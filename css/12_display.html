@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS:display</title>
+
+    <style>
+        /* 
+            display: 표시방식;
+                block
+                inline
+                inline-block:인라인이면서 블록 성격을 가짐
+                none:없음(표시하지않음)
+        */
+
+
+    </style>
+</head>
+<body>
+        <div>
+            <h1>제목</h1>
+            <br>
+                <p>Lorem <p>ipsum </p>dolor sit amet consectetur <b>adipisicing</b> elit. At, voluptatem veniam iste exercitationem, <i>similique</i> inventore suscipit <mark>recusandae</mark> minima earum iusto quo illo alias cum maxime sequi veritatis corrupti molestias amet!</p>
+            </br>
+            <header>
+                <nav>
+                    <ul>
+                        <li><a href="https://parksungwoo-0922.github.io/jfs">임시 링크</a></li>
+                        <li><a href="mailto:hong@naver.com">mailto:hong@naver.com</a></li>
+                        <li><a href="tel:010-123-4567">010-123-4567</a></li>
+                        <li><a href="index.html">파일</a></li>
+                        <li><a href="#sec">클릭하면 id가 sec인 위치로 이동</a></li>
+                    </ul>
+                </nav>
+            </header>
+            <section id="sec">
+                <h2>block vs inline</h2>
+                <figure>
+                    <!-- 경로지정 방법
+                            1.절대 경로:http://~,https://~,/~
+                            2.상대 경로 :./,../
+                    -->
+                        <!-- 상대경로 로컬과 서버에서모두 테스트가능 -->
+                    <img src="../assets/imgs/figma.png" alt="피그마로고">
+                        <!--/:루트(사이트 최상위)디렉토리  -->
+                        <!-- 작업영역 폴더기준(절대경로,로컬x,서버o) -->
+                        <figcaption>상대 경로 연결</figcaption>
+                    <img src="/assets/imgs/figma.png" alt="피그마로고">
+                    <figcaption>작업 영역 폴더 기준 경로 연겨</figcaption>
+                    <!-- open in brower/vs 프로그램추가/로컬테스트용 alt+b(기본브라우저열림),alt+shift+b -->
+                </figure>
+                <video >
+                    <source src="../assets/vid/mov_bbb.mp4" type="video/mp4">
+                </video>
+                <audio src="../assets/aud/Last Cappuccino in Rio - Chris Haugen.mp3" type=""></audio>
+            </section>
+            <footer>
+                <address>주소 및 연락처</address>
+            </footer>
+        </div>
+</body>
+</html>
