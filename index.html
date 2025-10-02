@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>홍길동</title>
+    <!-- 외부 스타일: link 태그로 css파일을 연결 -->
+    <link rel="stylesheet" href="./css/style2.css">
+</head>
+
+<body>
+    <!-- header(헤더) area -->
+    <!-- 
+        정보 구조(IA) 설계
+            메인 페이지1: Home
+                -> index.html
+            서브 페이지2: about me, my story
+                -> about.html
+            서브 페이지3: work(portfolio, project)
+                -> work.html
+            서브 페이지4: contact us
+                -> contact.html
+    -->
+    <!-- shift+alt+f -->
+    <header>
+        <!-- 로고 -->
+        <!-- h1.logo>a[href=index.html] -->
+        <h1 class="logo"><a href="index.html">Home</a></h1>
+        <!-- 내비게이션: GNB -->
+        <nav>
+            <ul>
+                <!-- shift+alt+방향키 -->
+                <li><a href="about.html">About me</a></li>
+                <li><a href="work.html">Work</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- section(본문) area -->
+    <!-- https://www.honorsville.co.kr/ -->
+    <div class="card-container">
+        <div class="card-image-wrapper">
+            <img src="https://www.honorsville.co.kr/upload/temp/20255303432444.jpg" alt="충주연수 경남아너스빌 센터원 아파트 외관"
+                class="card-image">
+            <!-- <img src="apartment-complex.jpg" alt="충주연수 경남아너스빌 센터원 아파트 외관" class="card-image"> -->
+        </div>
+
+        <div class="card-content">
+            <div class="card-header">
+                <span class="tag-badge">분양중</span>
+                <!-- 폼 요소: 회원가입, 로그인, 게시판, 상품구매 및 결재 -->
+                <!-- <button class="like-button" aria-label="관심 단지로 추가">
+                </button> (삭제)-->
+
+                <!-- 하트모양 -->
+                 <span class="like-button"><i class="fa-solid fa-heart like-button"></i></span>
+            </div>
+
+            <div class="card-body">
+                <h3 class="card-title">충주연수 경남아너스빌 센터원</h3>
+                <div class="card-details">
+                    <p>충청북도 충주시 연수동 787-25 일원</p>
+                    <p>243세대</p>
+                </div>
+                <div class="card-contact">
+                    <p class="phone-number">1866-0234</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- footer(푸터) area -->
+    <footer>
+        <p>&copy; 2025 HGD. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>

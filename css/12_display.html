@@ -6,20 +6,84 @@
     <title>CSS:display</title>
 
     <style>
+        /* vscode에서 창분할
+        왼쪽 패널 열고/닫기:ctrl+b
+            1.왼쪽 탐색기에서 분할하여 볼 파일을 마우스로 드래그(위치에 가면 회색으로 변경됨)
+            2.두개 이상의  화일이 탭으로 열려 있을때ctrl+alt+좌우방향키
+            2.같은 파일을 분할하여 볼 때:ctrl+\
+            3.기본 창 분할은 좌우 -> 상하 분할: alt 누르고(분할모양이변경되는것이보임) 분할버튼클릭
+        */
+        /* 
+            HTML에서 요소를 구분(v4.01이전)
+                1.블록 레벨 요소::
+                html,body,div(header,section,footer,nav),h1~h6,p,ul,li,figure,figcaption
+                2.인라인 요소::
+                span,b,i,br,a,img   cf)video(v5.0)
+        */
         /* 
             display: 표시방식;
-                block
-                inline
-                inline-block:인라인이면서 블록 성격을 가짐
+            block:html,body,div(header,section,footer,nav...),h1~h6,p,ul,figure,    figcaption,address
+                줄바꿈(위에서 아래로)
+                width: 100%
+                height:콘텐츠 크기
+                크기조절,여백(margin,padding),테두리(border)o
+                    ->마진 겹침 주의!
+                
+                
+                inline:
+                    1.줄바꿈x(가로배치:왼쪽에서 오른쪽)
+                    2.width:콘텐츠 크기
+                    3.height:콘텐츠 크기
+                    4.크기조절,margin(위,아래)조절x(예외:img,video,iframe 크기조절 가능)
+                        cf)패딩과 테두리 o
+                    span,b,i,br,a,img,video
+                
+                list-item: li
+
+                inline-block:
+                    인라인이면서 블록 성격을 가짐
+                    줄바꿈x(가로배치:왼쪽에서 오른쪽)->부모요소의 크기가 콘텐츠 보다 작으면 줄바꿈된다.
+                    width:콘텐츠 크기
+                    height:콘텐츠 크기
+                    크기조절,여백(margin,padding),테두리(border)o ->마진겹침현상 없음
+                    예)버튼
+
                 none:없음(표시하지않음)
+                     audio
         */
+            /*페이지에 있는 모든 요소  */
+        body * {outline: 1px solid lime;
+            width: 500px;
+        }
+        
+            /* p안에 들어있는 모든 요소 */
+        p *,a,img,video {outline: 2px solid red;}
 
+        #btn {
+            display: flow-root;/* 겹침현상제거 */
+            width: 1000px;/* width늘리면 버튼이 가로로 일렬 */
+            height: 600px;
+            margin: 500px;
+            margin: top 500px;
+            background-color: lawngreen;
+            outline:none;
+            /* line-height: 1; 연구해볼것..글자위여백관련*/
+            /* padding:13px 46px 윗줄과 비교해볼것*/
 
+        }
+        #btn button {
+            width:120px;
+            height:20px;
+            padding: 0;
+            border: none;
+            line-height: 1;
+            outline: none;
+        }
     </style>
 </head>
 <body>
         <div>
-            <h1>제목</h1>
+            <h1>display</h1>
             <br>
                 <p>Lorem <p>ipsum </p>dolor sit amet consectetur <b>adipisicing</b> elit. At, voluptatem veniam iste exercitationem, <i>similique</i> inventore suscipit <mark>recusandae</mark> minima earum iusto quo illo alias cum maxime sequi veritatis corrupti molestias amet!</p>
             </br>
@@ -50,14 +114,23 @@
                     <figcaption>작업 영역 폴더 기준 경로 연겨</figcaption>
                     <!-- open in brower/vs 프로그램추가/로컬테스트용 alt+b(기본브라우저열림),alt+shift+b -->
                 </figure>
-                <video >
-                    <source src="../assets/vid/mov_bbb.mp4" type="video/mp4">
-                </video>
-                <audio src="../assets/aud/Last Cappuccino in Rio - Chris Haugen.mp3" type=""></audio>
+                <div>
+                    <video >
+                        <source src="../assets/vid/mov_bbb.mp4" type="video/mp4">
+                    </video>
+                    <!-- 주의!! frameborder 속성은 비표준 대신css의border속성을 사용 -->
+                    <!-- <iframe src="https://www.daum.net" frameborder="0"></iframe> -->
+                    <iframe src="https://www.daum.net" ></iframe>
+    
+                    <audio src="../assets/aud/Last Cappuccino in Rio - Chris Haugen.mp3" type=""></audio>
+                </div>
             </section>
             <footer>
                 <address>주소 및 연락처</address>
             </footer>
         </div>
+            <div id="btn">
+                <button>버튼</button><button>버튼</button><button>버튼</button><button>버튼</button>
+            </div>
 </body>
 </html>

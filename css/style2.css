@@ -1,0 +1,123 @@
+@charset "utf-8";
+/* 크롬웹에서 colrozilla설치 스포이드 */
+/* CDN(Content Delivery Network방식으로 하트모양을 가져온다 */
+/* https://cdnjs.com */
+/* font awesome  소스코드 */
+/* 구글폰트 https://fonts.google.com검색  나눔없음*/
+/* 눈누 https://noonnu.cc -> 나눔스퀘어 폰트url 복사 붙이기 */
+/* 
+    typo/color system
+        -글꼴   나눔스퀘어
+        -줄간격 24
+*/
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css');/* Qi */
+
+/* 눈누받아 보완 */
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+
+/* common*/
+* {
+    box-sizing:border-box;
+}
+img {
+    vertical-align: top;/* vat */
+}
+body {
+    /* 글꼴은 하위 요소에 상속해 준다. */
+    font-family: 'NanumSquare',sans-serif;
+    font-size: 15px;
+    line-height: 1.6;
+    color:#9a8b86;
+}
+.card-title {
+    font-size: 22px;
+    color:#333;
+    line-height: 27px;
+}
+.card-details {
+    /* p는 위아래 기본마진(폰트크기(16)의1em */
+    margin:0;
+}
+.phone-number {
+    font-family: "Noto Sans KR", sans-serif;
+    font-size: 24px;
+    color:#0f2244;
+}
+/*header*/
+/*section*/
+/* 배경색:bgc */
+.card-container{
+    width: 340px;
+    
+    background-color: #F0F8FA;
+    padding: 0 45px 120px;
+    /* overflow: hidden; */
+}
+.card-image-wrapper {
+    overflow: hidden;
+}
+.card-image-wrapper img{
+
+    transition: 0.3s;/* trs,0.3초 */
+}
+.card-image-wrapper:hover img{
+    /* transform: scale(너비, 높이);trf:s */
+    transform: scale(1.2, 1.2);/* trf:s */
+}
+.card-content {
+    /* 마진 겹침 해결!
+        ->마진이 부모 바깥으로 지정되는 것을 방지
+    */
+    display:flow-root;
+}
+/* 배지, 좋아요 */
+.card-header {
+    /* 상 좌우 하 */
+    /* padding: 0 45px 120px; */
+    padding:  45px ;
+}
+.card-header span{
+    /* 분양중박스를 위로 맞춤 */
+    vertical-align: top;/* vat */
+}
+.tag-badge {
+    
+    display: inline-block;
+    width: 70px;/* w70 */
+    height: 38px;/*h38  */
+    line-height: 38px;/* lh38px */
+    text-align: center;/* tac */
+    background-color: #0f2244;/* bgc */
+    color: #fff;/* c */
+}
+/* 좋아요 하트 */
+.like-button{
+    /* 요소의 크기는 지정하면서 줄은 바꾸지 않는다. */
+    display: inline-blcok; 
+    
+    width: 55px; 
+    height: 55px;
+    /* padding:20px 18px; */
+    /* line-height: 1; */
+    line-height: 55px;/* 줄간격 */
+    text-align:center;/* 텍스트 좌우 정렬 */
+    
+    /* padding: 16px 18px 24px; */
+    /* padding: 16px 15px 24px; */
+    border-radius:50% ;
+    margin-top: 20px;
+    margin-left: 145px;
+    background-color:#b1b4b3
+}
+.like-button i {
+    color: #fff;
+    font-size:20px;
+}
+/* .card-body */
+.card-body {
+    /* m0-45-120 */
+    /* margin: 0 45px 120px; */
+    margin: 0 0px 120px;
+}
+/*footer*/
