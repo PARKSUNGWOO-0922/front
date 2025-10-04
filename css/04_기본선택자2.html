@@ -24,23 +24,31 @@
                  예)body > h1 (o)
                    h1    > body (x)
                    body  > li (x) cf)손자는 안됨.
-            3.결합(Compound) 선택자??
+            3.복합(Compound) 선택자??
                 예)ul.li (o)
---------------1.2.3 클래스 선택잘 대체가능----------------------            
-                4.가상 클래스 선택자
+--------------1.2.3번은  클래클래스로 대신작업 가능하다---            
+            4.가상 클래스 선택자[나중에 수업]
                 예):hover
-            5.가상 요소 선택자
+            5.가상 요소 선택자[나중에 수업]
                 예)
         */
-        /* ul h2 {border: 1px solid red} */
-        .descendant {border: 1px solid red}
-        /* ul > p {border: 2px dashed blue;}  error */
-         li > p {border: 2px dashed blue;}  
+
+        ul h2 {border: 1px solid red}
+        /* .descendant {border: 1px solid red} 위와같음*/
+
+        /* ul > p {border: 2px dashed blue;} 직계자식이 아니어서error */
+         li > p {border: 2px dashed blue;}  /*위error수정본  */
+
+
          ul p {border: 2px dashed blue;} 
-         /* ul.li {border:3px dotted violet;}    */
+         
          /* li태그중에 li클래스를 가진 요소 */
-         li.li {border:3px dotted violet;} 
-            /*li 태그의 하위 요소 중에서 li 클래스를가진 요소  */
+         ul.li {border:4px dotted goldenrod}   
+
+         /*li 태그의 하위또는 동등 요소 중에서 li 클래스를가진 요소  */
+         li.li {border:3px dotted blue;} 
+
+         /* li태그 하위, p태그중에 li클래스를 가진요소 :아래표현 */
          li p.li {border:3px double palegreen;}    
         
     </style>

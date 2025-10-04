@@ -18,12 +18,14 @@
             /* body의 height 기본값은 content 크기 */
             /* outline는 박스 모델에 포함되지 않으며,border 바깥에 지정된다.즉 width에 영향을 주지 않는다. */
             outline: 1px solid lime ;
-            height: 100vh;/* vh: viewport height ch)vw,vmax,vmin*/
+            height: 100vh;/* vh: viewport height cf)vw,vmax,vmin*/
+            margin:0;
         }
         div {
             /* 단위:px는 고정, %는 부모기준 */
             /* 부모(body) 넓이의 50% */
-            width: 50%;/*w50p  */
+            /* width: 50%; */
+            /*w50p  */
             height: 200px;/* h200 */
             background-color: powderblue; /* bgc ->p */
         }
@@ -36,7 +38,8 @@
         .div1 {
             width: 100%;
             /* 최대 너비 */
-            max-width:1200px;/* maw500 */
+            max-width:900px;
+            /* maw500 */
             margin: 0 auto;
             /* 최소 너비 */
             /* min-width: 500px; mw500 */

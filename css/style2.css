@@ -13,6 +13,7 @@
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css');/* Qi */
 
 /* 눈누받아 보완 */
+@import url('https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css' )
 
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
 
@@ -23,26 +24,52 @@
 img {
     vertical-align: top;/* vat */
 }
+
+/* 
+    typo/color system    
+        - 큰제목   22px, #333
+        - 배지     15px, #fff
+        - 본문     15px, #9a8b86, 나눔스쿼어, 1.6
+        - 연락처   24px, #0f2244, Noto Sans KR
+
+        font-family: 글꼴;
+        line-height: 줄간격;
+        font-size: 글자크기;
+        color: 글자색;
+        font-weight: 글자굵기;
+*/
+
+/* 
+    구글 폰트
+        https://fonts.google.com/
+    눈누 폰트
+        https://noonnu.cc/
+*/
+
 body {
+    /* 2. font-family 속성으로 지정 */
     /* 글꼴은 하위 요소에 상속해 준다. */
     font-family: 'NanumSquare',sans-serif;
     font-size: 15px;
     line-height: 1.6;
     color:#9a8b86;
 }
-.card-title {
-    font-size: 22px;
+.card-title {/* 충주연수경남아너스빌 센터원 줄간격 */
+    font-size: /* 글자크기 */22px;
     color:#333;
-    line-height: 27px;
+    line-height: /27px;
 }
-.card-details {
+.card-details p/*[선생님] p*/{
     /* p는 위아래 기본마진(폰트크기(16)의1em */
+    /* address sai jobajim */
     margin:0;
 }
 .phone-number {
     font-family: "Noto Sans KR", sans-serif;
-    font-size: 24px;
+    font-size: 24px;/* fz24 */
     color:#0f2244;
+    /* [선생님]font-weight:bold;  /*fwb*/ 
+    font-weight: bold;
 }
 /*header*/
 /*section*/
@@ -50,12 +77,12 @@ body {
 .card-container{
     width: 340px;
     
-    background-color: #F0F8FA;
-    padding: 0 45px 120px;
+    background-color:#F0F8FA;
+    /* [없음]padding: 0 45px 120px; */
     /* overflow: hidden; */
 }
 .card-image-wrapper {
-    overflow: hidden;
+    overflow: hidden;/* o */
 }
 .card-image-wrapper img{
 
@@ -75,49 +102,65 @@ body {
 .card-header {
     /* 상 좌우 하 */
     /* padding: 0 45px 120px; */
-    padding:  45px ;
+    padding-left:  45px ;
+    /* pl45 */
+    /* 0px =분양중 좌측끝 45px=우로이동 */
+    
 }
 .card-header span{
-    /* 분양중박스를 위로 맞춤 */
+    /* 분양중박스(인라인요소)를 위로 맞춤 */
     vertical-align: top;/* vat */
 }
 .tag-badge {
     
     display: inline-block;
+    /* 밑에 하트처럼 블럭화하여 너비와 높이를 준것 */
+    /* dib */
     width: 70px;/* w70 */
     height: 38px;/*h38  */
-    line-height: 38px;/* lh38px */
+    line-height: 38px;
+    /* lh38px */
     text-align: center;/* tac */
     background-color: #0f2244;/* bgc */
     color: #fff;/* c */
 }
-/* 좋아요 하트 */
+/* 좋아요 하트밖 원의 형태에 대한 스타일조정 */
 .like-button{
     /* 요소의 크기는 지정하면서 줄은 바꾸지 않는다. */
-    display: inline-blcok; 
-    
-    width: 55px; 
-    height: 55px;
+    display: inline-block;
+    /* dib */
+    /* display로 인하여 하트 원도커진다
+        이유 :원래 인라인성격인것을 블럭처럼 만들어 준것,그래서
+        너비와 높이를 지정할수 있게된다. */
+    width: 55px; /* w55 */
+    height: 55px;/* h55 */
     /* padding:20px 18px; */
     /* line-height: 1; */
-    line-height: 55px;/* 줄간격 */
-    text-align:center;/* 텍스트 좌우 정렬 */
+    line-height: 55px;
+    /* line-height로 인하여 하트가 가운데 정렬
+    :이유 span으로 묶인 바깥원과 안의 하트간의
+    줄간격을 line-hegiht로준것이며 */
+    /* 줄간격,lh55px */
+    text-align: center;/* 텍스트 좌우 정렬,tac */
     
-    /* padding: 16px 18px 24px; */
-    /* padding: 16px 15px 24px; */
-    border-radius:50% ;
+    
+    /* padding: 16px 15px 24px; 원안에 하트의 위치를 조정해보려시도->밑으로감 */
+    border-radius:50% ;/* bdrs50p */
     margin-top: 20px;
-    margin-left: 145px;
-    background-color:#b1b4b3
+    margin-left: 145px; 
+    background-color:#b1b4b3/* bgc */
 }
+/* 하트를 하얀색으로  */
 .like-button i {
-    color: #fff;
-    font-size:20px;
+    color: #fff;/* 글자 색,c */
+    color: red;
+    font-size:20px;/* 글자기= heart,fz20 */
 }
 /* .card-body */
 .card-body {
     /* m0-45-120 */
-    /* margin: 0 45px 120px; */
-    margin: 0 0px 120px;
+    margin: 0 45px 120px;
+    
+    /* [선생님] margin:0 45px 120px /*m0-45-120*/
 }
 /*footer*/
