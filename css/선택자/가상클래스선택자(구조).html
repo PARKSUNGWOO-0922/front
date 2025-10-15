@@ -55,8 +55,8 @@
         font-style:italic;
         color:green;
     }
-    /*아래것 이상???*/
-    p:first-child{
+    /*아래것 이상??? 답:div안에서 무조건 처음에 있어야 체크된다*/
+    div p:first-child {
         font-style: italic;
         color:greenyellow;
     }
@@ -111,7 +111,7 @@
     <!-- <div>
         <h2>형제관계선택자</h2>
     </div> -->
-    <div></div>
+    <div> </div>
     
     <div>
         <!-- <p>p:first-child</p> -->

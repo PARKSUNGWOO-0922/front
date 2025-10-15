@@ -57,7 +57,7 @@ body {
 .card-title {/* 충주연수경남아너스빌 센터원 줄간격 */
     font-size: /* 글자크기 */22px;
     color:#333;
-    line-height: /27px;
+    line-height: 27px;
 }
 .card-details p/*[선생님] p*/{
     /* p는 위아래 기본마진(폰트크기(16)의1em */
@@ -73,10 +73,20 @@ body {
 }
 /*header*/
 /*section*/
-/* 배경색:bgc */
+/* section common(공통) */
+.sec {
+    height: 100vh;
+}
+#sec2 {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;/* .card-content 의margin:20px */
+}
 .card-container{
     width: 340px;
-    
+    /* margin:20px; */
+    /* 배경색:bgc */
     background-color:#F0F8FA;
     /* [없음]padding: 0 45px 120px; */
     /* overflow: hidden; */
@@ -153,7 +163,7 @@ body {
 /* 하트를 하얀색으로  */
 .like-button i {
     color: #fff;/* 글자 색,c */
-    color: red;
+    /* color: red; */
     font-size:20px;/* 글자기= heart,fz20 */
 }
 /* .card-body */
