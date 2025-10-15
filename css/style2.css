@@ -77,6 +77,13 @@ body {
 .sec {
     height: 100vh;
 }
+/* section1 area */
+#sec1 .outer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* section2 area */
 #sec2 {
     display:flex;
     justify-content: center;
