@@ -16,17 +16,17 @@ body {
     color:#333;
     line-height: 27px;
 }
-.card-details p/*[선생님] p*/{
-    /* p는 위아래 기본마진(폰트크기(16)의1em */
-    /* address sai jobajim */
-    margin:0;
-}
 .phone-number {
     font-family: "Noto Sans KR", sans-serif;
     font-size: 24px;/* fz24 */
     color:#0f2244;
     /* [선생님]font-weight:bold;  /*fwb*/ 
     font-weight: bold;
+}
+.card-details p/*[선생님] p*/{
+    /* p는 위아래 기본마진(폰트크기(16)의1em */
+    /* address sai jobajim */
+    margin:0;
 }
 /*header*/
 /*section*/
@@ -35,14 +35,24 @@ body {
     height: 100vh;
 }
 /* section1 area */
+#sec1 {
+    position: relative;/* po */
+}
 #sec1 * {
     /* outline: 1px solid lime; */
 }
+#sec1 .vid {
+    position: absolute;/* poa */
+}
 #sec1 .outer {
-    display: flex;
+    position: absolute;/* 글자 영상위로  */
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    /* display: flex;
     justify-content: center;
     align-items: center;
-    height: 100%;
+    height: 100%; * 영상위에 글자를 입히는 경우tr사용한다네/
 }
 #sec1 .container {
     /* 너비가 100% 이지만, 최대크기가 1330px */
@@ -50,6 +60,9 @@ body {
     max-width: 1330px;/* maw1330 */
     text-align: center;
     /* tac 인라인요소(텍스트포함)에 대한 가운데 가로정렬 */
+}
+#sec1 .container p {
+    margin: 28px 0 100px;/* m-28-0-100 */
 }
 #sec1 .counter {
     display: flex;

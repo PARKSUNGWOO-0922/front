@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sticky</title>
+    <style>
+        body {
+            height: 1800px;
+        }
+        /* 들여쓰기(정렬)shift+alt+f */
+        .parent {
+            /* parent의 너비/높이를 주어야 화면에 absolute가 표시됨.기준이 있어야 이동이 가능. */
+            position: sticky;
+            top:0;
+            width: 400px;
+            height: 300px;
+            border:solid;
+        }
+        
+            /* 
+                position:위치;
+                    기본값:static;
+                    relative
+                    absolute:조상(부모:position이 static아닌부모)를 기준으로 이동
+                    fixed:viewport를 기준을 left,top,right,bottom이 기준이된다 cf(relative:자기자신)
+                    sticky:처음은 relative에서 top위치에 도달하면 fixed와 같아진다
+                left
+                right
+                top
+                bottom
+             */
+            
+    </style>
+</head>
+<body>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut id beatae voluptatem magni eligendi neque unde blanditiis ducimus fuga est provident assumenda vitae, veniam sunt architecto odio molestiae praesentium ratione?</p>
+    <div class="parent">
+        
+    </div>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut id beatae voluptatem magni eligendi neque unde blanditiis ducimus fuga est provident assumenda vitae, veniam sunt architecto odio molestiae praesentium ratione?</p>
+</body>
+</html>

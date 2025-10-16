@@ -39,12 +39,35 @@
     눈누 폰트
         https://noonnu.cc/
 */
-
-/* section1 area */
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');/* 구글폰트 */
+:root {
+    /*CSS의 변수의 정의,CSS변수는 :root에 정의한다 */
+    /* :root 선택자는 html태그를 가르킨다. :html도가능하나
+        보통 :root로 사용 */
+    --main-color: #9a8b86;
+    --sub-color:#3e3a38;
+    --white-color:#fff;
+}
 body {
     font-family: "Noto Sans KR", sans-serif;
     font-size: 16px;/* 기본값이라도 입력해주는게 좋음. */
+    font:15px/1.6 "Noto Sans KR", sans-serif;
+}
+
+
+body {
+        /* 2. font-family 속성으로 지정 */
+        /* 글꼴은 하위 요소에 상속해 준다. */
+        font-family: 'NanumSquare',sans-serif;
+        font-size: 15px;
+        line-height: 1.6;
+        /* color:#9a8b86; */
+        color: var(--main-color);
+}
+
+    /* section1 area */
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');/* 구글폰트 */
+#sec1 {
+    color:var(--white-color);
 }
 
 #sec1 h2 {
@@ -61,6 +84,21 @@ body {
 }
 #sec1 .counter div {
     /* 색상은 16진수 영문 대소문자 구별하지 않는다. */
-    color:#3e3a38;
+    /* 부모 요소(#sec1)에서 지정한 글자색보다 자식 요소에 지정한 속성이 우선 적용된다. */
+    color:var(--sub-color);
 }
 /* piexls 영상 무료다운로드 사이트 https://www.pexels.com/ko-kr/*/
+
+/* section2 area */
+.card-title {/* 충주연수경남아너스빌 센터원 줄간격 */
+    font-size: /* 글자크기 */22px;
+    color:#333;
+    line-height: 27px;
+}
+.phone-number {
+    font-family: "Noto Sans KR", sans-serif;
+    font-size: 24px;/* fz24 */
+    color:#0f2244;
+    /* [선생님]font-weight:bold;  /*fwb*/ 
+    font-weight: bold;
+}
