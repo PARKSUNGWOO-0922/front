@@ -1,5 +1,5 @@
 @charset "utf-8";
-/* common*/
+/* common 또는 reset(초기화) 또는 디폴트*/
 
 * {
     box-sizing:border-box;/* bx */
@@ -10,6 +10,7 @@ body,h1,h2,h3,p,ul {
 }
 
 img {
+    width: 100%;/* 스타벅스 오버플로우 해결 */
     vertical-align: top;/* vat */
 }
 
@@ -22,4 +23,12 @@ video {
 ul {
     list-style: none;
     padding: 0;/* p0 */
+}
+
+a {
+    text-decoration: underline;/* tdu 기본값(밑줄),ins태그기본값 */
+    text-decoration: overline;/* tdo 윗줄 */
+    text-decoration: line-through;/* tdl 취소선,del태그기본값 */
+    /* 밑줄없애기 */
+    text-decoration: none;/* tdn */
 }

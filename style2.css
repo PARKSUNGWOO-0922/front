@@ -1,6 +1,7 @@
 @charset "utf-8";
 @import url(common.css);
 @import url(typo.css);
+@import url(footer.css);
 
 
 .card-details p/*[선생님] p*/{
@@ -31,6 +32,7 @@
 }
 
 #sec1 .outer {
+
     position: absolute;/* 글자 영상위로  */
     left: 50%;
     top: 50%;
@@ -38,7 +40,7 @@
     /* display: flex;
     justify-content: center;
     align-items: center;
-    height: 100%; * 영상위에 글자를 입히는 경우tr사용한다네/
+    height: 100%; * 영상위에 글자를 입히는 경우tr사용한다네*/
 }
 #sec1 .container {
     /* 너비가 100% 이지만, 최대크기가 1330px */
@@ -189,4 +191,59 @@
     
     /* [선생님] margin:0 45px 120px /*m0-45-120*/
 }
+
+/* section3 area */
+
+#sec3 {
+    /* 배경 이미지 + Paralax Scrolling */
+    background-attachment: fixed;/* bga */
+    background:url(./assets/starbucks/back_image.jpg)
+    no-repeat 50%/cover fixed ;/* fixed :back image고정 */
+}
+#sec3 .intro {
+    position: absolute;
+    left: 400px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 380px;
+    height: 520px;
+    /* background: lightgreen; */
+    text-align: right;/* tar */
+    
+}
+
+#sec3 .intro h2 span{
+    display:block;/* span 글자 세로 배열 */
+}
+
+#sec3 .intro p:first-of-type {
+    margin: 48px 0 16px;/* m48-0-16 */
+}
+
+#sec3 .intro a {
+    border: 2px solid #fff;/* bd */
+    border-radius: 5px;/* bdrr */
+    display:inline-block;/* a는 inline, 높이를 주지못함. */
+    margin-top: 28px;
+    padding: 6px 24px;
+}
+#sec3 .intro a:hover {
+    background: var(--white-color);
+    text-decoration: underline;
+    color:#222;
+    transition: 0.7s;/* trs */
+}
+
+#sec3 .product {
+    position: absolute;
+    transform: translateY(-50%);
+    top: 50%;
+    left: 890px;
+    width: 880px;
+    height: 550px;
+    /* background: lightcyan; 이미지위치조절 확인용배경*/
+}
+
+
+
 /*footer*/
