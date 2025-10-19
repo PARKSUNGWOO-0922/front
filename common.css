@@ -12,6 +12,7 @@ body,h1,h2,h3,p,ul {
 img {
     width: 100%;/* 스타벅스 오버플로우 해결 */
     vertical-align: top;/* vat */
+    /* vat */
 }
 
 video {
@@ -26,7 +27,7 @@ ul {
 }
 
 a {
-    text-decoration: underline;/* tdu 기본값(밑줄),ins태그기본값 */
+    text-decoration: underline;/* tdu 기본값(a태그:밑줄),ins태그기본값 */
     text-decoration: overline;/* tdo 윗줄 */
     text-decoration: line-through;/* tdl 취소선,del태그기본값 */
     /* 밑줄없애기 */

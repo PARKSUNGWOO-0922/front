@@ -11,32 +11,45 @@
         }
         .section {
             position: relative;
+
+            /* ---------------------------------------------- */
             /* background-image: url(경로/이미지명); */
             background-image: url(./../../assets/ht/main_visual.jpg);/* bgi */
+            /* ---------------------------------------------- */
             background-repeat: no-repeat;/* bgr */
-            /* background-size: contain;  */ /* bgs 하단빈공간생김,cover와는 다르게 이미지잘림이없다.즉 가로세로비율을 유지하면서 확대/축소 시킨다.*/
+            
+            /* ---------------------------------------------- */
+            background-size: contain;   /* bgs 하단빈공간생김,cover와는 다르게 이미지잘림이없다.즉 가로세로비율을 유지하면서 확대/축소 시킨다.*/
             background-size: cover;/* 하단 빈공간채우기 ,즉 요소(.section)크기에 맞게 배경 미지이의 크기를 이미지의 비율을 유지하면서 확대/축소 시킨다.일부이미지가 잘릴수 있다.cover 이외 px, % 사용가능*/
-            /* background-size: 100px;
-            background-size: 124%;   */
+            
+            /*[선생님]  contain: 요소 크기에 맞게 배경 이미지를 잘림 없이 가로/세로 비율을 유지하면서 확대/축소 시킨다. -> 박스에 빈 영역이 생길 수 있다. */
+            /* cover: 요소 크기에 맞게 배경 이미지의 크기를 이미지의 가로/세로 비율을 유지하면서 확대/축소 시킨다.-> 박스에 빈 영역이 생기지 않는다. 이미지의 일부가 잘릴 수 있다. [/선생님]*/
+            background-size: cover;
+            background-size: 100px;
+            background-size: 124%;   
             /* background-size:너비 높이 */
-            /* background-size:100% 120% */
+            /* background-size:100% 90% */
+            /* ---------------------------------------------- */
             
             /* background-position: x위치 y위치; 화면에 벗어난 부분을 조정하여 전체화면을 보고자 하는경우*/
-            background-position: -245px 0;/* bgp 우측만두 보이게~%로 해보면*/
-            /* background-position: 50% 0;  *한번더 볼것 center도쓴다.디폴트값은 0,0*/
+            background-position: -240px 0;/* bgp 우측만두 보이게~%로 해보면*/
+             background-position: 50% 0;  /*한번더 볼것 center도쓴다.디폴트값은 0,0*/
             /* x위치:left,right,center */
             /* y위치:top,bottom,center */
-            /* background-position: center; 중앙위치로 */
-            /* 하나만 입력하는 경우
-                background-position:top; center top 같은의미
-                                    left; left center 같은의미
-             */
-             /* background: 속기 속성[]필수 | 또는
-                background: [색|이미지] 반복 위치/크기 고정 */
+            background-position: center center;
+            background-position: center; /*center center:즉 중앙위치로이동 */
+
+            /* 하나만 입력하는 경우(나머지는 center로자동인식) */
+            background-position: 50px;/* (50px center 같은의미) */
+            background-position: top;  /* (center top 같은의미) */
+            background-positi0n:  left; /* (left center 같은의미) */
+            
+             /* background: 속기 속성 []필수, | 또는
+                background: 색|이미지 [반복] [위치]/[크기] [고정] */
                 /* 기본값 */
                 /* background: transparent|none repeat 0 0/100% scroll; */
-            background: #000 url(./../../assets/ht/main_visual.jpg) 
-            no-repeat 50%/cover/* contatain 위아래 검정부분생김 */;
+            background: #000 url(./../../assets/ht/main_visual.jpg) no-repeat 50%/cover/* contatain 위아래 검정부분생김 */;
+
             height: 100vh;
         }
         /* 배경으로 넣어보자. 그래서 img 주석처리 */
@@ -45,21 +58,29 @@
             left: 63%;/* 계속 조정하면서 만든수치 */
             top: 10%;/* 50%너무 아래로 내려감 tr테스트해봄 */
             /* transform: translate(-50% -50%); */
-            width: 326px; /* %로 표시하면 화면확대/축소시 움직임다름 */
+
+             width: 326px; /* %로 표시하면 화면확대/축소시 움직임다름 */
             height: 371px; /* 즉 w/h 조정을 위한 별도 묶음이 필요(테스트) */
-            /* background-color: #fff; 위치보려테스트*/
-            background-image: url(./../../assets/ht/main_visual_ballon2.png);
-            background-size: contain;/* w/h사이즈에 맞게 그림이 생성되어 보임,좌측상단 ,여기서 사이즈를 예)20%로 작게하고 하단 no-repeat를 없애면 화면에 반복됨 */
-            /* repeat 반복(기본값)  */
-            /* no-repeat 반복 없음 */
-            /* repeat-x x방향으로만 반복  */
-            /* repeat-y y방향으로만 반복  */
-            /* background-size: 20%; 위치보려 테스트*/
-            background-position: 50% 50%;/* balloon영역의 가운데로위치,background-position:center center,px별도 계산이 필요함으로 쓰지않는 방향을..같은의미
-            background-posion:50px.px로 하나만 쓸경우 50px center의미 */
+
+            /* vw:viewport width */
             width: 18vw;/* 테스트 viewport-width 움직임이 아래위로 안됨 확인요!!!*/
             height: 371px;
+            /* background-color: #fff; 위치보려테스트*/
+
+            background-image: url(./../../assets/ht/main_visual_ballon2.png);
+            background-size: contain;/* w/h사이즈에 맞게 그림이 생성되어 보임,좌측상단 ,여기서 사이즈를 예)20%로 작게하고 하단 no-repeat를 없애면 화면에 반복됨 */
+
+            /* repeat 반복(기본값)  */
+            /* no-repeat 반복 없음 */
+            /* repeat-x : x방향으로만 반복  */
+            /* repeat-y : y방향으로만 반복  */
+            /* background-size: 20%; 위치보려 테스트*/
+
+            background-position: 50% 50%;/* balloon영역의 가운데로위치,background-position:center center,px별도 계산이 필요함으로 쓰지않는 방향을..같은의미
+            background-posion:50px.px로 하나만 쓸경우 50px center의미 */
+            
             background-repeat: no-repeat;
+            background-size:contain;
 
         }
         

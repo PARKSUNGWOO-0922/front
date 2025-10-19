@@ -12,14 +12,15 @@ footer img {
     width: auto;/* wa */
 }
 footer .info {
-    display: flex;
+    display: flex;/* left-info 와 fs */
     justify-content: space-between;
-    max-width: 1500px;
-    margin-left: 250px;
+    max-width: 1500px;/* 관련사이트열기 우측붙이기 */
+    margin-left: 250px;/* 좌측 로고자리 여분만들기 */
 }
 footer .util-box {
-    display: flex;
+    display: flex;/* bnd와 sns 정렬 */
 }
 footer .left-info ul {
-    display: flex;
+    display: flex;/* bnd,sns,com-info 각ul요소 정렬,즉 p태그는 제자리...*/
+   
 }

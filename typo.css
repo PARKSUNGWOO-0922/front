@@ -10,7 +10,7 @@
         -글꼴   나눔스퀘어
         -줄간격 24
 */
-@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css');/* Qi */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css');/* @i */
 
 /* 눈누받아 보완 */
 @import url('https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css' );
@@ -94,6 +94,7 @@ body {
     line-height: 27px;
 }
 .phone-number {
+    
     font-family: "Noto Sans KR", sans-serif;
     font-size: 24px;/* fz24 */
     color:#0f2244;
@@ -111,6 +112,7 @@ body {
 }
 #sec3 .intro h2 {
     font-weight: var(--fwm);
+
     /* 단어별 첫글자 대문자 */
     text-transform: capitalize;/* ttc */
     /* 모두 소문자 */
