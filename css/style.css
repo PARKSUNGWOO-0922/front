@@ -1,8 +1,12 @@
 @charset "utf-8";
-/* 웹 폰트:방법1 -cdn 모든스타일이 들어있다.*/
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Noto+Sans+KR:wght@100..900&display=swap');
 
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css');
+
+/* 웹 폰트:방법1 -cdn 모든스타일이 들어있다.*/
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+
+/* @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Noto+Sans+KR:wght@100..900&display=swap'); */
+
 
 /* 구글폰트 검색 lato  선택하여 2가지 방법으로 다운받아 보기
     1.우상단 getfont 눌러 <>선택 import로 복사해서 붙여넣기(cdn방식)
@@ -13,6 +17,15 @@
      @font-face {
         /* 사용자 임의로 폰트명 정의도 가능하지만 의미있는 단어로 쓴다*/
         font-family: "Lato-Regular";
+        /* 상대주소 */
+        /* 
+            /작업 영역 폴더 (root)
+            ./현재위치, 한 번만
+            ../부모위치, 여러 번
+            예) a폴더>b폴더>c폴더: 파일.html
+            예) a폴더: ../../이미지.jpg
+        */
+        /* 내 컴퓨터에서는 */
         src: url(./../assets/font/Lato/Lato-Regular.ttf);/* 작업영역상관없이 작동 */
         /* src: url(/jfs/assets/font/Lato/Lato-Regular.ttf); git폴더에서 vs코드로열었을때 */
         
@@ -22,6 +35,7 @@
         font-family: "Lato", sans-serif;
         src: url(./../assets/font/Lato/Lato-Thin.ttf);
         /* 절대주소 :github에 올려놓은경우 사용가능함*/
+        /* URL:프로토콜://도메인/폴더경로/파일  */
         src:url(https://PARKSUNGWOO-0922.github.io/jfs/assets/font/Lato-Thin.ttf)
      }
      
@@ -46,6 +60,14 @@ ul {
 a {
     text-decoration: none;/* to the top 밑줄없애기 */
 }
+iframe {
+    width:100%;/* ???????? */
+    height:100%;
+}
+button {
+    border:none;
+}
+
 /* typography(타이포그래피)*/
 /* :root는 html태그를 선택한다. */
 :root {
@@ -56,7 +78,8 @@ body {
     /* 폰드변경 원할경우 */
     /* font-family: "Lato-Regular", sans-serif; */
     /* font-family: "Lato-Thin", sans-serif; */
-    font:1.5rem/1.6 "Lato", sans-serif;
+    font:1.5rem/1.6 "Lato-Regular", sans-serif;
+    color:#777;
     /*
      단위:rem은 :root에서 지정한 크기의 배수 
      예) 10px *1.5qo -> 15px
@@ -68,28 +91,48 @@ h2 {
     color:#fff;/* 영문자보다 16잔수로 */
     /* 글자사이 간격:자간 */
     letter-spacing: 1rem;/* ls */
-    text-transform:uppercase;/* tt */
+    text-transform: uppercase;/* tt */
+}
+h3 {
+    font-size: 2.4rem;
 }
 
-
 header a {
-    background-color: #555;
-    color:#f3f3f3;
+    /* background-color: #555; */
+    color:#f0f0f0;
     /* color:#114141; *//* 내가내가 색조정해볼것/이미지도 선택해보고*/
 
 }
 footer a , footer p{
     color:#fff;
 }
-/* a태그에 그자색의 경우 a태그에 직접 지정(why:상속되지않기때문) */
+/* a태그에 글자색의 경우 a태그에 직접 지정(why:상속되지않기때문) */
 footer .top-btn a {
     color:#333
 
+}
+footer .sns {
+    margin: 24px;
 }
 
 footer .sns i {
     font-size: 2.4rem;
     margin: 0 -3px;
+}
+#contact h2 {
+    font-size: 3.6rem;
+}
+
+#contact a {
+    color: #777;
+}
+
+#contact button {
+    color: #fff;
+}
+
+#contact .addr {
+    font-size: 1.8rem;
 }
 
 /* common(공통) */
@@ -105,20 +148,29 @@ h2 {
     padding: 8px 24px 10px 30px;
    
 }
+h3 {
+    text-align:center;
+    margin:64px 0 10px;
+}
+ h3+p {
+    text-align: center;
+ }
 
 /* header area*/
 header {
-
+    z-index:99999;
+    position:fixed;
 }
 
 header .gnb ul {
     display: flex;
-    position:fixed;
+    /* position:fixed; */   /* header:posion-fixed대체 */
     /* pof */
 }
 header .gnb li a {
     display: inline-block;/* 약간 밑으로 */
     padding: 8px 16px;
+    /
 }
 
 header .gnb li a:hover {
@@ -130,7 +182,7 @@ header .gnb li i {
 
 /* footer area */
 footer {
-    background: #555;/* 각자 임의지정 */
+    background: #555;/* 색깔각자 임의지정 */
     /* 푸터 안의 인라인 요소는 모두 가운데로(배치) */
     text-align:center;
     padding: 100px;
@@ -141,25 +193,28 @@ footer:hover {
 /* to the top button */
 footer .top-btn {
     display: inline-block;
-    /* background:#ddd; */ /* 글자안보임 내가 */
-    background:#777;
+    background:#ddd; 
     padding: 8px 16px;
     
 }
 footer .top-btn i{
     margin-right: 8px;
 }
-footer .sns {
-    margin: 24px;
-}
 
 /* section area: index.html */
 #home {
     /* 뷰포트 크기로 높이 지정 */
     height: 100vh;
-    background: url(./../assets/img/rodion-kutsaiev-PEm_sLmJT-w-unsplash.jpg) no-repeat 100% 100%/cover;/* 보통 50% 50% 내가내가 */
+    background: url(./../assets/img/mark-koch-KiRlN3jjVNU-unsplash.jpg) no-repeat 30% 30%/cover;
+  /*   background: url(./../assets/img/rodion-kutsaiev-PEm_sLmJT-w-unsplash.jpg) no-repeat 100% 100%/cover; *//* 보통 50% 50% 내가내가 */
    /* background: url(../assets/img/marita-kavelashvili-ugnrXk1129g-unsplash.jpg) no-repeat 50% 50%/cover */
 }
+#home h2 {
+    background: #555;
+    /* 일반적으로 좌우패딩을 상하보다 많이 준다. */
+    padding: 8px 24px 10px 30px;
+}
+
 /* section area:contact.html */
 #contact .contact {
     width: 600px;/* 기존사이트 참고수치 */
@@ -170,14 +225,13 @@ footer .sns {
     height: 400px;
     background: url(/jfs/assets/img/parallax3.jpg) no-repeat 50% 50%/cover fixed;
 }
-#contact .parallax-bg h2 {
-    background: transparent;/* 배경색제거,불필요함,제거. 4040이동으로 수정 */
-}
+
 #contact .container {
     display: flex;
     justify-content: space-between;
     width: 900px;
-    margin-top: 48px auto  96px;
+    /* margin-top: 48px auto  96px; */
+    margin: 48px auto  96px;
 }
 #contact .map {
     width: 280px;
@@ -190,24 +244,25 @@ footer .sns {
 #contact .contact p {
     margin: 24px 0 16px;
 }
-#contact input {
-    /* width: 295px; */
-    height: 45px;
-}
-#contact input:first-of-type {
-    margin-right: 7px;
-}
 #contact .frm-input {
     display: flex;
     justify-content: space-between;
     gap:10px;
+  
+}
+#contact input {
+   width:100%;
+   height: 45px;
+   padding-left: 16px; 
 }
 #contact textarea  {
     width: 100%;
+    /* 텍스트영역 상자의 크기 조정 불가 */
     resize: none;
     height: 150px;
     margin-top: 10px;
 }
+
 #contact button {
     background: #111;
     padding: 12px 24px;
