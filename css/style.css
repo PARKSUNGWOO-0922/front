@@ -67,16 +67,15 @@ h2 {
     font-size: 2.4rem;
     color:#fff;/* 영문자보다 16잔수로 */
     /* 글자사이 간격:자간 */
-    letter-spacing: 1rem;
-    background: #404040;
-    /* 일반적으로 좌우패딩을 상하보다 많이 준다. 8의배수 주로사용 */
-    padding: 8px 24px;   /* p8-16 */
+    letter-spacing: 1rem;/* ls */
+    text-transform:uppercase;/* tt */
 }
 
 
 header a {
-    /* color:#f3f3f3; */
-    color:#114141;/* 내가내가 */
+    background-color: #555;
+    color:#f3f3f3;
+    /* color:#114141; *//* 내가내가 색조정해볼것/이미지도 선택해보고*/
 
 }
 footer a , footer p{
@@ -87,6 +86,12 @@ footer .top-btn a {
     color:#333
 
 }
+
+footer .sns i {
+    font-size: 2.4rem;
+    margin: 0 -3px;
+}
+
 /* common(공통) */
 /* 글자조정 */
 h2 {
@@ -94,20 +99,23 @@ h2 {
     left: 50%;
     top: 50%;
     /* trft */
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);/* trft */
+    background: #404040;
+    /* 일반적으로 좌우패딩을 상하보다 많이 준다  */
     padding: 8px 24px 10px 30px;
-    text-transform: uppercase;/* tt */
+   
 }
 
-/* header */
+/* header area*/
 
 header .gnb ul {
-    position:fixed;
     display: flex;
+    position:fixed;
+    /* pof */
 }
 header .gnb li a {
-    padding: 8px 16px;
     display: inline-block;/* 약간 밑으로 */
+    padding: 8px 16px;
 }
 
 header .gnb li a:hover {
@@ -124,13 +132,13 @@ footer {
     text-align:center;
     padding: 100px;
 }
-footer:over {
-    background: #111;
+footer:hover {
+    background: #111;/* footer 백그라운드 색상변경 */
 }
 /* to the top button */
 footer .top-btn {
     display: inline-block;
-    /* background:#ddd; */
+    /* background:#ddd; */ /* 글자안보임 내가 */
     background:#777;
     padding: 8px 16px;
     
@@ -141,15 +149,13 @@ footer .top-btn i{
 footer .sns {
     margin: 24px;
 }
-footer .sns i {
-    font-size: 2.4rem;
-    margin: 0 -3px;
-}
 
 /* section area: index.html */
 #home {
     /* 뷰포트 크기로 높이 지정 */
     height: 100vh;
-    background: url(./../assets/img/rodion-kutsaiev-PEm_sLmJT-w-unsplash.jpg) no-repeat 100% 100%/cover;/* 보통 50% 50%  */
+    background: url(./../assets/img/rodion-kutsaiev-PEm_sLmJT-w-unsplash.jpg) no-repeat 100% 100%/cover;/* 보통 50% 50% 내가내가 */
+   /* background: url(../assets/img/marita-kavelashvili-ugnrXk1129g-unsplash.jpg) no-repeat 50% 50%/cover */
 }
+/* section area:contact.html */
 
