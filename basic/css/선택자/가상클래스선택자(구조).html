@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 선택자</title>
+<style>
+    /* 가상 클래스  선택자
+        ///type을 구분하지 않는 선택자(자식요소에대한type을 구분하지 않음)
+        선택자:nth-child(n)
+        선택자:nth-last-child(n)
+        선택자:first-child(n)
+        선택자:last-child(n)
+        선택자:only-child(n)
+
+        ///type을 구분하는 선택자
+        (자식요소에대한type을 구분함)
+        선택자:nth-of-type(n)
+
+        n은 숫자(1,2,3,....), 수열(2n, 2n+1,....), odd, even 등을 사용할수 있다.
+        홀수 번째:odd 또는 2n+1,2n-1
+        짝수 번째:even 또는  2n
+        3의 배수 번째:3n
+        4의 배수 번째:4n
+
+        선택자:first-of-type  첫번째요소
+        선택자:nth-last-of-type 마지막 요소 선택 
+        선택자:last-of-type 마지막요소
+        p:nth-last-of-type(n) 마지막 요소부터 거꾸로 거슬러 올라가는 선택
+        선택자:only-of-type 자식이 하나인 경우사용
+    */
+    /*
+        p요소중 짝수 번째
+            p:nth-of-type(2n)
+            p:nth-of-type(enen)
+        p요소중 홀수 번째
+            p:nth-of-type(2n+1)
+            p:nth-of-type(2n-1)
+            p:nth-of-type(odd)
+        p요소중 첫번째요소 선택
+            p:first-of-type(n) {}
+        p요소중 마지막요소 선택
+            p:last-of-type(n) {}
+        
+
+    */
+    p:nth-of-type(1) {
+        color:red;
+    }
+    h2:nth-of-type(1) {
+        color:rgb(131,191,214);
+    }
+    /* 첫번째 자식으로 h1이 오는 경우     */
+    h1:nth-child(1) {
+        font-style:italic;
+        color:green;
+    }
+    /*아래것 이상??? 답:div안에서 무조건 처음에 있어야 체크된다*/
+    div p:first-child {
+        font-style: italic;
+        color:greenyellow;
+    }
+    /* p중에 마지막 자식을 기점으로 세번째 녀석 */
+    p:nth-last-of-type(3) {
+        color:violet;
+    }
+    div h2:only-of-type {
+        color:blueviolet;
+    }
+    p:last-child {
+        font-style: italic;
+    }
+    p:nth-child {
+        font-style: italic;
+    }
+    /*###################나의필기######################  */
+    /* h1:only-of-type {border:1px solid red;} */
+
+    /* p:nth-of-type(2n-1) {color: red;  } */
+    /*n은 0,(-)는 없다. 즉.양의정수 사용해야함.
+                                            cf)2n-1수열식에서는 n은 0부터 시작된다 */
+            /* 첫번째 요소 선택 */
+    /* p:nth-of-type(1) {text-decoration: underline;  }      
+    p:first-of-type {text-decoration: underline;  }      
+    p:nth-last-of-type(6) {text-decoration: underline;  }       */
+    /* 마지막 요소 선택 */
+    /* p:nth-of-type(6) {text-decoration: underline;  }      
+    p:last-of-type {text-decoration: underline;  }      
+    p:nth-last-of-type {text-decoration: underline;  }       */
+
+               /* 짝수번째 선택 */
+     /* p:nth-of-type(even) {color: red;  }                                       
+     p:nth-of-type(2n) {color: red;  }       */
+     /* p요소중 홀수 번째 요소 선택 */ 
+     /* p:nth-of-type(2n+1) {color: blue;  }      
+     p:nth-of-type(2n-1) {color: blue;  }      
+     p:nth-of-type(odd) {color: blue;  }       */
+
+        /*h2:nth-of-type(1) {color: lightblue;  } */
+        /* :empty {
+            display: block;
+            width: 200px;
+            height: 100px;
+            border:1px solid red;
+        } */
+    
+    /*#######################나의필기끝###############################  */
+</style>
+</head>
+<body>
+    <!-- <div>
+        <h2>형제관계선택자</h2>
+    </div> -->
+    <div> </div>
+    
+    <div>
+        <!-- <p>p:first-child</p> -->
+        <h1>1.형제관계 선택자 </h1>
+        <h2>2.형제 선택자 </h2>
+        <p>3.나는 1번째 문단이다.</p>
+        <p>4.나는 2번째 문단이다.</p>
+        <h2>5.인접형제 선택자 </h2>
+        <p>6.나는 3번째 문단이다.</p>
+        <p>7.나는 4번째 문단이다.</p>
+        <p>8.나는 5번째 문단이다.</p>
+    </div>
+
+    
+</body>
+</html>

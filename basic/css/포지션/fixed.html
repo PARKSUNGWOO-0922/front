@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fixed</title>
+    <style>
+        body {
+            height: 1800px;
+        }
+        /* 들여쓰기(정렬)shift+alt+f */
+        div.fixed {
+            /* 
+                position:위치;
+                    기본값:static;
+                    relative
+                    absolute:조상(부모)를 기준으로 이동
+                    fixed:viewport를 기준을 left,top,right,bottom이 기준이된다 cf(relative:자기자신)
+                    sticky
+                left
+                right
+                top
+                bottom
+             */
+            position: fixed;/* pof */
+            width: 100px;
+            height: 100px;
+            right: 0;
+            bottom:0;
+            border: 3px solid #73AD21;
+        }
+    </style>
+</head>
+<body>
+    <div class="fixed">
+
+    </div>
+</body>
+</html>

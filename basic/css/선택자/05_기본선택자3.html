@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS선택자3</title>
+    <style>
+                 
+                /*
+                1.가상 클래스 선택자
+                    예):hover
+                2.가상 요소 선택자
+                    예)::after
+                       ::before  
+                */
+
+            div {
+                /* w340 h268 tab */
+                width: 340px;
+                height: 268px;
+                border: 5px solid red;
+                /* cu tab 손모양표시 */
+                cursor: pointer;
+                /* 넘친부분 숨기기 */
+                overflow:hidden;
+            }
+            img {
+                
+                /* 전환(transition) */
+                /* trs tab */
+                transition: 0.5s;
+            }
+            /* div에 마우스를 올렸을때 css를 div에적용*/
+            div:hover{
+                /* 변형:이미지확대 */
+                /* trf:s  숫자가같아야 찌그러지지않음*/
+                /* 빈집합규칙에따른 에러발생중~(상단1) */
+            }
+            /* div에 마우스를 올렸을때 css를 img에 적용  */
+            div:hover img {
+                transform: scale(1.2, 1.2);
+
+            }
+    </style>
+</head>
+<body>
+    <h1 >CSS선택자3</h1>
+    <div>
+        <img src="https://www.honorsville.co.kr/upload/temp/20255303432444.jpg" alt="충주연수 경남아너스빌 센터원 아파트 외관">
+    </div>
+    
+</body>
+</html>
