@@ -1,47 +1,45 @@
 <!DOCTYPE html>
-<html lang="ko">
-
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>박성우</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./css/style.css">
 </head>
-
-<body style="background-color:#f7f7f7">
-    <!-- header area-->
-    <!--
-        <정보구조(IA)설계>
-        메인 페이지1:home
-                ->index.html
-        서브 페이지2:about me, my stroy
-                ->about.html
-        서브 페이지3:work(portfolio,preject)
-                ->work.html
-        서브 페이지4:contact us
-                ->work.html
-    -->
-    <header>
-        <!-- 로고 -->
-        <!-- h1.logo>a[href=index.html] -->
-        <h1 class="logo"><a href="index.html">Home</a></h1>
-        <!-- nav area내비게이션 : GNB-->
-        <nav>
-            <ul>
-                <li><a href="about.html">about me</a></li>
-                <li><a href="work.html">work me</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
-            </ul>
-        </nav>
-    </header>
-    <!-- section area-->
-     <section>
-        <h2>Work</h2>   
-     </section>
-    <!-- footer area(푸터) -->
-     <footer>
-        <p>copy&copy; 2025 HGd. All rights reserved</p>
-     </footer>
+<body>
+    <!-- header -->
+     <header>
+    <!-- 1depth(깊이) GNB:Global Navigation Bar -->
+     <nav class="gnb"></nav>
+     <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="about.html"><i class="fa-solid fa-user-tie"></i>About</a></li>
+        <li><a href="work.html"><i class="fa-solid fa-laptop-code"></i>Portfolio</a></li>
+        <li><a href="contact.html"><i class="fa-solid fa-envelope"></i>contact</a></li>
+     </ul>
+     </header>
+     <!-- section -->
+    <div id="work">
+        <h2>Work/h2>
+    </div>
+    <!-- footer -->
+    <footer>
+        <!-- 폰트어썸 https://fontawesome.com-->
+         <!-- 1,라이브러리 CDN 연결: https://cdnjs.com -->
+         <!-- 2.아이콘을 검색하여 지정 -->
+        <div class="top-btn">
+            <a href="#top"><i class="fa-solid fa-arrow-up"></i>To the top</a>
+            <!-- <i class="fa-solid fa-arrow-up"></i> -->
+        </div>
+        <div class="sns">
+            <a href="#"><i class="fa-brands fa-square-facebook"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-square-snapchat"></i></a>
+            <a href="#"><i class="fa-brands fa-pinterest-p"></i></a>
+            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+        <p>&copy; 2025 HGD. All rights reserved.</p>
+    </footer>
 </body>
-
 </html>

@@ -73,6 +73,12 @@ h2 {
     padding: 8px 24px;   /* p8-16 */
 }
 
+
+header a {
+    /* color:#f3f3f3; */
+    color:#114141;/* 내가내가 */
+
+}
 footer a , footer p{
     color:#fff;
 }
@@ -92,11 +98,25 @@ h2 {
     padding: 8px 24px 10px 30px;
     text-transform: uppercase;/* tt */
 }
-#home {
-    /* 뷰포트 크기로 높이 지정 */
-    height: 100vh;
-    background: url(./../assets/img/rodion-kutsaiev-PEm_sLmJT-w-unsplash.jpg) no-repeat 100% 100%/cover;/* 보통 50% 50%  */
+
+/* header */
+
+header .gnb ul {
+    position:fixed;
+    display: flex;
 }
+header .gnb li a {
+    padding: 8px 16px;
+    display: inline-block;/* 약간 밑으로 */
+}
+
+header .gnb li a:hover {
+    background: #333;
+}
+header .gnb li i {
+    margin-right: 8px;
+}
+
 /* footer area */
 footer {
     background: #555;/* 각자 임의지정 */
@@ -110,9 +130,10 @@ footer:over {
 /* to the top button */
 footer .top-btn {
     display: inline-block;
-    background:#ddd;
+    /* background:#ddd; */
+    background:#777;
     padding: 8px 16px;
-
+    
 }
 footer .top-btn i{
     margin-right: 8px;
@@ -121,8 +142,14 @@ footer .sns {
     margin: 24px;
 }
 footer .sns i {
-   font-size: 2.4rem;
-   margin: 0 -3px;
+    font-size: 2.4rem;
+    margin: 0 -3px;
 }
 
+/* section area: index.html */
+#home {
+    /* 뷰포트 크기로 높이 지정 */
+    height: 100vh;
+    background: url(./../assets/img/rodion-kutsaiev-PEm_sLmJT-w-unsplash.jpg) no-repeat 100% 100%/cover;/* 보통 50% 50%  */
+}
 
