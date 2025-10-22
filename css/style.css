@@ -231,18 +231,24 @@ footer .top-btn i{
     justify-content: space-between;
     width: 900px;
     /* margin-top: 48px auto  96px; */
-    margin: 48px auto  96px;
+    margin: 15px auto  96px;
+    /* 
+        margin: 25px 50px 75px;
+                top margin is 25px
+                right and left margins are 50px
+                bottom margin is 75px
+    */
 }
 #contact .map {
     width: 280px;
-    height: 160px;
+    height: 170px;
     border-radius: 5px;
     /* i 프레임과 map radius로 인한 둥근모서리 와 map의 사각모서리 차이*/
     overflow:hidden;
     margin-right: 32px;
 }
 #contact .contact p {
-    margin: 24px 0 16px;
+    margin: 45px 0 16px;
 }
 #contact .frm-input {
     display: flex;
@@ -261,6 +267,7 @@ footer .top-btn i{
     resize: none;
     height: 150px;
     margin-top: 10px;
+    padding: 16px;
 }
 
 #contact button {
