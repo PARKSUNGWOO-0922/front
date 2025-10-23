@@ -34,9 +34,9 @@ footer .inquiry .con-btn a {
 footer .inquiry {
     /* 콘텐츠 높이 : 110px */
     height: 426px;/* 306+120 */
+    padding-top: 120px;
      /* 배경 이미지 높이: 196px */
     background: #fff url(./../assets/img/footer_img.png) no-repeat 0 100% ;/* 확인요 */
-    padding-top: 120px;
 }
 footer .inquiry .inner{
     display: flex;
@@ -57,7 +57,7 @@ footer .inquiry .faq-btn {
     display: inline-block;
     width: 275px;
     text-align: center;
-    padding: 35px 0;
+    padding: 35px 0px;
     margin-right: 12px;
 }
 footer .inquiry .faq-btn span {
@@ -73,7 +73,7 @@ footer .inquiry .consult-btn {
     display: inline-block;
     width: 275px;
     text-align: center;
-    padding: 35px 0;
+    padding: 35px 0px;
 
     }
 footer .inquiry .consult-btn span {
@@ -84,7 +84,7 @@ footer .inquiry .consult-btn span {
 
 /*  info:정보 */
 footer .info {
-    background:  #222  url(./../assets/img/logo.png)  80px 70px;/* 뭔~흰점이생겨서 또 이동 */
+    background:  #222  url(./../assets/img/logo.png)  no-repeat 80px 70px;/* 뭔~흰점이생겨서 또 이동 "확인요"*/
     /* 기본값은 background-origin:paddding-box */
     /* background-origin:conent-box */
     padding: 50px 250px;
