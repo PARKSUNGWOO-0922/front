@@ -24,15 +24,15 @@ th {
 .bc li:not(:last-child)::after {
     font-family: "Font Awesome 6 Free";
     /* content:'\f0c7'; */
-     content:'〉'; 
+     content:'〉'; /* icon 우측기본마진있어 margin-left적용 */
     margin-left: 8px;
-    color: #222;
+    color:#222;
 }
 
 .search_wrap {
     display: flex;
     justify-content: end;
-    align-items: center;
+    align-items: center;/*사실 버튼은 기본값이 중앙정렬 */
     height: 78px;
     background-color: #f4f4f4;
     padding: 20px 3px;
@@ -55,23 +55,27 @@ th {
 /* notice table area */
 .notice {
     width: 100%;
-    border-collapse: collapse;/* bcl */
+    border-collapse: collapse;/* th 위아래선이 th간에 끊어짐 해결 */
+    /* bcl */
 }
 .notice tr {
-    height: 50px;
+    height: 50px;/* 테이블 레코드 높이 조절 */
 }
+/* > 아이콘을 마지막(공짖사항)에 넣지않기 위해  */
 .notice td:not(:nth-child(2)) {
     text-align: center;
 }
+/* th 위아래 선넣기 */
 .notice th {
     border-top: 1px solid #333;/* bt */
     border-bottom: 1px solid #333;/* bdb */
     
 }
+/* td아래 선넣기 */
 .notice td {
     border-bottom: 1px solid #ddd;
 }
-/* 공지사항 제목에 호버시 밑줄 */
+/* 공지사항 제목에 마우스 놓을시 밑줄생성 */
 .notice a:hover {
     text-decoration: underline;
 
