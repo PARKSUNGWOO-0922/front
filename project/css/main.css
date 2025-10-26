@@ -30,16 +30,13 @@ font-weight: 글자굵기;
 /* 
 /* piexls 영상 무료다운로드 사이트 https://www.pexels.com/ko-kr/*/
 /* 폰트사이트 dafont.com */
-구글 폰트   https://fonts.google.com/
-눈누 폰트   https://noonnu.cc/
-*/
+/* 구글 폰트   https://fonts.google.com/ */
+/* 눈누 폰트   https://noonnu.cc/ */
+
 /* typo */
 /* ================== section 1 area =============================================== */
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');/* 구글폰트 */
 #sec1 {
-    margin: 0;
-}/* ????? 상속 우선순위?? 흰글자는 나왔는데... */
-#sec1{
     color:var(--white-color);
 }
 
@@ -283,6 +280,14 @@ font-weight: 글자굵기;
 }
 
 /* -----------section3 area--------------------------------------- */
+#sec3 {
+    /* 배경 이미지 + Paralax Scrolling 
+    패럴랙스 스크롤링(Parallax Scrolling)
+    - 웹사이트나 게임 등에서 배경 레이어는 느리게, 전경 레이어는 빠르게 움직여 입체감과 깊이감을 주는 디자인 기법입니다. 
+    */
+    background-attachment: fixed;
+    background: url(./../assets/img/back_image.jpg) no-repeat 50%/cover fixed ;/* fixed :back image고정 */
+}
 #sec3 .intro a {
     display:inline-block;
     /* a는 inline속성으로 높이를 주지못함. */
@@ -293,14 +298,6 @@ font-weight: 글자굵기;
     margin-top: 28px;
     padding: 6px 24px;
 }/* ①에 있어야 글자가 가운데 정렬됨??? 아니면 좌측으로 붙어버림????? */
-#sec3 {
-    /* 배경 이미지 + Paralax Scrolling 
-    패럴랙스 스크롤링(Parallax Scrolling)
-    - 웹사이트나 게임 등에서 배경 레이어는 느리게, 전경 레이어는 빠르게 움직여 입체감과 깊이감을 주는 디자인 기법입니다. 
-    */
-    background-attachment: fixed;
-    background: url(./../assets/img/back_image.jpg) no-repeat 50%/cover fixed ;/* fixed :back image고정 */
-}
 /* *******************#sec3을 이선밑으로하면 배경그림이 나온다.이유모름... */
 #sec3 .intro {
     position: absolute;
