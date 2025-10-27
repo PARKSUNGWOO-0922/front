@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>2D변환rotate</title>
+    <style>
+      /* 
+            transform: 값 값 값 ...; (,없이 작성)
+                translate(x,y)  x,y위치이동
+                translate(x)    x위치이동
+                translate(y)    y위치이동
+                    - 0을 기준으로 양수이면 오른쪽, 아래쪽 이동
+                    - 음수이면 왼쪽/위쪽으로 이동한다.
+                rotate()     회전
+                scaleX()     크기
+                scaleY()
+                scale()
+                skewX()      기울기
+                skewY()
+                skew()
+                matrix()     혼합
+        */
+     
+       
+      .close {
+        /* background: blue; */
+        line-height: 1;
+
+        /* 변환은 블록레벨 요소에 지정한다. */
+            display: inline-block;
+    
+        /*
+             transform: rotate(x위치); 
+             transform: rotate(y위치);
+        */
+        transform: rotate(0deg);/* 기본값 */
+        transform-origin: 50% 58%;/* 회전의 중심 기본값 50% 50% */
+        transition:.5s;
+        /* 
+        duration 의 값이 자을 수록 속도는 빨라진다.
+        소수점 앞의 0은 생략 가능
+        */
+    }
+    .close:hover {
+        /* transform:rotate():단위deg(degree),각도0~360  */
+        transform: rotate(360deg);
+
+        
+      }
+    </style>
+  </head>
+  <body>
+    <span class="close">
+         ❌
+    </span>
+  </body>
+</html>
