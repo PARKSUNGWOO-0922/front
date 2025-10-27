@@ -1,19 +1,19 @@
 @charset "utf-8";
 /* typo */
+
+
 footer {
-    background-color: #222;
+    /* background-color: #222; */
     /* padding: 50px 0;  10-20수정*/
     /* function(arguments) */
     /* 함수(인자) */
-    /* color:#555; */
-    color:var(--gray5)
+    color:var(--gray5);
+    /* font-size: 1.5em; */
    
 }
 footer a {
     color: var(--white-color)
 }
-
-/* inquiry문의 */
 footer .inquiry h2 {
     color: var(--gray3);
     font-size: 50px;
@@ -29,21 +29,23 @@ footer .inquiry .tel-area a {
 }
 footer .inquiry .con-btn a {
     font-size: 20px;
-}
-/* inquiry:문의 */
+} 
+/* inquiry문의 */
 footer .inquiry {
     /* 콘텐츠 높이 : 110px */
     height: 426px;/* 306+120 */
     padding-top: 120px;
-     /* 배경 이미지 높이: 196px */
-    background: #fff url(./../assets/img/footer_img.png) no-repeat 0 100% ;/* 확인요 */
+    /* 배경 이미지 높이: 196px */
+    background: #fff url(./../assets/img/footer_img.png) no-repeat 0 100% ;
 }
 footer .inquiry .inner{
     display: flex;
     justify-content: space-between;/* jcsb */
     width: 1280px;/* 반응형을 위해서는 max,min등 */
-    margin:  auto;/* m:a */
+    margin: auto;/* m:a */
+    
 }
+/* inquiry:문의 */
 footer .inquiry .con-area{
     display: flex;
     justify-content: space-between;
@@ -73,15 +75,13 @@ footer .inquiry .consult-btn {
     display: inline-block;
     width: 275px;
     text-align: center;
-    padding: 35px 0px;
-
-    }
+    padding: 35px 0;
+}
 footer .inquiry .consult-btn span {
-    background: url(./../assets/img/icon_main_inquiry_02.png) no-repeat; /*0 0/contain; contain 로고전체표시 속기*/
+    background: url(./../assets/img/icon_main_inquiry_01.png) no-repeat; 
     background-size: contain;
     padding-left: 57px;
 }
-
 /*  info:정보 */
 footer .info {
     background:  #222  url(./../assets/img/logo.png)  no-repeat 80px 70px;/* 뭔~흰점이생겨서 또 이동 "확인요"*/
@@ -93,10 +93,11 @@ footer .info {
 footer .info .inner{/* inner ?? 백그라운드를 인포로 */
     display: flex;/* left-info 와 fs */
     justify-content: space-between;
-    max-width: 1500px;/* 관련사이트열기 우측붙이기 */
-   /*  margin-left: 250px; */       /* 좌측 로고자리 여분만들기 */
+    /* width: 1280px; */
+    max-width: 1500px;
+    /* 관련사이트열기 우측붙이기 */
+    /*  margin-left: 250px; */       /* 좌측 로고자리 여분만들기 */
 }
-
 footer .util-box {
     display: flex;/* bnb와 sns 정렬 */
 }
@@ -105,12 +106,10 @@ footer .left-info ul {
     display: flex;/* bnd,sns,com-info 각ul요소 정렬,즉 p태그는 제자리...*/
 }
 
-
-/*footer10-20수정분추가 ,그냥 최종분으로 정리해라.....*/
 footer .sns li:nth-last-of-type(1) img, 
 footer .sns li:nth-last-of-type(2) img {
     width: 29px;
-    height: 20px;
+    height: 28px;
 }
 
 footer .sns li:nth-last-of-type(3) img {
@@ -121,6 +120,10 @@ footer .sns li:nth-last-of-type(4) img {
     width: 28px;
     height: 25px;
 }
+
+
+
+
 
 /* 폰트어썸 전화기 다운/우측주소 클릭(자동복사).코드위치에 붙여넣기 */
 

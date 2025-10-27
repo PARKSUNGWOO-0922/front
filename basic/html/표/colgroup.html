@@ -5,19 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>표:colgroup</title>
     <style>
-        col {
-            background-color: #D6EEEE;
+        col:nth-child(1) {
+            background-color: rgba(245,59,59,0.5);
         }
-        col  :first-child {
-            background-color: red;
+        col:last-child {
+            background-color: rgba(48,129,206,0.5);
         }
-        col :last-child {
-            background: rgba(187,187,249,0.5);
-
-        }
-        col :nth-child(3) {
-            /* 숨기기 */
-            visibility: collapse;
+        /* 숨기기 수요일 영역 숨기기 */
+        col:nth-child(3) {
+            /* visibility: collapse; */
         }
     </style>
 </head>
@@ -27,10 +23,10 @@
 
         <colgroup>
             <col>
+            <col span="2">
             <col>
+            <col span="2">
             <col>
-            <col>
-            <col span="5" >
             <col>
         </colgroup>
 
