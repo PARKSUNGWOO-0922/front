@@ -6,7 +6,7 @@
     <title>전환</title>
     <style>
       /* 
-            transition-property : all(필수)
+            transition-property : all(필수)->3가지 width,background,color
             transition-duration (필수)
             transition-timing-function
                 ease- 전환은 느리게 시작해서 빠르게 진행되고 느리게 끝납니다(기본값)
@@ -27,14 +27,19 @@
         width: 100px;
         height: 100px;
         background-color: red;
-        transition: width 2s;
-        transition: all 2s; /* 생략예시 ,안쓴거나 all 같음*/
-        transition: width 2s 2s;
+        transition: width 2s;/* 높이는 바로, 너비는 2초후 */
+        transition: all 2s; /* 높이,너비 모두 2초후 */
+        /* 생략예시 ,안쓴거나 all 같음*/
+        transition: width 2s 5s;/* 너비 전환시간 지연시간 (속기속성)*/
 
-        transition-property: width;/* trsp */
-        transition-duration: 1s;/* trs2s */
-        transition-delay: 2s;/* trsde2s */
-        transition-timing-function: ease ;/* trst */
+        transition-property: width;
+        /* trsp */
+        transition-duration: 1s;
+        /* trs2s */
+        transition-delay: 2s;
+        /* trsde2s */
+        transition-timing-function: ease ;
+        /* trst */
 
         transition: width 1s ease 2s;
     }
@@ -46,7 +51,7 @@
   </head>
   <body>
     <div>
-      <div>전환</div>
+      <div>전환-마우스올리고기다리세요</div>
     </div>
   </body>
 </html>

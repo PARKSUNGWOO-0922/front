@@ -82,9 +82,17 @@
             
             background-repeat: no-repeat;
             background-size:contain;
-
+            /* ----------애니메이션 연습---- */
+            animation-name: balloon;
+            animation-duration: 7s;
+            animation-direction: alternate;
+            animation-iteration-count: infinite;
+           
         }
-        
+        @keyframes balloon{
+            0%  {transform: translateY(-30px);animation-timing-function: linear  };
+            100%  {transform: translateY(0px);animation-timing-function: linear  };
+        }
     </style>
 </head>
 <body>

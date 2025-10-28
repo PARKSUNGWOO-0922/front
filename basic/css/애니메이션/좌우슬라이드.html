@@ -19,7 +19,7 @@
         .slider {
             width: 600px;
             height: 300px;
-            overflow: hidden; */   /* 나머지이미지숨김
+          /*   overflow: hidden; */    /* 나머지이미지숨김*/
             margin: 50px auto;
             border:20px solid #333;
         }
@@ -31,12 +31,12 @@
             animation: slideRoll 9s infinite;
             /* 속기속성 */
             /* animation: 이름 동작시간 [반복횟수]; */
-            animation: slideRoll 9s infinite ease-in-out;
+            animation: slideRoll 9s 2 ease-in-out;
         }
         @keyframes slideRoll {
             0% {transform: translateX(0);}
             11.11% {transform: translateX(-600px);}
-            33.33% {transform: translateX(-600px);}
+            33.33% {transform: translateX(-600px);}/*33.33% 유지 */
             44.44% {transform: translateX(-1200px);}
             66.66% {transform: translateX(-1200px);}
             77.77% {transform: translateX(-1800px);}

@@ -41,12 +41,15 @@
              transform: translate(x위치);
              transform: translate(y위치);
         */
-        transform: translate(-50%, 0%);/* 기본값 */
-        transition:1s;
-        opacity: 0;
+        transform: translate(-50%, 0%); 
+        /* 기본값..이라기 보다는 시작이자돌아올위치인거같다.포지션으로 left:50% 된위치에서 -50%이동함으로 center 위치하게 된것같다 */
+        transition:1.5s;
+        opacity: 0;/* 시작이자돌아올값:밑바닥에붙어있으나 투명처리 */
+        text-align: center;
+        line-height: 40px;
     }
     .outer:hover .inner{
-        transform: translate(-50%, -30px);
+        transform: translate(-50%, -30px);/* 그자리(-50% x위치재지정하고, y값을(-)에서 위로 이동 */
         opacity: 1;
 
         
