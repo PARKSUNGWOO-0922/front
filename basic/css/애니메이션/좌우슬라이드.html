@@ -6,26 +6,35 @@
     <title>좌우슬라이드</title>
     <style>
         /* reset */
-        body {
+        body,ul {
             margin: 0;
+        }
+          ul {
+            padding: 0;
+            list-style: none;
         }
         img {
             vertical-align: top;
-            width: 600px;
-            height: 300px;
+            width: 100%;
+            height: 100%;
+            /* width: 600px;
+            height: 300px; */
             object-fit: cover;
         }
         /* 슬라이드 */
         .slider {
             width: 600px;
             height: 300px;
-          /*   overflow: hidden; */    /* 나머지이미지숨김*/
+            overflow: hidden;    /* 나머지이미지숨김*/
             margin: 50px auto;
             border:20px solid #333;
         }
          .slides {
             display: flex;
-            width: calc(600px * 4);/* 슬라이드폭을 이미지4개 폭으로 확대 */
+           /*  width: calc(600px * 4); *//* 슬라이드폭을 이미지4개 폭으로 확대 */
+           /* calc() 사용시 연산자 앞뒤를 1칸 띄어쓴다 */
+           width: calc(100% * 4);
+           height: 100%;
             animation-name:slideRoll;
             animation-duration: 9s;
             animation: slideRoll 9s infinite;
@@ -35,25 +44,26 @@
         }
         @keyframes slideRoll {
             0% {transform: translateX(0);}
-            11.11% {transform: translateX(-600px);}
-            33.33% {transform: translateX(-600px);}/*33.33% 유지 */
-            44.44% {transform: translateX(-1200px);}
-            66.66% {transform: translateX(-1200px);}
-            77.77% {transform: translateX(-1800px);}
-            100% {transform: translateX(-1800px);}
+            11.11% {transform: translateX(-25%);}
+            33.33% {transform: translateX(-25%);}/*33.33% 유지 */
+            44.44% {transform: translateX(-50%);}
+            66.66% {transform: translateX(-50%);}
+            77.77% {transform: translateX(-75%);}
+            100% {transform: translateX(-75%);}
 
         }
+       
     </style>
 </head>
 <body>
     <div class="slider">
-        <div class="slides">
-            <img src="../../assets/imgs/20250314110653975049.png" alt="이미지1">
-            <img src="../../assets/imgs/20250901085539504042.png" alt="이미지1">
-            <img src="../../assets/imgs/20250901085834611046.png" alt="이미지1">
+        <ul class="slides">
+            <li><img src="../../assets/imgs/20250314110653975049.png" alt="이미지1"></li>
+            <li><img src="../../assets/imgs/20250901085539504042.png" alt="이미지1"></li>
+            <li><img src="../../assets/imgs/20250901085834611046.png" alt="이미지1"></li>
             <!-- 롤링이미지 -->
-            <img src="../../assets/imgs/20250314110653975049.png" alt="이미지1">
-        </div>
+            <li><img src="../../assets/imgs/20250314110653975049.png" alt="이미지1"></li>
+        </ul>
     </div>
 </body>
 </html>

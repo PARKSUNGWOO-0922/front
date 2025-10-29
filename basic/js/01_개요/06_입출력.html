@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS:입출력방법</title>
+</head>
+<body>
+        <h1>JS입출력</h1>
+        <p id="result">여기에 출력됩니다.</p>
+
+    <script>
+        /* 
+            문법
+                객체.메서드(argument,arg, ...):()있으면 메서드 , 없으면 속성
+                    -객체 없이 동작할 수 없는 함수
+                    함수():객체 없이 독립된 메서드
+                    -객체 없이 동작하는 함수
+                
+
+            window는 자바ㅡ크립트의 최상위객체로 window객체
+            키워드는 생략 가능하다.
+
+            출력
+                window.alert() : 윈도우의 alert() 메서드-> window생략-> 1. alert() 함수
+                2.console.log() 
+                3.document.write()
+
+                문법:  객체.메서드(.속성
+                4.document.getElementById('아이디').innetHTML
+                
+            입력
+                window.prompt() :  윈도우의 prompt() 메서드-> window생략 -> prompt() 함수
+                */
+               
+               window.alert("문자열"); /* 보통 window생략하고 사용 */
+               alert(100+10);  //경고창 출력 ,''묶으면 문자열로 인식
+               
+               console.log("문자열콘솔"); //개발자모드 콘솔 영역에 출력
+               console.log(100+10);  //개발자모드 콘솔 영역에 출력
+               
+               document.write("문자열"+'<br>');//body 영역에 출력
+               document.write(100+10);//body 영역에 출력
+               
+               //body 안의 p태그에 출력
+                
+              // document.getElementById('result').innerHTML = "문자열P태그"
+              const p = document.getElementById('result');
+              p.innerHTML = "문자열P태그";
+
+              // 입력
+              // 문법
+              //prompt('메시지',기본값);
+              var city = prompt('지역을 입력하세요.','서울');
+              //출력
+              alert('당신이 사는곳은' + city + '입니다.');
+
+
+    </script>
+</body>
+</html>

@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>상하슬라이드</title>
-    <style>
+    <title>Document</title>
+        <style>
         /* reset */
         body,ul {
             margin: 0;
@@ -16,7 +16,7 @@
         img {
             vertical-align: top;
             width: 100%;
-            height: 100%;/*  */
+            height: 300px;/*  */
             object-fit: cover;
         }
         /* 슬라이드 */
@@ -28,8 +28,8 @@
             border:20px solid #333;
         }
          .slides {
-            height: calc(100% * 4);
-            /* height: 400%; */
+            /* height: calc(100% * 4); */
+            height: 100%;
             width: 100%;/* 안해도 블록레벨이니까... */
           
             animation: slideRoll 9s infinite ease-in-out;
@@ -50,13 +50,13 @@
     </style>
 </head>
 <body>
-    <ul class="slider">
+     <ul class="slider">
         <div class="slides">
-            <li><img src="../../assets/imgs/20250314110653975049.png" alt="이미지1"></li>
-            <li><img src="../../assets/imgs/20250901085539504042.png" alt="이미지1"></li>
-            <li><img src="../../assets/imgs/20250901085834611046.png" alt="이미지1"></li>
-            <!-- 롤링이미지 -->
-            <li><img src="../../assets/imgs/20250314110653975049.png" alt="이미지1"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+           
         </div>
     </ul>
 </body>

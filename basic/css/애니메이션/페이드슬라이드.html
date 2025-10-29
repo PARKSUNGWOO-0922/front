@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>페이드슬라이드</title>
+    <style>
+        /* reset */
+        ul {
+            padding: 100px;/* where테스트용 화면보고 지우기 */
+            list-style: none;
+        }
+        
+        /* :where(선택자,선택자,...) 다른선택자보다 우선순위 낮음, 초기화용    (css4) */
+        /* :is(선택자,선택자,...) 다른선택자보다 우선순위 ???    (css4) */
+        :where(body,ul) {
+            margin: 0;
+        }
+
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;/* 가로세로 동일비율로 인한 이미지 찌그러짐 방지 */
+        }
+         /* 슬라이드 */
+         .slider {
+            position: relative;
+            width: 600px;
+            height: 300px;
+            margin: 50px auto;
+            border: 20px solid #333;
+         }
+         .slides li{
+            position: absolute;/* 이미지3장이 겹치게됨 */
+            /* width: 600px; absolute로 딱히 필요없다....??*/
+            height: 100%;
+             opacity: 0; /*시작시 깜박임 없애기위애 .slides li:nth-child 개별로 적용해 보기로 함..또변경...*/
+            animation: crossfade 9s infinite;
+         }
+
+         .slides li:nth-child(1) {animation-delay:0s ; opacity: 1 ; }
+         .slides li:nth-child(2) {animation-delay:3s ;  }
+         .slides li:nth-child(3) {animation-delay:6s ;  }
+         @keyframes crossfade {
+            0%  {opacity:  0;}
+            10% {opacity:  1;}
+            40% {opacity:  1;}
+            50% {opacity:  0;}
+            100%{opacity:  0;}
+            
+         }
+
+    </style>
+</head>
+<body>
+    <div class="slider">
+        <ul class="slides">
+            <li><img src="../../assets/imgs/20250314110653975049.png" alt="이미지1"></li>
+            <li><img src="../../assets/imgs/20250901085539504042.png" alt="이미지1"></li>
+            <li><img src="../../assets/imgs/20250901085834611046.png" alt="이미지1"></li>
+        </ul>
+    </div>
+</body>
+</html>
