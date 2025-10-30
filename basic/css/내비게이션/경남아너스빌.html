@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>드롭다운 Nav.</title>
+</head>
+    <style>
+        @import url('https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css');
+        /* 초기화 */
+        html {font-size: 10px;}
+        body,h1,ul { margin:0;}
+        ul {padding: 0;list-style: none;}
+        a {
+            text-decoration: none;
+            color:#333;}
+
+        /* 공통 */
+        body {
+            font:1.5rem/1.6 'NanumSquare';
+            background-color: #366cc9;
+        }
+
+        /* 헤더 */
+        #header {
+            background:#0f2244;
+        }
+        #header::after {
+            width: 100px;
+            height: 0;
+            display: block;/* 줄바꿈 */
+            content:'비워둘예정';
+            color: #fff;
+            background:#fff;
+            opacity: 0;
+            margin: auto;/* 바시작지점 왼쪽,확인요~ */
+            transform: scale(0);
+            
+
+        }
+        #header a {
+            color: #fff;
+        }
+        .main li {
+            width: 150px;
+        }
+        .main>li>a::after {
+           conten:'표시확인';
+           display:inline-block ;
+           width: 100%;
+           height: 3px;
+           background: red;
+           border-bottom:3px solid red;
+        }
+        #header .main a:hover {
+            color:#bbb;
+        }
+        .container {
+            padding: 0 50px;/* 상하 좌우 */
+            position: relative;
+            display: flex;
+            height: 95px;
+            align-items: center;
+            justify-content: space-between;/* jcsb */
+            /* background-color: lightcoral; */
+
+        }
+        /* 로고 */
+        /* 글로벌 내비게이션(GNB) */
+        #gnb {
+            align-self:flex-start;
+            position: absolute;
+            left: 50%;
+            top: 33%;
+            transform: translate(-50%);
+            /* background: lightgreen; */
+        }
+        /* 1depth:Main Menu */
+        .main {
+            display: flex;
+            width: 600px;
+            /* justify-content: space-between; */
+            /* background:lightblue; */
+            text-align: center;/* tac */
+            font-size: 1.8rem;/* 상속됨 */
+            font-weight: 700;
+        }
+        .main li {
+            width: 150px;/* 호버시 글자 움직임해결 */
+        }
+        /* 메인 메뉴에 :hover 시 서버 메뉴 나타내기 */
+        .main:hover .sub{
+            /* display: block; */
+            visibility: visible;
+            opacity: 1;
+            /* transition: .3s;   visibility  는 transition 적용안됨*/
+
+        }
+        /* 2depth:Sub Menu */
+        .sub {
+            /* display: none; 숨김1*/
+            visibility: hidden;/* 숨김2 */
+            opacity: 0;/* transition효과 */
+            font-size: 1.6rem;
+            line-height: 2;
+            font-weight: 400;
+            margin-top: 45px;
+            background: #fff;
+        }
+        /* a태그 글자색은 반드시 a태그에 직접 지정한다. */
+        /* #header a {
+            color:#333;  
+        } */
+        /* SNS,로그인,회원가입 */
+    </style>
+<body>
+    <header id="header">
+        <div class="container">
+            <!-- 로고 -->
+            <!-- h1.logo>a[href=index.html] -->
+            <!-- h1.logo>a[href=index.html] -->
+            <h1 class="logo"><a href="index.html">경남아너스빌</a></h1>
+            <!-- 내비게이션: GNB -->
+            <nav id="gnb">
+                <ul class="main">
+                    <!-- shift+alt+방향키 -->
+                    <li><a href="#">분양단지</a>
+                        <ul class="sub">
+                            <li> <a href="#"></a>분양중인 단지   </li>
+                            <li> <a href="#"></a>분양예정 단지   </li>
+                            <li> <a href="#"></a>분양완료 단지   </li>
+                            <li> <a href="#"></a>연간분양계획  </li>
+                        </ul>
+                    </li>
+                    <li><a href="#">브랜드</a>
+                           <ul class="sub">
+                            <li><a href="#"></a>브랜드 스토리</li>
+                            <li><a href="#"></a>브랜드 아이덴티티</li>
+                            <li><a href="#"></a>특화아이템</li>
+                           </ul>
+                    </li>
+                    <li><a href="#">아너스빌 멤버스</a>
+                        <ul class="sub">
+                            <li><a href="#"></a>아너스빌 소식</li>
+                            <li><a href="#"></a>청약가이드</li>
+                        </ul>
+                    </li>
+                    <li><a href="#">마이아너스빌</a>
+                        <ul class="sub">
+                            <li><a href="#"></a>자주 묻는 질문</li>
+                            <li><a href="#"></a>1:1 문의</li>
+                            <li><a href="#"></a>A/S 문의</li>
+                            <li><a href="#"></a>관심단지 관리</li>
+                            <li><a href="#"></a>개인정보 변경</li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <div class="util">
+                <a href="#">SNS</a>
+                <a href="#">로그인</a>
+                <a href="#">회원가입</a>
+            </div><!-- util -->
+        </div><!-- container -->
+    </header>
+</body>
+</html>
