@@ -1,0 +1,119 @@
+@charset "utf-8";
+
+@import url('https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css');
+
+        /* 초기화 :주석 common*/
+        /* html {
+            font-size: 10px;
+        }
+        body,h1,ul { 
+            margin:0;
+        }
+        ul {
+            padding: 0;
+            list-style: none;
+        }
+        a {
+            text-decoration: none;
+            color:#333;
+        } */
+        /* 공통 */
+        /* body {
+            font:1.5rem/1.6 'NanumSquare';
+            background-color: #366cc9;
+        } */
+        /* 헤더 */
+        #header {
+            /* 포지션이 static인 요소보다 위에 배치 */
+            /* 포지션이 static이 아닌요소들은z-index의 숫자가 클수록 위로 배치 */
+            /* fixed 또는 absolute는 가로크기가 요소 크기와 같아진다 */
+            width: 100%;
+            position: fixed;
+            z-index:9999;
+            background:#0f2244;
+            overflow: hidden; 
+        }
+         #header::after {
+            content: '';
+            color: #fff;
+            display: block;
+            width: 100%;
+            height: 0;
+            background: #fff;
+            transition: .7s;
+        }
+
+        #header:hover::after {
+            height: 200px;
+        }
+        #header a {
+            color: #fff;
+        }
+        #header .container {
+            position: relative;
+            padding:0 50px;
+            height: 95px;
+            display:flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        /* 로고 */
+        /* 글로벌 내비게이션바(GNB) */
+        #gnb {
+            align-self: flex-start;
+            position: absolute;
+            top: 33px;
+            left:50%;
+            transform: translateX(-50%);
+        }
+        /* 1depth:Main Menu */
+        #header .main {
+            width: 600px;
+            display:flex;
+            text-align:center;/* tac */
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+        #header .main li {
+            width: 150px;/
+        }
+
+        /* 메인 메뉴 호버시 밑줄생성 */
+        #header .main>li>a {
+            display: inline-block;
+        }
+
+        #header .main> li> a::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 2px;
+            background: #bbb;
+            /* margin: auto; */
+            /* border-bottom: 3px solid red;
+            transform: scaleX(0);*/
+            
+            transition: .3s; 
+        }
+
+        #header .main li a:hover::after {
+            /* transform: scaleX(1); */
+            width: 100%;
+        }
+
+        #header .main a:hover {
+            color: #bbb;
+        }
+        /* 2depth:Sub Menu */
+        #header .sub {
+            font-size: 1.6rem;
+            line-height:2;
+            font-weight: 400;
+            margin-top: 45px;
+            background: #fff;
+        } 
+        /* a태그 글자색은 반드시 a태그에 직접 지정한다. */
+           #header .sub a {
+            color: #333;
+        }
+        /* SNS,로그인,회원가입 */

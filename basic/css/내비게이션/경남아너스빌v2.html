@@ -30,9 +30,9 @@
         /* 헤더 */
         #header {
             background:#0f2244;
-            overflow: hidden; 
+            /* overflow: hidden;  */
         }
-         #header::after {
+         /* #header::after {
             content: '';
             color: #fff;
             display: block;
@@ -40,11 +40,11 @@
             height: 0;
             background: #fff;
             transition: .7s;
-        }
+        } */
 
-        #header:hover::after {
+        /* #header:hover::after {
             height: 200px;
-        }
+        } */
         #header a {
             color: #fff;
         }
@@ -102,13 +102,24 @@
         #header .main a:hover {
             color: #bbb;
         }
+        #header .main>li:hover .sub{
+            visibility: visible;
+            height: 200px;
+            opacity: 1;
+
+        }
         /* 2depth:Sub Menu */
         .sub {
             font-size: 1.6rem;
             line-height:2;
             font-weight: 400;
             margin-top: 45px;
+            padding: 20px;
             background: #fff;
+            height: 0;
+            opacity: 0;
+            visibility: hidden;
+            transition: .3s;
         } 
         /* a태그 글자색은 반드시 a태그에 직접 지정한다. */
            #header .sub a {

@@ -214,10 +214,29 @@ footer .top-btn i{
    /* background: url(../assets/img/marita-kavelashvili-ugnrXk1129g-unsplash.jpg) no-repeat 50% 50%/cover */
 }
 #home h2 {
-    background: #555;
+    /* background: #555; */
     /* 일반적으로 좌우패딩을 상하보다 많이 준다. */
     padding: 8px 24px 10px 30px;
 }
+
+   .circle_ani {
+    position: absolute;
+            right: 0;
+            width: 135px;
+            height: 136px;
+            /* transform: rotate(0deg); */
+            transition: linear 5s;
+            animation:circle 40s linear;
+        }
+        @keyframes circle {
+            0%{transform: rotate(0deg) scale(3)}
+            100%{transform: rotate(720deg) scale(3)}
+            
+        }
+   .circle_ani:hover {
+            /* transform: rotate(숫자deg); 0~360이상*/
+            transform: rotate(720deg);
+        }
 
 /* section area:contact.html */
 #contact .contact {
