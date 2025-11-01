@@ -4,14 +4,33 @@
             const date = new Date();
             const clockBox = document.getElementById('clock');
             //chat
-           /*  const hours = String(date.getHours()).padStart(2, '0');
-            const minutes = String(date.getMinutes()).padStart(2, '0');
-            const seconds = String(date.getSeconds()).padStart(2, '0');
+            let hours = date.getHours();
+            let minutes = date.getMinutes();
+            let seconds = date.getSeconds();
+            let ampm ;
 
-            const ampm = hours >= 12 ? 'PM' : 'AM';
-            hours = hours % 12 || 12;  // 0시는 12로 표시
-            hours = String(hours).padStart(2, '0'); */
-            //
+            if (hours == 0)  {
+                hours = 12;
+            } else  {
+                hours %= 12;
+            }
+            
+            if (minutes == 0 || minutes < 10) {
+                minutes = '0' + minutes;
+            } 
+            
+            if (seconds == 0 || seconds < 10) {
+                seconds = '0' + seconds;
+            } 
+            
+            if (hours >= 12) {
+                ampm = '오후';
+            } else {
+                ampm = '오전';
+            }
+               
+             
+            
             let day; // 요일을 담을 변수
 
             let clock ;
@@ -41,10 +60,11 @@
             hours + ':' +
             minutes + ':' +
             seconds;
+
+
             clockBox.innerHTML = clock;
 
         }
         //setInterval(함수,시간)
-        //am/pm 12tl  두자리, 디지털시계
-        
+        // 자바스크립트는 시간을 밀리초 단위로 표현한다.
         setInterval(digitalClock, 1000);

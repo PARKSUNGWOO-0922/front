@@ -5,7 +5,7 @@
 /* 웹 폰트:방법1 -cdn 모든스타일이 들어있다.*/
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
 
-/* @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Noto+Sans+KR:wght@100..900&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Noto+Sans+KR:wght@100..900&display=swap');
 
 
 /* 구글폰트 검색 lato  선택하여 2가지 방법으로 다운받아 보기
@@ -32,7 +32,7 @@
      }
      @font-face {
         /* 사용자 임의로 폰트명 정의도 가능하지만 의미있는 단어로 쓴다*/
-        font-family: "Lato", sans-serif;
+        font-family: Lato-Thin;
         src: url(./../assets/font/Lato/Lato-Thin.ttf);
         /* 절대주소 :github에 올려놓은경우 사용가능함*/
         /* URL:프로토콜://도메인/폴더경로/파일  */
@@ -49,7 +49,12 @@
     scroll-behavior: smooth;/* top버튼 눌렀을때 */
 }
 
-body,h1,h2,h3,p,ul {
+body,
+h1,
+h2,
+h3,
+p,
+ul {
     margin: 0;
 }
 
@@ -84,8 +89,13 @@ body {
      단위:rem은 :root에서 지정한 크기의 배수 
      예) 10px *1.5qo -> 15px
      */
+
+    }
+    .body_hidden {
+    overflow-x: hidden;
 }
 h2 {
+    width: 696px;
     font-weight: 400;
     font-size: 2.4rem;
     color:#fff;/* 영문자보다 16잔수로 */
@@ -97,7 +107,8 @@ h3 {
     font-size: 2.4rem;
 }
 
-header a {
+header a
+ {
     /* background-color: #555; */
     color:#f0f0f0;
     /* color:#114141; *//* 내가내가 색조정해볼것/이미지도 선택해보고*/
@@ -218,25 +229,30 @@ footer .top-btn i{
     /* 일반적으로 좌우패딩을 상하보다 많이 준다. */
     padding: 8px 24px 10px 30px;
 }
-
+    .home {
+        overflow:hidden;
+    }
    .circle_ani {
     position: absolute;
-            right: 0;
+             top: -30px;
+            right: -30px;
             width: 135px;
             height: 136px;
-            /* transform: rotate(0deg); */
+            
+            /* transform: rotate(0deg); 기본값*/
             transition: linear 5s;
-            animation:circle 40s linear;
+            animation:circle 50s linear infinite;
         }
         @keyframes circle {
-            0%{transform: rotate(0deg) scale(3)}
-            100%{transform: rotate(720deg) scale(3)}
+            0%{transform: rotate(0deg) scale(2.5)}
+            100%{transform: rotate(720deg) scale(2.5)}
             
         }
    .circle_ani:hover {
             /* transform: rotate(숫자deg); 0~360이상*/
             transform: rotate(720deg);
         }
+  
 
 /* section area:contact.html */
 #contact .contact {
@@ -254,7 +270,7 @@ footer .top-btn i{
     justify-content: space-between;
     width: 900px;
     /* margin-top: 48px auto  96px; */
-    margin: 15px auto  96px;
+    margin: 48px auto  96px;
     /* 
         margin: 25px 50px 75px;
                 top margin is 25px
@@ -264,14 +280,14 @@ footer .top-btn i{
 }
 #contact .map {
     width: 280px;
-    height: 170px;
+    height: 160px;
     border-radius: 5px;
     /* i 프레임과 map radius로 인한 둥근모서리 와 map의 사각모서리 차이*/
     overflow:hidden;
     margin-right: 32px;
 }
 #contact .contact p {
-    margin: 45px 0 16px;
+    margin: 24px 0 16px;
 }
 #contact .frm-input {
     display: flex;
