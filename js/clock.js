@@ -11,8 +11,8 @@
 
             if (hours == 0)  {
                 hours = 12;
-            } else  {
-                hours %= 12;
+            } else if(hours % 12 <10) { 
+                hours = '0' + hours % 12;
             }
             
             if (minutes == 0 || minutes < 10) {
