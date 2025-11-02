@@ -92,9 +92,9 @@
             /* border-bottom: 3px solid red;*/
             transform: scaleX(0);
             /* transform-origin: x축기준 y축기준; */
-            transform-origin: 50% 50%; /* 기본값 */
-            transform-origin: 0% 50%;
-            transform-origin: right;
+            transform-origin: 50% 50%; /* 기본값 중심에서 시작*/
+            transform-origin: 0% 50%;/* 왼쪽에서 시작 왼쪽으로 사라짐 */
+            transform-origin: 100% 50%;/* right */
 
             transition: .3s; 
         }
@@ -102,7 +102,7 @@
         .main li a:hover::after {
             transform: scaleX(1);
             /* width: 100%; */
-            transform-origin: left;
+            transform-origin: left;/* 0% 50% */
         }
 
         #header .main a:hover {
