@@ -25,24 +25,22 @@
      };   
 
      //문자열  
+     //length 는 문자열의 문자 수-.6자
+     //st는 문자열 객체
+     //객체는 속성과 메서들 구성되어 있다.
+     //length는 속성
+     //.은 객체와 속성을 구분하는 구분자
      const st = 'ABCDEF';//문자열의 길이 6
 
-                //length 는 문자열의 문자 수-.6자
-                //st는 문자열 객체
-                //객체는 속성과 메서들 구성되어 있다.
-                //length는 속성
-                //.은 객체와 속성을 구분하는 구분자
      for (let num=1,ct=st.length ; num < ct; num++) {
-        document.write('문자열로 반복 수행: ' + num+ct  + '<br>');
+        document.write('문자열로 반복 수행: ' + num  + '<br>');
      };
 
-     document.write('for(;;) 반복 수행: ' + ct  + '<br>');
                 //const는 재선언, 재할당 가능. 
                 //let도 재선언하면 안됨. 재할당은 가능. 
     num = 1;
                 //st ='ABCDEF';
-                //ct=st.length;
-     document.write('for(;;) 반복 수행: ' + num  + '<br>');
+    ct=st.length;
      for ( ; ; ) {
         if(num < ct) {
             document.write('for(;;) 반복 수행: ' + num  + '<br>');
