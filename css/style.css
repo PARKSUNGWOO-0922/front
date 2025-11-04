@@ -62,6 +62,11 @@ ul {
     padding: 0;
     list-style: none;
 }
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
 a {
     text-decoration: none;/* to the top 밑줄없애기 */
 }
@@ -71,6 +76,10 @@ iframe {
 }
 button {
     border:none;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #ccc;
 }
 
 /* typography(타이포그래피)*/
@@ -91,9 +100,9 @@ body {
      */
 
     }
-    .body_hidden {
-    overflow-x: hidden;
-}
+    /* .body_hidden {
+    overflow-x: hidden; } 내가내가*/
+
 h2 {
     width: 696px;
     font-weight: 400;
@@ -219,6 +228,8 @@ footer .top-btn i{
 /* section area: index.html */
 #home {
     /* 뷰포트 크기로 높이 지정 */
+    position:relative;/* 아래스크롤바 해결 */
+    overflow: hidden;
     height: 100vh;
     background: url(./../assets/img/mark-koch-KiRlN3jjVNU-unsplash.jpg) no-repeat 30% 30%/cover;
   /*   background: url(./../assets/img/rodion-kutsaiev-PEm_sLmJT-w-unsplash.jpg) no-repeat 100% 100%/cover; *//* 보통 50% 50% 내가내가 */
@@ -234,10 +245,10 @@ footer .top-btn i{
     }
    .circle_ani {
     position: absolute;
-             top: -30px;
-            right: -30px;
-            width: 135px;
-            height: 136px;
+    top: -30px;
+    right: -30px;
+    width: 135px;
+    height: 136px;
             
             /* transform: rotate(0deg); 기본값*/
             transition: linear 5s;
@@ -254,29 +265,48 @@ footer .top-btn i{
         }
   
 
-/* section area:contact.html */
-#contact .contact {
-    width: 600px;/* 기존사이트 참고수치 */
-}
-#contact .parallax-bg {
+/* work+contact  section common area:work.html */
+.parallax-bg {
     position: relative;
-    /* h2중앙(공통코딩되어있음)위치 기준 */
     height: 400px;
-    background: url(/jfs/assets/img/parallax3.jpg) no-repeat 50% 50%/cover fixed;
+    background: no-repeat 50% 50% / cover fixed;
+}
+.container {
+    width: 900px;
+    margin: 48px auto 96px;
+    text-align: center;
+}
+button {
+    background: #f1f1f1;
+    padding: 12px 24px;
+    margin-top: 10px;
+    border-radius: 3px;
+}
+/* work section area:work.html */
+#work .parallax-bg {
+    background-image: url(/jfs/assets/img/parallax2.jpg);
+}
+#work .portfolio {
+    display: flex;
+    gap:16px;
+}
+#work .portfolio li {
+    width: 213px;
+    height: 162px;
+}
+#work button {
+    margin: 64px 0 0;
+}
+
+/* contact section area:contact.html */
+
+#contact .parallax-bg {
+    background-image: url(/jfs/assets/img/parallax3.jpg);
 }
 
 #contact .container {
     display: flex;
     justify-content: space-between;
-    width: 900px;
-    /* margin-top: 48px auto  96px; */
-    margin: 48px auto  96px;
-    /* 
-        margin: 25px 50px 75px;
-                top margin is 25px
-                right and left margins are 50px
-                bottom margin is 75px
-    */
 }
 #contact .map {
     width: 280px;
@@ -285,6 +315,9 @@ footer .top-btn i{
     /* i 프레임과 map radius로 인한 둥근모서리 와 map의 사각모서리 차이*/
     overflow:hidden;
     margin-right: 32px;
+}
+#contact .contact {
+    width: 600px;/* 기존사이트 참고수치 */
 }
 #contact .contact p {
     margin: 24px 0 16px;
@@ -312,8 +345,7 @@ footer .top-btn i{
 
 #contact button {
     background: #111;
-    padding: 12px 24px;
-    margin-top: 10px;
+  
 }
 #contact i {
     margin-right: 8px;
