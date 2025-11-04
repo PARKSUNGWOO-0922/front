@@ -8,8 +8,8 @@
             let clock ;
             //날짜
             let yy = date.getFullYear();
-            let mm = date.getMonth();
-            let dd = date.getDay();
+            let mm = date.getMonth()+1;
+            let dd = date.getDate();
 
              //시간:AM/PM,
             let hour = date.getHours();//시
@@ -118,7 +118,7 @@
             // minute + ":" +
             // second;
             //문자열 연결 연산자
-            // clock = yy + "년" + mm + "월"+ dd + "일" +"("+day+")" +ampm +hour+":"+minute+":"+second;
+             clock = yy + "년" + mm + "월"+ dd + "일" +"("+day+")" +ampm +hour+":"+minute+":"+second;
             //템플릿리터럴(ver.ES6):기호는 백틱(backtick`)
             //문자열과 표현식(변수등) 구별 : ${표현식}
             //불필요한 문자열(+,"," 등) 제거
