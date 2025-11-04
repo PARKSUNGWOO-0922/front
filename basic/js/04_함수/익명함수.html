@@ -3,11 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>함수</title>
+    <title>JS함수</title>
 </head>
 <body>
-    <!-- 버튼 클릭시 함수 호출 -->
-    <button type="button" onclick="printMsg('이기자',30)">누르세요</button>
+   
     <script>
         /* 
             함수(function) 작성
@@ -15,7 +14,7 @@
                 -이름 지정 방법은 변수와 같다
                 1)함수 선언
                     function 함수명([매개변수1, 매개변수2,...]){
-                        실행문장;
+                        코드;
                         [return 반환값;]
                     }
                     
@@ -31,9 +30,6 @@
                 반복코드를 재사용!
         */
          // 자바스크립트 호이스팅은 인터프리터가 코드를 실행하기 전에 변수와 함수 선언을 해당 스코프(유효 범위)의 최상단으로 끌어올리는 것처럼 보이는 현상입니다. 이로 인해 코드에 선언된 위치보다 위에서 변수나 함수를 사용해도 오류가 발생하지 않고, 마치 선언이 먼저 된 것처럼 동작합니다. 
-        //매개변수가 없는 함수
-       
-        //
         const txt1 = '함수 선언 전 호출';
         const txt2 = '함수 선언 후 호출';
         
@@ -44,14 +40,14 @@
         
         //익명함수 선언
         //const 변수명 = function([매개변수,...]){코드;};
-        const printMsg = function (msg) {
-           document.write(msg + '<br>');
-       };
+        var printMsg = function (msg) {
+           document.write('익명함수: '+msg + '<br>');
+       }
        
        // 선언적 함수
-        // 재선언: Uncaught SyntaxError: Identifier 'printMsg' has already been declared
-       function printMsg(name,age) {
-           document.write('이름은 ' + name +'이고, 나이는'+ age +'살 입니다 .<br>');
+        //const,let사용시---> 재선언: Uncaught SyntaxError: Identifier 'printMsg' has already been declared
+       function printMsg(msg) {
+           document.write('선언적함수: ' + msg +'<br>');
         }
         //함수 호출
         printMsg(txt2);

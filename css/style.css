@@ -71,7 +71,7 @@ a {
     text-decoration: none;/* to the top 밑줄없애기 */
 }
 iframe {
-    width:100%;/* ???????? */
+    width:100%;
     height:100%;
 }
 button {
@@ -100,11 +100,8 @@ body {
      */
 
     }
-    /* .body_hidden {
-    overflow-x: hidden; } 내가내가*/
 
 h2 {
-    width: 696px;
     font-weight: 400;
     font-size: 2.4rem;
     color:#fff;/* 영문자보다 16잔수로 */
@@ -120,7 +117,6 @@ header a
  {
     /* background-color: #555; */
     color:#f0f0f0;
-    /* color:#114141; *//* 내가내가 색조정해볼것/이미지도 선택해보고*/
 
 }
 footer a , footer p{
@@ -178,7 +174,7 @@ h3 {
 }
  h3 + p {
     text-align: center;
- }
+}
 
 /* header area*/
 header {
@@ -188,8 +184,6 @@ header {
 
 header .gnb ul {
     display: flex;
-    /* position:fixed; */   /* header:posion-fixed대체 */
-    /* pof */
 }
 header .gnb li a {
     display: inline-block;/* 약간 밑으로 */
@@ -206,13 +200,12 @@ header .gnb li i {
 
 /* footer area */
 footer {
-    background: #555;/* 색깔각자 임의지정 */
-    /* 푸터 안의 인라인 요소는 모두 가운데로(배치) */
+    background: #555;
     text-align:center;
     padding: 100px;
 }
 footer:hover {
-    background: #111;/* footer 백그라운드 색상변경 */
+    background: #111;
 }
 /* to the top button */
 footer .top-btn {
@@ -231,41 +224,33 @@ footer .top-btn i{
     position:relative;/* 아래스크롤바 해결 */
     overflow: hidden;
     height: 100vh;
-    background: url(./../assets/img/mark-koch-KiRlN3jjVNU-unsplash.jpg) no-repeat 30% 30%/cover;
-  /*   background: url(./../assets/img/rodion-kutsaiev-PEm_sLmJT-w-unsplash.jpg) no-repeat 100% 100%/cover; *//* 보통 50% 50% 내가내가 */
-   /* background: url(../assets/img/marita-kavelashvili-ugnrXk1129g-unsplash.jpg) no-repeat 50% 50%/cover */
+    background: url(./../assets/img/mark-koch-KiRlN3jjVNU-unsplash.jpg) no-repeat 30% 30%/cover fixed;
 }
 #home h2 {
     /* background: #555; */
-    /* 일반적으로 좌우패딩을 상하보다 많이 준다. */
     padding: 8px 24px 10px 30px;
 }
-    .home {
-        overflow:hidden;
-    }
    .circle_ani {
     position: absolute;
     top: -30px;
     right: -30px;
     width: 135px;
     height: 136px;
+    transition: linear 5s;
+    animation:circle 50s linear infinite;
+}
+    @keyframes circle {
+        0%{transform: rotate(0deg) scale(2.5)}
+        100%{transform: rotate(720deg) scale(2.5)}
             
-            /* transform: rotate(0deg); 기본값*/
-            transition: linear 5s;
-            animation:circle 50s linear infinite;
-        }
-        @keyframes circle {
-            0%{transform: rotate(0deg) scale(2.5)}
-            100%{transform: rotate(720deg) scale(2.5)}
-            
-        }
+}
    .circle_ani:hover {
             /* transform: rotate(숫자deg); 0~360이상*/
             transform: rotate(720deg);
-        }
+}
   
 
-/* work+contact  section common area:work.html */
+/* work+contact  section common area */
 .parallax-bg {
     position: relative;
     height: 400px;
@@ -317,7 +302,7 @@ button {
     margin-right: 32px;
 }
 #contact .contact {
-    width: 600px;/* 기존사이트 참고수치 */
+    width: 600px;
 }
 #contact .contact p {
     margin: 24px 0 16px;
