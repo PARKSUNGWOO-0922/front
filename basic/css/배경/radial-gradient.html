@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>그라디언트(Radial-Gradient)</title>
+    <style>
+        /* 
+            radial-Gradient() 함수
+            background-image: radial-gradient(모양 크기 at 위치, 색, ..., 색);
+        */
+        p {
+            width: 500px;
+            height: 300px;
+        }
+
+        #grad1 {
+
+             background-image: radial-gradient(red, yellow, green);
+        }
+        #grad2 {
+
+             background-image: radial-gradient(red 5%, yellow 15%, green 60%);
+        }
+        #grad3 {
+
+              background-image: radial-gradient(circle, red, yellow, green);
+        }
+       
+        #grad4 {
+         background-image: radial-gradient(closest-side at 70% 60%, red, yellow,green)
+        }
+        #grad5 {
+            background-image: radial-gradient(farthest-side at 70% 60%, red, yellow, green);  
+        }
+       
+        #grad6 {
+             background-image: repeating-radial-gradient(red, yellow 10%, green 15%);
+        }
+        #grad7 {
+
+        }
+        
+    </style>
+</head>
+<body>
+    <p id="grad1">background-image: radial-gradient(red, yellow,green);</p>
+    <p id="grad2">background-image: radial-gradient(red 5%, yellow 15%, green 60%);</p>
+    <p id="grad3">background-image: radial-gradient(circle, red, yellow, green);</p>
+    <p id="grad4">background-image: radial-gradient(closest-side at 70% 60%, red, yellow);</p>
+    <p id="grad5">background-image: radial-gradient(farthest-side at 70% 60%, red, yellow);</p>
+    <p id="grad6">repeating-radial-gradient(red, yellow 10%, green 15%</p>
+    <p id="grad7"></p>
+    
+</body>
+</html>

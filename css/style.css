@@ -103,7 +103,7 @@ body {
 
 h2 {
     font-weight: 400;
-    font-size: 2.4rem;
+    font-size: 3.6rem;
     color:#fff;/* 영문자보다 16잔수로 */
     /* 글자사이 간격:자간 */
     letter-spacing: 1rem;/* ls */
@@ -135,9 +135,9 @@ footer .sns i {
     font-size: 2.4rem;
     margin: 0 -3px;
 }
-#contact h2 {
+/* #contact h2 {
     font-size: 3.6rem;
-}
+} */
 
 #contact a {
     color: #777;
@@ -167,6 +167,7 @@ h2 {
     top: 50%;
     /* trft */
     transform: translate(-50%, -50%);/* trft */
+    text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
 }
 h3 {
     text-align:center;
@@ -279,9 +280,18 @@ button {
     width: 213px;
     height: 162px;
 }
-#work button {
-    margin: 64px 0 0;
-}
+
+#shadow {
+      margin: 64px 0 0;
+            width: 200px;
+            height: 50px;
+            background : inherit;
+            color:#000;
+            box-shadow: none;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            transition: .2s ease-out;
+        }
 
 /* contact section area:contact.html */
 

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS함수의return</title>
+</head>
+<body>
+    <script>
+        function addsum(name,num) {
+            //템플릿 리터럴
+            document.write(`템플릿:${name}  이 숫자  ${num } 을 입력하였습니다.1부터  ${num } 까지의 합은.... <br><br>`);
+            //
+            document.write(name + '이 숫자 ' +num +'을 입력하였습니다.1부터' + num + '까지의 합은');
+            
+            let sum = 0;
+            for (let i = 1;i <= num; i++) {
+                sum += i;
+            }
+            return sum;
+        }
+    
+    let result = addsum('홍길동',10);
+    document.write(result + '입니다.');
+
+    result = addsum('홍길동',100);
+    document.write(result + '입니다.');
+
+    document.write(addsum('홍길동',100) + '입니다.');
+    // console.log(sum); 오타확인
+
+    function add(x,y) {
+        return x + y;
+    }
+    function subtract(x,y) {
+        return x - y;
+    }
+    function multiply(x,y) {
+        return x * y;
+    }
+    function divide(x,y) {
+        return x / y;
+    }
+
+    document.write('<br>---------------------<br>')
+    document.write(add(5,2)+'<br>');
+    const addition = add;
+    document.write(`${addition(5,2)}<br>`);
+
+    </script>
+</body>
+</html>

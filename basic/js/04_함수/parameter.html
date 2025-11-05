@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS parameter</title>
+</head>
+<body>
+    <script>
+       function add0() {
+        const sum = 1;
+        return sum;
+       }
+       function add1(x) {
+        const sum = x + 1;
+        return sum;
+       }
+       function add2(x,y) {
+        const sum = x + y;
+        return sum;
+       }
+       function add3(x,y=5,z=10) {
+        const sum = x + y +z;
+        return sum;
+       }
+    //    document.write(add(2,3,4)+'<br>');
+
+
+       const r0 = add0();
+       const r1 = add1(2);
+       const r2 = add2(2,3);
+       const r3 = add3(2,3,4);
+    //    const r4 = add4(2,3,4,5,6);
+       document.write('r0 = ' + r0 + '<br>');
+       document.write('r1 = ' + r1 + '<br>');
+       document.write('r2 = ' + r2 + '<br>');
+       document.write('r3 = ' + r3 + '<br>');
+
+      function add5(x,y,z) {
+       if (x === undefined) {
+            sum = 1;
+       }else if(y === undefined && z === undefined) {
+            sum = x;
+       }else if(z === undefined) {
+            sum = x + y;
+       }else {
+            sum = x + y + z;
+       }
+        return sum;
+       } 
+       document.write('-----------------------------------<br>');
+       document.write(add5(2)+'<br>');
+       document.write(add5(2,3)+'<br>');
+       document.write(add5(2,3,4)+'<br>');
+
+       function fruit() {
+            console.log(arguments);
+            console.log(arguments[1]);
+            console.log(arguments.length);
+       }
+       fruit("사과","딸기",'포도','수박');
+
+
+       
+       
+
+    </script>
+</body>
+</html>
