@@ -33,7 +33,7 @@
      @font-face {
         /* 사용자 임의로 폰트명 정의도 가능하지만 의미있는 단어로 쓴다*/
         font-family: Lato-Thin;
-        src: url(./../assets/font/Lato/Lato-Thin.ttf);
+        /* src: url(./../assets/font/Lato/Lato-Thin.ttf); */
         /* 절대주소 :github에 올려놓은경우 사용가능함*/
         /* URL:프로토콜://도메인/폴더경로/파일  */
         src:url(https://PARKSUNGWOO-0922.github.io/jfs/assets/font/Lato-Thin.ttf)
@@ -245,10 +245,7 @@ footer .top-btn i{
         100%{transform: rotate(720deg) scale(2.5)}
             
 }
-   .circle_ani:hover {
-            /* transform: rotate(숫자deg); 0~360이상*/
-            transform: rotate(720deg);
-}
+   
   
 
 /* work+contact  section common area */
@@ -266,7 +263,7 @@ button {
     background: #f1f1f1;
     padding: 12px 24px;
     margin-top: 10px;
-    border-radius: 3px;
+    border-radius: 5px;
 }
 /* work section area:work.html */
 #work .parallax-bg {
@@ -292,6 +289,9 @@ button {
             border-radius: 3px;
             transition: .2s ease-out;
         }
+#shadow:hover {
+    box-shadow: 0 0 6px rgba(35, 173, 278, 1);
+}
 
 /* contact section area:contact.html */
 

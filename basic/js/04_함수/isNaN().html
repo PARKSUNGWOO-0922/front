@@ -7,13 +7,27 @@
 </head>
 <body>
     <script>
+        /* 
+            매개변수와 인자
+
+            typeof 연산자
+
+            참고:
+            NaN(Not a Number): 숫자가 아닌 값
+            isNaN(값) 함수
+                - 숫자가 아니면 true
+                - 숫자 이면 false
+        */
         //isNaN()
         document.write(isNaN(0)+'<br>');//false
         document.write(isNaN('0')+'<br>');//false
         document.write(isNaN(Infinity)+'<br>');//false
         document.write(isNaN(-Infinity)+'<br>');//false
         document.write(isNaN(null)+'<br>');//false
-        document.write(isNaN(Number(1234n))+'<br>');//false
+        // Uncaught TypeError: Cannot convert a BigInt value to a number
+        // document.write(isNaN(123n)+'<br>'); // 에러
+        document.write(isNaN(Number(123n))+'<br>');//false
+
 
         document.write(isNaN(NaN)+'<br>');//true
         document.write(isNaN('string')+'<br>');//true
