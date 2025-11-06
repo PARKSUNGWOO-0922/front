@@ -18,26 +18,27 @@
     <script>
         //${표현식}
         
-        // +=연산자 활용!
         // for(let i = 1; i <=9 ; i++) {
-        //     document.write(`${i}단<br>`)
-        //     for(let dan = 1; dan<=9 ; dan++){
-        //         document.write(`${i} × ${dan} = ${i * dan} <br>`);
-        //     }
-        // }
-
-        let result =
-       `<table><tr>`
+            //     document.write(`${i}단<br>`)
+            //     for(let dan = 1; dan<=9 ; dan++){
+                //         document.write(`${i} × ${dan} = ${i * dan} <br>`);
+                //     }
+                // }
+                
+        // +=연산자 활용!
+        let result = `<table><tr>`;
                 for(let dan=1; dan<=9 ; dan++){
-                   result += `<th>${dan}단</th>` ;             
-                }                            /* <th>2단</th><th>3단</th> */
-        result +=  `</tr>` ;             
+                   result += `<th>${dan}단</th>`;             
+                }  
+
+            result +=  `</tr>` ;   
+
                 for(let i=1;i<=9;i++){
                      result +=`<tr>`;
                     for(let dan=1; dan<=9; dan++) {
                          result +=`<td>${dan} × ${i} =${dan * i}</td>`;
                     }
-                     result += `<tr>`;
+                     result += `</tr>`;
                 }   
           
         result +=`</table>`
