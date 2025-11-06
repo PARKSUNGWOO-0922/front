@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS 배열</title>
+</head>
+<body>
+    <script>
+        /* 
+            배열(array)
+
+        */
+       
+       const a = 1;
+       const b = 2;
+       const c = 3;
+       
+       const arr = [1,2,3];
+       //배열 생성-리터럴방식
+       //const 배열명 = [값,값,...]
+       const cities = ['서울','경기','인천'];
+       console.log(cities);
+       
+       console.log(cities.length);
+       
+       document.write(cities[0]+ '<br>');
+       document.write(cities[1]+ '<br>');
+       document.write(cities[2]+ '<br>');
+       
+       for(let i=0;i<3; i++) {
+           document.write(cities[i]+ '<br>');
+        }
+
+        for(let i=0;i<cities.length; i++) {
+            document.write(cities[i]+ '<br>');
+        }
+        
+        function city() {
+            for(let i=0;i<cities.length; i++) {
+                document.write(cities[i]+ '<br>');
+            }
+            
+        }
+        //요소 추가
+        cities[3] = '광주';
+        cities[4] = '부산';
+        city();
+        
+        //요소 제거
+        cities[3] = undefined;//undefined로 출력
+        cities[4] = '';//빈공백으로 출력
+        city();
+        console.log(cities);
+
+        //평균 구하기
+        const nums = [95,88,,72,68,,99,82,78,85];
+        document.write(nums.length+'<br>');
+        
+        let sum= 0;
+        for (let i = 0; i<nums.length;i++) {
+            sum += nums[i];
+        }
+        let avg = sum / nums.length;
+        document.write(avg+'<br>');//빈값으로 NaN 출력
+
+        sum = 0;
+        let count =0;
+        for (let i = 0; i<nums.length;i++) {
+            if(nums[i] === undefined){
+                continue;
+            }else {
+            sum += nums[i];
+            count++;}
+        }
+        avg = sum /count;
+        document.write(`총원은 ${nums.length}에서 8명의 합계는 ${sum} 이고 평균은 ${avg} 점이다.<br>`);
+
+        //다양한 데이터 타입
+        let x = 5;
+        const arr2 = [100,'String',true,x];
+        document.write(arr2);
+        
+        //객체 생성 = new Array()
+        document.write('<br>---------------------------------------------------<br>');
+        const city1 = '서울';
+        const city2 = '서울';
+        
+        const cities2 = ['서울','경기','인천'];
+        const cities3 = ['서울','경기','인천'];
+        
+        const cities4 = new Array('서울','경기','인천');
+        const cities5 = new Array('서울','경기','인천');
+
+        const str = '서울,경기,인천';
+
+        document.write(cities2+'<br>');
+        document.write(cities2[0]+'<br>');
+        document.write((cities2 == cities3)+'<br>');//false
+        document.write((cities4 == cities5)+'<br>');//false
+        document.write((cities3 == cities4)+'<br>');//false
+        document.write((city1 == city2)+'<br>');//true
+        document.write('<br>---------------------------------------------------<br>');
+        //instancdof 연산자
+        document.write((cities2 instanceof Array)+'<br>');//true
+        document.write((cities4 instanceof Array)+'<br>');//true
+        document.write((city1 instanceof Array)+'<br>');//false
+        document.write((str instanceof Array)+'<br>');//???
+
+        document.write((typeof cities4)+'<br>');//object
+
+        document.write((Array.isArray(cities4))+'<br>');//true
+        document.write((Array.isArray(nums))+'<br>');//true
+        document.write((Array.isArray(city1))+'<br>');//false
+
+        
+
+
+
+
+
+    </script>
+</body>
+</html>

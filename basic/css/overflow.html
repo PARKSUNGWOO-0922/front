@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>overflow속성</title>
+    <style>
+      /* 
+            overflow 속성
+            visible- 기본값입니다. 오버플로는 잘리지 않습니다. 콘텐츠는 요소의 상자 밖으로 렌더링됩니다.
+            hidden- 오버플로는 잘리고 나머지 콘텐츠는 숨겨집니다.
+            scroll- 스크롤바가 추가되었습니다. 사용자는 모든 콘텐츠를 보려면 스크롤해야 합니다.
+            auto- 와 유사 scroll하지만 필요한 경우에만 스크롤바를 추가합니다.
+        */
+      .wrap div {
+        width: 300px;
+        height: 150px;
+        background-color: coral;
+      }
+      .wrap {
+        display: flex;
+        gap:30px;
+      }
+      .div1 {
+        overflow: visible;
+      }
+      .div2 {
+        overflow: hidden;
+      }
+      .div3 {
+        overflow: scroll;
+        overflow-x: hidden;
+        
+    }
+    .div4 {
+        overflow: auto;
+    }
+    .div5 {
+        overflow: clip;
+    }
+    .div6 {
+        overflow: scroll;
+        overflow-y: hidden;
+        white-space: nowrap;
+      }
+      .div7 {
+        overflow: auto;
+      }
+      span {
+        color:red;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+        <div class="div1"><span>visible</span> Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi reprehenderit molestias voluptates cumque voluptatum, ullam doloribus quia necessitatibus ea delectus libero beatae facilis blanditiis debitis optio quis! Sapiente, non fugit?</div>
+        <div class="div2"><span>hidden</span> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis repellendus blanditiis deleniti fugiat eius quisquam exercitationem modi, amet nisi doloribus voluptas cum voluptatum ab culpa aut aliquid ullam sint tenetur!</div>
+        <div class="div3"><span>scroll</span> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis repellendus blanditiis deleniti fugiat eius quisquam exercitationem modi, amet nisi doloribus voluptas cum voluptatum ab culpa aut aliquid ullam sint tenetur!</div>
+        <div class="div4"><span>auto</span> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis repellendus blanditiis deleniti fugiat eius quisquam exercitationem modi, amet nisi doloribus voluptas cum voluptatum ab culpa aut aliquid ullam sint tenetur!</div>
+        <div class="div5"><span>clip</span> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis repellendus blanditiis deleniti fugiat eius quisquam exercitationem modi, amet nisi doloribus voluptas cum voluptatum ab culpa aut aliquid ullam sint tenetur!</div>
+        <div class="div6"><span>scroll</span> Lorem ipsum dolor sit amet, consectetur adipisicing elit. </div>
+        <div class="div7"><span>auto</span> Lorem ipsum dolor sit amet, consectetur adipisicing elit. </div>
+    </div>
+  </body>
+</html>
