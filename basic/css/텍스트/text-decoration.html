@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>text-decoration</title>
+    <style>
+      /* 
+            text-decoration
+
+        */
+      /* div.a {
+        text-decoration-line: overline;
+      }
+
+      div.b {
+        text-decoration-line: underline;
+      }
+
+      div.c {
+        text-decoration-line: line-through;
+      }
+
+      div.d {
+        text-decoration-line: overline underline;
+      } */
+
+    div {margin: 30px;font-size: 30px;}   
+       div.a {
+        text-decoration-line: overline;
+        text-decoration-style: dashed;
+        text-decoration-thickness: auto;
+        text-decoration-color: red;
+    }
+    
+    div.b {
+        text-decoration-line: underline;
+        text-decoration-style: dotted;
+        text-decoration-thickness: 5px;
+        color:rgba(255,0,0,0.5);
+        
+        text-decoration: underline dotted 5px red;
+      }
+
+      div.c {
+        text-decoration-line: line-through;
+        text-decoration-style: double;
+        text-decoration-thickness: 50%;/*기준:글자크기 */
+
+      }
+
+      div.d {
+        text-decoration-line: overline underline;
+        text-decoration-style: wavy;
+
+      } 
+      a {
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline wavy;
+      }
+
+
+    </style>
+  </head>
+  <body>
+    <div class="a">text-decoration-line<br /><br /></div>
+    <div class="b">text-decoration-line<br /><br /></div>
+    <div class="c">text-decoration-line<br /><br /></div>
+    <div class="d">text-decoration-line<br /><br /></div>
+    <!-- <u>underline<br /><br /></u>
+    <ins>underline<br /><br /></ins>
+    <s>line-through<br /><br /></s>
+    <del>삭제<br /><br /></del> -->
+    <a href="">a태그의 경우는 밑줄이기본</a>
+  </body>
+</html>

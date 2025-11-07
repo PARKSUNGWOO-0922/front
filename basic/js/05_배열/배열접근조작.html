@@ -32,15 +32,18 @@
         // 조회
         function selectFn (){
             insertFn()
-            document.write(nums+'<br>');
+            for (let i=0;i<=nums.length-1;i++){
+
+                document.write(nums[i]+' ');
+            }
         }
        function addFn() {
            selectFn();
            let sum = 0;
            for (let i = 0; i<=100; i++){
-                sum += i;
+                sum += nums[i];
             }
-           document.write(sum);
+           document.write(`1부터 100까지 합은 ${sum} 입니다.`);
            document.write('<br><a href="배열접근조작.html">새로고침</a>');
        }
 
