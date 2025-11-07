@@ -250,15 +250,73 @@ footer .top-btn i{
 #about .basic p {
     text-align: left !important;
 }
+#about .basic strong {
+    text-decoration: underline 2px wavy rgba(255,0,0,0.8);
+}
+#about .basic b {
+    display: inline-block;
+    margin-bottom: 36px;
+}
+#about .basic img {
+    height: 280px;
+    border-radius: 5px;
+    filter:opacity(50%)
+}
+#about .basic img:hover {
+    filter:none;
+}
 #about .basic .inner {
     display: flex;
+    gap: 48px;
+    margin:48px 0 130px;
 }
 #about .basic .inner div{
    flex:50%
 }
 #about .basic .inner p{
-   flex:50%
+   flex:50% /* 수정 */
 }
+#about .skill > p {
+    /* margin: 64px 0; */
+    padding-bottom:36px ;
+    font-size: 1.8rem;  
+}
+#about .skill .inner p{
+    text-align: left;
+    letter-spacing: 1rem;
+    margin: 12px 0;
+}
+#about .progressbar {
+    background: #f1f1f1;
+    color:#fff;
+}
+#about .progressbar div{
+    /* height: 35px;
+    line-height: 35px; */
+    padding: 6px;
+    background: #616161;
+}
+#about .progressbar:nth-of-type(1) div{
+    width: 85%;
+}
+#about .progressbar:nth-of-type(2) div{
+    width: 95%;
+}
+#about .count ul {
+    display: flex;
+    text-align: center;
+    background-color: #616161;
+    color:#fff;
+    padding: 36px;
+}
+#about .count ul li{
+   flex:0 1  25%;
+}
+#about .count ul li span{
+    display: block;
+    font-size: 2.4rem;
+}
+
   
 
 /* work+contact  section common area */
