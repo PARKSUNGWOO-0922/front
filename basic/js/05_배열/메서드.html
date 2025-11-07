@@ -24,48 +24,78 @@
                 13) filter
                 14) indexOf
                 15) lastIndexOf
-        */
-
-        //join
+                */
+               
+               //join
+               document.write('---------------join():string반환-----------------------<br>');
         let result;
         const cities =['서울','경기','인천'];
-         // 배열이름.메서드()
+        document.write(cities + '<br>');
+        document.write(typeof cities + '<br>');
+        // 배열이름.메서드()
         // 배열.join(): ,
         result = cities.join();
-        document.write(result + '<br>');
+        document.write('join():'+result + '<br>');
         document.write(typeof result + '<br>');
-        document.write(typeof cities + '<br>');
         result = cities.join('-');
-        document.write(result + '<br>');
+        document.write("join('-'):"+result + '<br>');
         document.write(typeof result + '<br>');
         
         // 배열.join('구분자')
         result = cities.join(' 그리고 ');
+        document.write("join('그리고'):"+result + '<br>');
         document.write(result + '<br>');
-        document.write('--------------------------------------<br>');
+        document.write(typeof result + '<br>');
+        document.write('---------------concat():object반환-----------------------<br>');
         //concat
         const fruits =['사과','딸기','포도'];
+        document.write(fruits + '<br>');
+        document.write(typeof fruits + '<br>');
+
         const names =['홍길동','박길동','감길동'];
+        document.write(names + '<br>');
+        document.write(typeof names + '<br>');
+
         result = cities.concat('부산','광주');
-        document.write(result + '<br>');
-        result = cities.concat(fruits).join('-');
-        result = cities.join('-').concat(fruits);
+        document.write("concat('부산','광주')"+result + '<br>');
         document.write(typeof result + '<br>');
-        document.write(result + '<br>');
+
+        result = cities.concat(fruits).join('-');
+        document.write("cities.concat(fruits).join('-')"+result + '<br>');
+        document.write(typeof result + '<br>');
+        
+        result = cities.join('-').concat(fruits);
+        document.write("cities.join('-').concat(fruits)"+result + '<br>');
+        document.write(typeof result + '<br>');
+
         result = cities.concat(fruits,names,'부산');
-        document.write(result + '<br>');
-        document.write('--------------------------------------<br>');
+        document.write("cities.concat(fruits,names,'부산')"+result + '<br>');
+        document.write(typeof result + '<br>');
+        document.write('------------reverse():배열변경후 object반환--------------------------<br>');
         //reverse
         const nums = [9,8,7,6,5,4,3,2,1];
+         document.write(nums + '<br>');
+        document.write(typeof nums + '<br>');
+        
         result = nums.join();
-        document.write(result + '<br>');
+        document.write(" nums.join()"+result + '<br>');
+        document.write(typeof result + '<br>');
+        
         result = nums.reverse();
-        document.write(result + '<br>');
+        document.write("nums.reverse()"+result + '<br>');
+        document.write(typeof result + '<br>');
+        
+        document.write("reverse후nums:"+nums + '<br>');
+        
         result = names.join();
-        document.write(result + '<br>');
+        document.write("join()"+result + '<br>');
+        document.write(typeof result + '<br>');
+        
         result = names.reverse();
-        document.write(result + '<br>');
-        document.write('--------------------------------------<br>');
+        document.write("reverse()"+result + '<br>');
+        document.write(typeof result + '<br>');
+        
+        document.write('-------------sort():배열변경후object반환-------------------------<br>');
         //sort
         
         const ndata1=[19, 38, 67, 26, 55, 24, 53, 12, 31]; 
@@ -75,22 +105,35 @@
         
         result = ndata1.sort();
         document.write(result + '<br>');
+        document.write(typeof result + '<br>');
+
       //  result = ndata2.sort(function(a,b){return a-b;});
          result = ndata2.sort((a,b)=>a-b);
         document.write(result + '<br>');
+        document.write(typeof result + '<br>');
+
         result = edata.sort();
         document.write(result + '<br>');
+        document.write(typeof result + '<br>');
+
         result = kdata.sort();
         document.write(result + '<br>');
-        document.write('--------------------------------------<br>');
+        document.write(typeof result + '<br>');
+        document.write('-------------slice():배열변경없이 object반환------------------<br>');
         //slice
         kdata=['서울', '부산', '구포', '대구', '인천','대전','세종']; 
         result = kdata.slice(0,4);
         document.write(result + '<br>');
+        document.write(typeof result + '<br>');
+
         result = kdata.slice(-2,-1);
         document.write(result + '<br>');
+        document.write(typeof result + '<br>');
+
         result = kdata.slice(-4,-2);
         document.write(result + '<br>');
+        document.write(typeof result + '<br>');
+        document.write(kdata);
 
 
     </script>
