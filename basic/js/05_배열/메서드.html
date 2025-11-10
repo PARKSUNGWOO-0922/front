@@ -120,22 +120,148 @@
         document.write(result + '<br>');
         document.write(typeof result + '<br>');
         document.write('-------------slice():배열변경없이 object반환------------------<br>');
-        //slice
+        //slice(에서, 이전까지)
         kdata=['서울', '부산', '구포', '대구', '인천','대전','세종']; 
         result = kdata.slice(0,4);
         document.write(result + '<br>');
         document.write(typeof result + '<br>');
-
+        
         result = kdata.slice(-2,-1);
         document.write(result + '<br>');
         document.write(typeof result + '<br>');
-
+        
         result = kdata.slice(-4,-2);
         document.write(result + '<br>');
         document.write(typeof result + '<br>');
-        document.write(kdata);
+        document.write(kdata +'<br>');
+        
+        document.write('-------------splice():배열변경후 object반환------------------<br>');
+        //splice  배열명.SPLICE(시작index,삭제개수,...아이템)
+        //[서울,부산,구포,대구,인천,대전,세종]
+        //삭제개수가 0 일때 삭제없이(반환값x),데이터 삽입만 실행
+        document.write(kdata+ '<br>');
+        result = kdata.splice(1,2)
+        document.write(result + '<br>');
+        document.write(kdata + '<br>');
+        //서울,대구,인천,대전,세종
+        result = kdata.splice(1,1,"수원","용인");
+        document.write(result + '<br>');
+        document.write(kdata + '<br>');
+        //서울,수원,용인,인천,대전,세종
+        result = kdata.splice(2,Number.MAX_VALUE);//MAX_VALUE 큰수로 끝까지로 해석.
+        document.write(result + '<br>');//용인,인천,대전,세종
+        document.write(kdata + '<br>');
+        //서울,수원
+        //(-)표현식
+        kdata=['서울', '부산', '구포', '대구', '인천','대전','세종']; 
+        result = kdata.splice(-2,1)
+        document.write(result + '<br>');
+        document.write(kdata + '<br>');
+        //모두삭제시
+        // result = kdata.splice(0,Number.MAX_VALUE) 또는 0만써도 모두삭제
+        result = kdata.splice(0)
+        document.write('모두삭제'+result + '<br>');
+        document.write('남은것'+kdata + '<br>');
+        
+        document.write('-------------push & pop 배열변경후------------------<br>');
+        //push : 반환값: 추가된 후 배열의 전체 길이
+        //pop : 반환값: 제거된 요소의 값
+        
+        //push
+        result = kdata.push('서울', '부산', '구포', '대구', '대전','청주','세종')
+        document.write(result + '<br>');
+        document.write(kdata + '<br>');
+        //pop
+        result = kdata.pop();
+        document.write(result + '<br>');
+        document.write(kdata + '<br>');
+        document.write('-------------shift/unshift------------------<br>');
+        kdata=['서울', '부산', '구포', '대구', '인천','청주']; 
+        //unshift
+        result = kdata.unshift('경기','세종');
+        document.write(result + '<br>');
+        document.write(kdata + '<br>');
+        //shift
+        result = kdata.shift();
+        document.write(result + '<br>');
+        document.write(kdata + '<br>');
+        document.write('-------------delete:메소드는 아님 ,스크립트 내장함수------------------<br>');
+        //delete키워드로 삭제한 요소는 undefined를반환
+        //요소의 갯수는변함이 ㅇ벗다.
+        delete kdata[0];
+        delete kdata[1];
+        delete kdata[2];
+        delete kdata[3];
+        delete kdata[4];
+        delete kdata[5];
+        delete kdata[6];
+        for (let i =0;i<kdata.length;i++){
+            document.write(`배열데이터[${i}]=${kdata[i]}<br>`);
+        }
+        document.write(kdata.length + '<br>');
+        document.write(kdata + '<br>');
+
+        document.write('-------------forEach------------------<br>');
+        //forEach()-배열을 반복하며 저장된 데이터를 조회
+        //forEach(function(element, index, array):JS가 forEach 내부에서 콜백을 호출할 때 항상 이 순서로 넣음
+        kdata=['서울', '부산' ,'청주','대구']; 
+        
+        kdata.forEach(function printArr(item,index) {
+            document.write(`배열 데이터 [${index}] : ${ item } <br>`);
+        });
+        
+        //for와비교
+        document.write('-------------for------------------<br>');
+        for (let i = 0; i <kdata.length; i++) {
+            document.write(`배열 데이터 [${i}] : ${kdata[i] } <br>`)};
+            
+        document.write('-------------for ~of------------------<br>');
+         //for~of:index가 없다
+         for (const item of kdata) {
+              document.write(`배열 데이터 : ${item } <br>`);
+         }   
+         
+         //forEach  : 1~10까지의 합
+        let sum = 0;
+         let datas =[1,2,3,4,5,6,7,8,9,10];
+          datas.forEach(function (item) {
+             sum += item;
+            });
+            document.write(`1~10까지의합: ${sum} <br>`);
+
+         document.write('-------------map:기존배열변동없음,각요소를 변환하여 새배열생성------------------<br>');   
+           datas =[1,2,3,4,5,6,7,8,9,10]; 
+         //기존배열을 두고 새배열을 생성한다 cf)forEach 단순반복뿐
+         //map(콜백함수)
+         //map(function(val,idx,arr))
+         result = datas.map(function(val) {
+            return val*val;
+         });
+         
+         document.write(`기존배열: ${datas}  <br>`); 
+         document.write(`새배열 : ${result}  <br>`); 
+
+         document.write('------------filter:기존배열변동없음, 조건을 만족하는 요소를 변환하여 새배열생성------------------<br>');   
+          datas =[1,2,3,4,5,6,7,8,9,10]; 
+         result = datas.filter(function(val) {
+            return val >=6;
+         });
+         
+         document.write(`기존배열: ${datas}  <br>`); 
+         document.write(`새배열 : ${result}  <br>`);  
+
+        document.write('-------------indexOf/lastIndexOf------------------<br>');
+          datas =[1,2,3,4,5,3,7,8,3,10]; 
+          //indexOf(값,[fromIdx]):값에 대한 인덱스 반한,앞에서부터
+          //lastIndexOf(값,fromIdx):값에 대한 인덱스 반한,뒤에서부터
+          document.write(datas.indexOf(3)+'<br>');//처음 등장
+          document.write(datas.indexOf(3,2)+'<br>');//
+          document.write(datas.lastIndexOf(3)+'<br>');//배열/문자열에서 마지막으로 등장하는 인덱스 반환
+          document.write(datas.lastIndexOf(3,3)+'<br>');
 
 
-    </script>
+
+
+        </script>
 </body>
 </html>
