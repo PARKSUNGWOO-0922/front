@@ -203,7 +203,7 @@
 
         document.write('-------------forEach------------------<br>');
         //forEach()-배열을 반복하며 저장된 데이터를 조회
-        //forEach(function(element, index, array):JS가 forEach 내부에서 콜백을 호출할 때 항상 이 순서로 넣음
+        //forEach(function(element, index, array): 순서
         kdata=['서울', '부산' ,'청주','대구']; 
         
         kdata.forEach(function printArr(item,index) {
@@ -252,8 +252,8 @@
 
         document.write('-------------indexOf/lastIndexOf------------------<br>');
           datas =[1,2,3,4,5,3,7,8,3,10]; 
-          //indexOf(값,[fromIdx]):값에 대한 인덱스 반한,앞에서부터
-          //lastIndexOf(값,fromIdx):값에 대한 인덱스 반한,뒤에서부터
+          //indexOf(값,[fromIdx]):값에 대한 인덱스 반환,앞에서부터
+          //lastIndexOf(값,fromIdx):값에 대한 인덱스 반환,뒤에서부터
           document.write(datas.indexOf(3)+'<br>');//처음 등장
           document.write(datas.indexOf(3,2)+'<br>');//
           document.write(datas.lastIndexOf(3)+'<br>');//배열/문자열에서 마지막으로 등장하는 인덱스 반환
