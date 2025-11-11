@@ -38,14 +38,14 @@
             background: lightblue;
         }
         /* 테블릿
-            최소 768px -> 768px 이상의 장치:테블릿(768px),데스크탑(1920px)
+            최대 768px -> 768px 이하의 장치:테블릿(768px),폰(360px)
         */
-        @media (min-width: 768px) {
+        @media (max-width: 1024px) {
             /* CSS기록 */
           body { background: lightcoral;}   
         }
-        /* 최소 1024px -> 1024pt 이상의 장치;데스크탑 */    
-        @media (max-width:1024px) {
+        /* 최대 768px -> 768px 이상의 장치;폰(360px) */    
+        @media (max-width:768px) {
             /* CSS기록 */
          body {background: lightgoldenrodyellow;}    
         }
