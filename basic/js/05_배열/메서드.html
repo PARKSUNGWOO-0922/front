@@ -231,7 +231,7 @@
 
          document.write('-------------map:기존배열변동없음,각요소를 변환하여 새배열생성------------------<br>');   
            datas =[1,2,3,4,5,6,7,8,9,10]; 
-         //기존배열을 두고 새배열을 생성한다 cf)forEach 단순반복뿐
+         //기존배열을 두고 새배열을 생성한다.배열의길이는유지 cf)forEach 단순반복뿐
          //map(콜백함수)
          //map(function(val,idx,arr))
          result = datas.map(function(val) {
@@ -254,10 +254,10 @@
           datas =[1,2,3,4,5,3,7,8,3,10]; 
           //indexOf(값,[fromIdx]):값에 대한 인덱스 반환,앞에서부터
           //lastIndexOf(값,fromIdx):값에 대한 인덱스 반환,뒤에서부터
-          document.write(datas.indexOf(3)+'<br>');//처음 등장
-          document.write(datas.indexOf(3,2)+'<br>');//
-          document.write(datas.lastIndexOf(3)+'<br>');//배열/문자열에서 마지막으로 등장하는 인덱스 반환
-          document.write(datas.lastIndexOf(3,3)+'<br>');
+          document.write(datas.indexOf(3)+'<br>');//처음 등장2
+          document.write(datas.indexOf(3,3)+'<br>');//5
+          document.write(datas.lastIndexOf(3)+'<br>');//배열/문자열에서 마지막으로 등장하는 인덱스 반환8
+          document.write(datas.lastIndexOf(3,3)+'<br>');2
 
 
 

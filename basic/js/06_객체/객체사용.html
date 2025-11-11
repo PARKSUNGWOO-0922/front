@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="var1">var1여기에 표시 된다.</p>
+    <p id="var2">var2여기에 표시 된다.</p>
+    <script>
+        const car= {
+            name:'소나타',
+            speed:100,
+            color:'white'
+        }
+        //객체.메서드()
+        document.write('잘가,write!');
+        //innerHTML 속성:HTML의 요소에 내용 지정
+        const var1= document.getElementById('var1');
+        const var2= document.getElementById('var2');
+
+        //p태그 내용 가져오기
+        //객체.innerHTML;(getter)
+        console.log(var1.innerHTML);
+        //객체.innerHTML  = 값;(setter)
+        var1.innerHTML = car.name;
+        var1.innerHTML = car.name+'입니다.';
+        var1.innerHTML = `<b>${car.name}<b>입니다.`;//소나타입니다.HTML태그인식
+
+
+        //객체.textContent;(getter)
+        console.log(var2.textContent);
+        //객체.textContent  = 값;(setter)
+        var2.textContent =`<b>${car.color}<b>입니다.`;//<b>white<b>입니다.HTML태그인식안함
+
+        ///출력순서 재확인
+
+
+    </script>
+</body>
+</html>

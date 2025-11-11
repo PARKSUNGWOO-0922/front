@@ -247,6 +247,10 @@ footer .top-btn i{
 }
    
 /*about  section common area */
+#about .parallax-bg {
+    background-image: url(/jfs/assets/img/bg-about.jpg);
+    background-position: 50% 100%;
+}
 #about .basic p {
     text-align: left !important;
 }
@@ -339,6 +343,7 @@ button {
 /* work section area:work.html */
 #work .parallax-bg {
     background-image: url(/jfs/assets/img/parallax2.jpg);
+    background-position: 50% 30%;
 }
 #work .portfolio {
     display: flex;
@@ -367,16 +372,18 @@ button {
 /* contact section area:contact.html */
 
 #contact .parallax-bg {
-    background-image: url(/jfs/assets/img/parallax3.jpg);
+    background-image: url(/jfs/assets/img/bg-contact.jpg);
+    background-position: 50% 50%;
 }
 
 #contact .container {
+    width: 1200px;
     display: flex;
-    justify-content: space-between;
+   justify-content: space-between;
 }
 #contact .map {
-    width: 280px;
-    height: 160px;
+    width: 880px;
+    height: 400px;
     border-radius: 5px;
     /* i 프레임과 map radius로 인한 둥근모서리 와 map의 사각모서리 차이*/
     overflow:hidden;
@@ -384,6 +391,7 @@ button {
 }
 #contact .contact {
     width: 600px;
+    text-align: left;
 }
 #contact .contact p {
     margin: 24px 0 16px;
