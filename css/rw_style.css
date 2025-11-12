@@ -205,7 +205,6 @@ button {
     /* work section area:work.html */
 #work .parallax-bg {
     background-image: url(/jfs/assets/img/parallax2.jpg);
-    background-position: 50% 30%;
 }
 #work .portfolio {
     display: flex;
@@ -228,16 +227,13 @@ button {
             transition: .2s ease-out;
         }
 #shadow:hover {
-    box-shadow: 0 0 6px rgba(35, 173, 278, 1);}
-    /* 모든장치:: 데스크탑(1920px)*/
-        body {
-            background: lightblue;
-        }
-        /* 테블릿
+    box-shadow: 0 0 6px rgba(35, 173, 278, 1);
+}
+        
+        /* 
             최대 768px -> 768px 이하의 장치:테블릿(768px),폰(360px)
         */
         @media (max-width: 1024px) {
-            /* CSS기록 */
             body {
                 /*vw,vh,vmax,vmin */
                 font-size: 2vw;
@@ -270,7 +266,7 @@ button {
              height: 240px;
             }  
         }
-        /* 최대 767px -> 768px 이상의 장치;폰(360px) */    
+        /* 최대 767px -> 768px 이하의 장치;폰(360px) */    
         @media (max-width:767px) {
              body {
                 /*vw,vh,vmax,vmin */
@@ -294,7 +290,7 @@ button {
                 padding: 0 24px;
             }
             footer .sns a i {
-                 font-size: 5.5vw;
+                 font-size: 6.5vw;
              }
              footer {
               padding: 100px 0px;
