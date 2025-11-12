@@ -37,6 +37,12 @@
         body {
             background: lightblue;
         }
+        /* oientation:portrait(세로) */
+        /* oientation:landscape(가로) */
+        /* 최대 767px -> 767px 이하의 장치 중 + 가로방향 */
+        @media(max-width:767px) and (orientation:landscape) {
+           body{ background: lightseagreen;}
+        }
         /* 테블릿
             최소 768px -> 768px 이상의 장치:테블릿(768px),데스크탑(1920px)
         */

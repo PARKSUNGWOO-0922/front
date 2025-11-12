@@ -224,8 +224,19 @@ footer .top-btn i{
     /* 뷰포트 크기로 높이 지정 */
     position:relative;/* 아래스크롤바 해결 */
     overflow: hidden;
+}
+#home .bgimg {
     height: 100vh;
-    background: url(./../assets/img/mark-koch-KiRlN3jjVNU-unsplash.jpg) no-repeat 30% 30%/cover fixed;
+    background: url(./../assets/img/light_mode.jpg) no-repeat 30% 30%/cover fixed;
+
+}
+#home.dark .bgimg {
+    filter:brightness(50%);
+    background-image: url(./../assets/img/dark_mode.jpg) ;
+}
+#home.dark h2 {
+    color:rgba(255,255,255,0.5);
+     text-shadow: 1px 1px 2px black, 0 0 25px red, 0 0 5px red;
 }
 #home h2 {
     /* background: #555; */
