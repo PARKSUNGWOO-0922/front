@@ -34,7 +34,7 @@
             overflow: hidden; 
         }
          #header::after {
-            content: '';
+            content: "";
             color: #fff;
             display: block;
             width: 100%;
