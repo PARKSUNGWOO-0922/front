@@ -42,22 +42,21 @@
         //객체.메서드()
         document.write('잘가,write!');
 
-        // getElementById()
-        //  - 문서의 id를 가진 요소를 가져온다(선택)
-        //  - CSS의 선택자 역할(#, ., 태그명, ...)
-        
-        // const 변수명= document.querySelector('선택자');
-        // const 변수명= document.getElementByClassName('클래스명');
-        
-        // const 변수명= document.getelementsByTagName('선택자');
-        // const 변수명= document.querySelector('선택자');
-        // const 변수명= document.querySelector('선택자');
+        /* 
+            단일 요소
+                const 변수명 = document.getElementById('아이디명');
+                const 변수명 = document.querySelector('CSS선택자');
+            같은 요소가 여러 개
+                const 변수명 = document.getElementsByClassName('클래스명')[인덱스];
+                const 변수명 = document.getElementsByTagName('태그명').item(인덱스);
+                const 변수명 = document.querySelectorAll('CSS선택자')[인덱스]; 
+        */
        
         const var1= document.getElementById('var1');
-        const var2= document.querySelector('#var2');//???????????확인요
+        const var2= document.querySelector('#var2');
 
         const var3= document.getElementsByClassName('var3')[0];
-        const var4= document.querySelectorAll('.var4').item(0);
+        const var4= document.querySelectorAll('.var4').item(1);
         const var5= document.getElementsByTagName('p')[4];
         
         //innerHTML 속성:HTML의 요소에 내용 지정

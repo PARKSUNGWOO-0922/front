@@ -9,31 +9,62 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/css/bootstrap.min.css"/>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/js/bootstrap.min.js" ></script>
 
- <!-- 
-    bg-light,bg-secondary 
-  -->
 </head>
 <body>
 <!-- 부트스트랩 프레임워크에서 class 이름을 미리 정의해 놓았다. -->
+<!-- 부트스트랩은 무엇을 공부하나? 
+    - 어떤 class 이름들이 있고, 
+    - class이름 붙이면 어떻게 동작하나! 
+-->
+    <!-- 컨테이너 클래스: 
+        container-fluid: 100% 가로 크기 
+        container: width: 1290px; padding: 0 12px;
+            중단점(576이하(xs), 576(sm), 768(md), 992(lg), 1200(xl), 1400(xxl))을 기준으로 최대 크기는 정해져 있다.
+        컨테이너는 row와 col로 나눈다.
+        col-[*]-[*]은 최대 12개로 구성된다.
+            첫 번째*은 중단점
+            두 번째*은 1~12 숫자
+    -->
+    <!-- 
+          background-color: #0DCAF0;
 
-<div class="container-fluid p-5 bg-primary text-white text-center" >
+        배경색
+          bg-primary, bg-secondary, bg-success, bg-danger, bg-warning, bg-info,, bg-light, bg-dark, bg-white, bg-transparent
+        텍스트        
+          text-primary, text-secondary, text-success, text-danger, text-warning, text-info, text-light, text-dark, text-white, text-muted
+    -->
+    <!-- 
+          text-align: center;
+          text-align: left;
+          text-align: right;
+
+          text-center
+          text-start
+          text-end
+    -->
+<div class="container-fluid p-5 bg-info text-white text-center" >
   <h1>My First Bootstrap Page</h1>
   <p>Resize this responsive page to see the effect!</p> 
 </div>
   
-<div class="container mt-5">
+<div class="container bg-info mt-5">
   <div class="row">
-    <div class="col-sm-4">
+    <div class="col-md-6 col-xl-3">
       <h3>Column 1</h3>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
       <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
     </div>
-    <div class="col-sm-4">
+    <div class="col-md-6 col-xl-3">
       <h3>Column 2</h3>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
       <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
     </div>
-    <div class="col-sm-4">
+    <div class="col-md-6 col-xl-3">
+      <h3>Column 3</h3>        
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+    </div>
+    <div class="col-md-6 col-xl-3">
       <h3>Column 3</h3>        
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
       <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
