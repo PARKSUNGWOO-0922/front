@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>캐로셀</title>
+    <title>캐로셀2</title>
     <style>
         @import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css);
         .body {
@@ -14,9 +14,11 @@
             height: 100vh;
             background-color: #ff636b
         }
+         /* 좌우 버튼 */
         .nextprev {
             /* absolute일경우 요소의 크기는 콘텐츠 크기,별도w가 주면됨 */
-            position: relative;/* relative는    100%값을 가짐 */
+            position: relative;
+            /* relative는    100%값을 가짐 */
             /* width: 100%; */
             display:flex;
             justify-content: space-between;
@@ -39,10 +41,8 @@
         .nextprev a:hover {
             color:rgba(247, 16, 27,0.5);
         }
-        .nextprev {
-            /* prev/next를 없애보고자 했으나..땡 */
-            /* text-indent: -99999em; 아이콘정보까지 안보임 */
-        }
+        
+        /* pagination 또는 indicator */
         .pagination {
             position: absolute;
             /* 

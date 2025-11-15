@@ -44,85 +44,64 @@
         
 
     */
-    p:nth-of-type(1) {
-        color:red;
-    }
-    h2:nth-of-type(1) {
-        color:rgb(131,191,214);
-    }
-    /* 첫번째 자식으로 h1이 오는 경우     */
-    h1:nth-child(1) {
-        font-style:italic;
-        color:green;
-    }
-    /*아래것 이상??? 답:div안에서 무조건 처음에 있어야 체크된다*/
-    div p:first-child {
-        font-style: italic;
-        color:greenyellow;
-    }
-    /* p중에 마지막 자식을 기점으로 세번째 녀석 */
-    p:nth-last-of-type(3) {
-        color:violet;
-    }
-    div h2:only-of-type {
-        color:blueviolet;
-    }
-    p:last-child {
-        font-style: italic;
-    }
-    p:nth-child {
-        font-style: italic;
-    }
-    /*###################나의필기######################  */
-    /* h1:only-of-type {border:1px solid red;} */
+ /* p요소 중 첫 번째 요소 선택 */
+        p:nth-of-type(1) {text-decoration: underline;} /* tdu */
+        p:first-of-type {text-decoration: underline;}
 
-    /* p:nth-of-type(2n-1) {color: red;  } */
-    /*n은 0,(-)는 없다. 즉.양의정수 사용해야함.
-                                            cf)2n-1수열식에서는 n은 0부터 시작된다 */
-            /* 첫번째 요소 선택 */
-    /* p:nth-of-type(1) {text-decoration: underline;  }      
-    p:first-of-type {text-decoration: underline;  }      
-    p:nth-last-of-type(6) {text-decoration: underline;  }       */
-    /* 마지막 요소 선택 */
-    /* p:nth-of-type(6) {text-decoration: underline;  }      
-    p:last-of-type {text-decoration: underline;  }      
-    p:nth-last-of-type {text-decoration: underline;  }       */
+        p:nth-child(1) {font-style: italic;} /* fs */ /* 적용x */
+        p:first-child {font-style: italic;} /* 적용x */
 
-               /* 짝수번째 선택 */
-     /* p:nth-of-type(even) {color: red;  }                                       
-     p:nth-of-type(2n) {color: red;  }       */
-     /* p요소중 홀수 번째 요소 선택 */ 
-     /* p:nth-of-type(2n+1) {color: blue;  }      
-     p:nth-of-type(2n-1) {color: blue;  }      
-     p:nth-of-type(odd) {color: blue;  }       */
+        /* p요소 중 마지막 번째 요소 선택 */
+        p:last-of-type {text-decoration: underline;}
+        p:nth-last-of-type(1) {text-decoration: underline;}
+        
+        p:last-child {font-style: italic;}
+        p:nth-last-child(1) {font-style: italic;}
 
-        /*h2:nth-of-type(1) {color: lightblue;  } */
-        /* :empty {
+        /* p요소 중 짝수 번째 요소 선택 */
+        p:nth-of-type(even) {color: red;}
+        p:nth-of-type(2n) {color: red;}
+
+        p:nth-child(even) {background-color: yellow;}
+        p:nth-child(2n) {background-color: yellow;}
+        
+        /* p요소 중 홀수 번째 요소 선택 */
+        p:nth-of-type(2n+1) {color: blue;}
+        p:nth-of-type(2n-1) {color: blue;}
+        p:nth-of-type(odd) {color: blue;}
+
+        p:nth-child(2n+1) {font-size: 40px;}
+        p:nth-child(2n-1) {font-size: 40px;}
+        p:nth-child(odd) {font-size: 40px;}
+
+        /* div 자식이 하나인 요소 */
+        div h2:only-of-type {border-left: 10px solid red;}
+        div h2:only-child {border-right: 10px solid blue;}
+
+        div:empty {
             display: block;
             width: 200px;
             height: 100px;
-            border:1px solid red;
-        } */
-    
-    /*#######################나의필기끝###############################  */
+            border: 1px solid red;
+        }
 </style>
 </head>
 <body>
-    <!-- <div>
+     <div>
         <h2>형제관계선택자</h2>
-    </div> -->
+    </div> 
     <div> </div>
-    
+    <p></p>
     <div>
-        <!-- <p>p:first-child</p> -->
-        <h1>1.형제관계 선택자 </h1>
-        <h2>2.형제 선택자 </h2>
-        <p>3.나는 1번째 문단이다.</p>
-        <p>4.나는 2번째 문단이다.</p>
-        <h2>5.인접형제 선택자 </h2>
-        <p>6.나는 3번째 문단이다.</p>
-        <p>7.나는 4번째 문단이다.</p>
-        <p>8.나는 5번째 문단이다.</p>
+        <h1>1)가상 클래스 선택자</h1>
+        <h2>2)~of-type</h2>
+        <p>3)~of-type은 태그 종류(즉, 타입)을 구별한다.</p>
+        <p>4)나는 2번째 문단이다.</p>
+        <h2>5)~child</h2>
+        <p>6)~child은 태그 종류를 구별하지 않는다.</p>
+        <p>7)나는 4번째 문단이다.</p>
+        <p>8)나는 5번째 문단이다.</p>
+        <p>9)나는 6번째 문단이다.</p>
     </div>
 
     
