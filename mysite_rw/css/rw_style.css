@@ -101,6 +101,45 @@ footer .sns i {
     font-size: 2.4rem;
     margin: 0 -3px;
 }
+/* home area */
+#home {
+    /* 뷰포트 크기로 높이 지정 */
+    position:relative;/* 아래스크롤바 해결 */
+    overflow: hidden;
+}
+#home .bgimg {
+    height: 100vh;
+    background: url(./../assets/img/light_mode.jpg) no-repeat 30% 30%/cover fixed;
+
+}
+#home.dark .bgimg {
+    /* filter:brightness(50%); */
+    background-image: url(./../assets/img/dark_mode.jpg) ;
+}
+#home.dark h2 {
+    color:rgba(255,255,255,0.5);
+     text-shadow: 1px 1px 2px black, 0 0 25px red, 0 0 5px red;
+}
+#home h2 {
+    /* background: #555; */
+    font-size: 2.6rem;
+    padding: 8px 24px 10px 30px;
+}
+   .circle_ani {
+    position: absolute;
+    top: -30px;
+    right: -30px;
+    width: 135px;
+    height: 136px;
+    transition: linear 5s;
+    animation:circle 50s linear infinite;
+}
+    @keyframes circle {
+        0%{transform: rotate(0deg) scale(2.5)}
+        100%{transform: rotate(720deg) scale(2.5)}
+            
+}
+
 /* #contact h2 {
     font-size: 3.6rem;
 } */
@@ -304,9 +343,80 @@ button {
     display: block;
     font-size: 2.4vw;
 }
+/* <contact area> */
+#contact a {
+    color: #777;
+}
 
+#contact button {
+    color: #fff;
+}
+
+#contact .addr{
+    font-size: 1.8rem;
+}
+#contact .parallax-bg {
+    background-image: url(/jfs/assets/img/bg-contact.jpg);
+    background-position: 50% 50%;
+}
+
+#contact .container {
+    width: 1200px;
+    display: flex;
+   justify-content: space-between;
+}
+#contact .map {
+    width: 880px;
+    height: 400px;
+    border-radius: 5px;
+    /* i 프레임과 map radius로 인한 둥근모서리 와 map의 사각모서리 차이*/
+    overflow:hidden;
+    margin-right: 32px;
+}
+#contact .contact {
+    width: 600px;
+    text-align: left;
+}
+#contact .contact p {
+    margin: 24px 0 16px;
+}
+#contact .frm-input {
+    display: flex;
+    justify-content: space-between;
+    gap:10px;
+  
+}
+#contact input {
+   width:100%;
+   height: 45px;
+   padding-left: 16px; 
+}
+#contact textarea  {
+    width: 100%;
+    /* 텍스트영역 상자의 크기 조정 불가 */
+    resize: none;
+    height: 150px;
+    margin-top: 10px;
+    padding-top: 16px;
+    padding-left: 16px;
+}
+
+#contact button {
+    background: #111;
+  
+}
+#contact i {
+    margin-right: 8px;
+}
+#contact .addr i {
+    margin-right: 16px;
+}
+#contact .frm-btn {
+    text-align: right;
+}
+/* <--/contact area---> */
         /* 
-            최대 768px -> 768px 이하의 장치:테블릿(768px),폰(360px)
+            테블릿
         */
         @media (max-width: 1024px) {
             body {
@@ -332,14 +442,14 @@ button {
                 width: 100%;
             
             } */
-
+            /* about 섹션 - counter */
             #about .count ul {
             flex-wrap:wrap;
             gap:16px;
  
             }
             #about .count ul li{
-              flex: calc(50%-8px);
+              flex: calc(50% - 8px);
             }
             #work .portfolio {
             flex-wrap: wrap;
@@ -349,6 +459,11 @@ button {
              flex:48%;
              height: 240px;
             }  
+            #contact .container {
+            width: 800px;
+            display: flex;
+            justify-content: space-between;
+}
         }
         /* 최대 767px -> 768px 이하의 장치;폰(360px) */    
         @media (max-width:767px) {
@@ -367,7 +482,18 @@ button {
             }
             .top-btn {
                 font-size: 4.5vw;
-            }    
+            }
+            p {
+                font-size:4.0vw;
+            }
+    
+        @keyframes circle {
+        0%{transform: rotate(0deg) scale(1.0)}
+        100%{transform: rotate(720deg) scale(1.0)}
+            
+}
+            
+
            
             #work .portfolio {
                 flex-wrap: wrap;
@@ -382,6 +508,31 @@ button {
             #work .portfolio li {
             flex:100%;
         }
-
+        #contact .container {
+            margin-right: 15px;
+            display:block;
+            width: 350px;
         }
-        
+        #contact .frm-input  {
+            width:50%;
+            display:flex;
+            flex-direction: column;
+            
+        }
+        #contact .frm-btn {
+            display: flex;
+            flex-direction: column;
+            width:28%;
+            margin-left: 30%;
+        }
+        #contact form {
+            margin: 10px;
+        }
+        #contact .contact p {
+            padding-left: 5px;
+        }
+        #contact textarea {
+            width:340px;
+        }
+        }
+       

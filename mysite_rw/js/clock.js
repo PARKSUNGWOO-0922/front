@@ -123,8 +123,9 @@
             //문자열과 표현식(변수등) 구별 : ${표현식}
             //불필요한 문자열(+,"," 등) 제거
 
-            clock = `${yy}년 ${mm}월 ${dd}일 (${day}) ${ampm} ${hour}:${minute}:${second}`;
+            clock = `${yy}년 ${mm}월${dd}일 (${day}) ${ampm}${hour}:${minute}:${second}`;
 
+           
             clockBox.innerHTML = clock;
         }
         //setInterval(함수,시간)
