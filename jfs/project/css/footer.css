@@ -41,7 +41,7 @@ footer .inquiry {
 footer .inquiry .inner{
     display: flex;
     justify-content: space-between;/* jcsb */
-    width: 1280px;/* 반응형을 위해서는 max,min등 */
+    width: 1280px;/* 반응  형을 위해서는 max,min등 */
     margin: auto;
     /* m:a */
     
