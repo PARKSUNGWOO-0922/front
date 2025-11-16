@@ -87,7 +87,7 @@ footer .info {
     background:  #222  url(./../assets/img/logo.png)  no-repeat 80px 70px;/* 뭔~흰점이생겨서 또 이동 "확인요"*/
     /* 기본값은 background-origin:paddding-box */
     /* background-origin:conent-box */
-    padding: 50px 250px;
+    padding: 50px 100px;
     
 }
 footer .info .inner{/* inner ?? 백그라운드를 인포로 */
@@ -99,9 +99,13 @@ footer .info .inner{/* inner ?? 백그라운드를 인포로 */
     /*  margin-left: 250px; */       /* 좌측 로고자리 여분만들기 */
 }
 footer .util-box {
+    width: 888px;
+    position: relative;
     display: flex;/* bnb와 sns 정렬 */
 }
-
+.left-info {
+    margin-left: 120px;
+}
 footer .left-info ul {
     display: flex;/* bnd,sns,com-info 각ul요소 정렬,즉 p태그는 제자리...*/
 }
@@ -120,7 +124,48 @@ footer .sns li:nth-last-of-type(4) img {
     width: 28px;
     height: 25px;
 }
+footer .inquiry .inner .fs-icon {
+    position: relative; 
+}
+footer .inquiry .inner .fs-index {
+    position: relative;
+    margin-left: 250px;
+    width:200px;
+    z-index: 2;
+}
+footer .inquiry .inner .fs-icon img {
+    position: absolute;
+    display: flex;
+    width:44%;
+    top: -20px;
+    left:-32px;
+    z-index: 1;
+}
+footer .inner .fs {
+    position: relative;
+    top: 40px;
+    width: 320px;
+    height: 50px;
+    margin-left: 56px;
+    padding-left: 10px;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 50px;
+    background-color: #494949;
+    color:#777;
+}
+footer .inner .fs img {
+    position: absolute;
+    width: 15px;
+    right: 10px;top: 20px;
+}
 
+.util-box .bnb li {
+    margin: 14px 20px;
+}
+.util-box .sns li {
+    margin: 14px 20px;
+}
 
 
 
