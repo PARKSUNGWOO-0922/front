@@ -54,21 +54,23 @@
         }
 
         .custom-checkbox input {
-            display: none;
+            display: none;/* 원래input박스숨김 */
         }
 
         .custom-checkbox .checkmark {
             width: 11px;
             height: 11px;
-            background-color: #eee;
-            border: 1px solid gray;
+            background-color: #eee;/* 체크전상태 */
+            border: 1px solid gray;/* 체크전상태 */
             border-radius: 0px;
             /* 여기서 둥글기 조정 가능 */
-            display: inline-block;
+            display: inline-block;/* w/h 주기위해 */
             transition: 0.2s;
         }
 
         /* 가상클래스 선택자 :checked */
+        /* 즉 ✔ 체크박스를 체크했을 때,
+            바로 뒤에 있는 .checkmark 에 스타일을 적용하라는 의미 */
         .custom-checkbox input:checked+.checkmark {
             background-color: #2196F3;
         }
@@ -177,7 +179,7 @@
 <!-- 커스텀 체크박스 -->
         <label class="custom-checkbox">
             <input type="checkbox">
-            토글(toggle) : <span class="checkmark"></span>
+            커스텀체크박스->토글(toggle) : <span class="checkmark"></span>
         </label>
 
         <label class="custom-checkbox">

@@ -17,7 +17,7 @@
 <body>
     <!-- ---------------------------------fieldset---------------------- -->
     <!-- w3c복사본 -->
-    <form action="ele.jsp">
+    <form action="/action_page.php">
         <fieldset>
             <legend>Personalia:</legend>
             <label for="fname">First name:</label><br>
@@ -34,18 +34,23 @@
 
         <label for="pin">PIN:size4 입력칸의 너비</label><br>
         <input type="text" id="pin" name="pin" size="4">
+    </form>
 
         <!-- button은 기본값이 type="submit" -->
         <!-- form,fieldest 블록요소 -->
         <!-- 이벤트(event):click(클릭) -->
         <!-- 이벤트(event):속성 onclick -->
         <!-- 자바스크립트 이벤트란 웹 페이지에서 발생하는 사용자의 행동이나 시스템의 변화를 의미합니다 -->
+    <form action="ele.jsp">     
         <fieldset>
             <legend>캡션:설명글</legend>
             <input type="text" id="naming">
             <label for="naming"></label>
             
             <button>그냥button버튼</button>
+            <button type="submit">전송</button>
+            <button type="reset">초기화</button>
+            <button type="button">버튼</button>
             <button type="button" onclick="alert('Hello World!')">Click Me!버튼으로 onclick="allert" 속성사용</button>
         </fieldset>
 
