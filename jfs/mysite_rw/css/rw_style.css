@@ -1,0 +1,538 @@
+@charset "utf-8";
+
+
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css');
+
+/* 웹 폰트:방법1 -cdn 모든스타일이 들어있다.*/
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Noto+Sans+KR:wght@100..900&display=swap');
+     @font-face {
+        font-family: "Lato-Regular";
+        src: url(./../assets/font/Lato/Lato-Regular.ttf);/* 작업영역상관없이 작동 */
+     }
+     @font-face {
+        font-family: Lato-Thin;
+        src:url(https://PARKSUNGWOO-0922.github.io/jfs/assets/font/Lato-Thin.ttf)
+     }
+/* 초기화(reset) */
+* {
+    box-sizing: border-box;
+}
+:root {
+    /* 페이지 내에서 이동 시 부드러움 움직임 효과 */
+    scroll-behavior: smooth;/* top버튼 눌렀을때 */
+}
+
+body,
+h1,
+h2,
+h3,
+p,
+ul {
+    margin: 0;
+}
+
+ul {
+    padding: 0;
+    list-style: none;
+}
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+a {
+    text-decoration: none;/* to the top 밑줄없애기 */
+}
+iframe {
+    width:100%;
+    height:100%;
+}
+button {
+    border:none;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #ccc;
+}
+
+/* 폰트설정*/
+:root {
+    font-size: 10px;
+}
+body {
+    font:1.5rem/1.6 "Lato-Regular", sans-serif;
+    color:#777;
+
+    }
+
+h2 {
+    font-weight: 400;
+    font-size: 3.6rem;
+    color:#fff;/* 영문자보다 16잔수로 */
+    /* 글자사이 간격:자간 */
+    letter-spacing: 1rem;/* ls */
+    text-transform: uppercase;/* tt */
+}
+h3 {
+    font-size: 2.4rem;
+}
+
+header a
+ {
+    /* background-color: #555; */
+    color:#f0f0f0;
+
+}
+footer a , footer p{
+    color:#fff;
+}
+/* a태그에 글자색의 경우 a태그에 직접 지정(why:상속되지않기때문) */
+footer .top-btn a {
+    color:#333
+
+}
+footer .sns {
+    margin: 24px;
+}
+
+footer .sns i {
+    font-size: 2.4rem;
+    margin: 0 -3px;
+}
+/* home area */
+#home {
+    /* 뷰포트 크기로 높이 지정 */
+    position:relative;/* 아래스크롤바 해결 */
+    overflow: hidden;
+}
+#home .bgimg {
+    height: 100vh;
+    background: url(./../assets/img/light_mode.jpg) no-repeat 30% 30%/cover fixed;
+
+}
+#home.dark .bgimg {
+    /* filter:brightness(50%); */
+    background-image: url(./../assets/img/dark_mode.jpg) ;
+}
+#home.dark h2 {
+    color:rgba(255,255,255,0.5);
+     text-shadow: 1px 1px 2px black, 0 0 25px red, 0 0 5px red;
+}
+#home h2 {
+    /* background: #555; */
+    font-size: 2.6rem;
+    padding: 8px 24px 10px 30px;
+}
+   .circle_ani {
+    position: absolute;
+    top: -30px;
+    right: -30px;
+    width: 135px;
+    height: 136px;
+    transition: linear 5s;
+    animation:circle 50s linear infinite;
+}
+    @keyframes circle {
+        0%{transform: rotate(0deg) scale(2.5)}
+        100%{transform: rotate(720deg) scale(2.5)}
+            
+}
+
+/* #contact h2 {
+    font-size: 3.6rem;
+} */
+
+#contact a {
+    color: #777;
+}
+
+#contact button {
+    color: #fff;
+}
+
+#contact .addr{
+    font-size: 1.8rem;
+}
+textarea {
+   font: 1.5rem/1.6 "Lato-Regular", sans-serif; 
+}
+/* 가상 요소 클래스 ::placeholder*/
+::placeholder {
+    font:1.5rem/1.6 "Lato-Regular", sans-serif;
+    color:#ccc;
+}
+
+/* common(공통) */
+/* 글자조정 */
+h2 {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    /* trft */
+    transform: translate(-50%, -50%);/* trft */
+    text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+}
+h3 {
+    text-align:center;
+    margin:64px 0 10px;
+}
+ h3 + p {
+    text-align: center;
+}
+
+/* header area*/
+header {
+    z-index:99999;
+    position:fixed;
+}
+
+header .gnb ul {
+    display: flex;
+}
+header .gnb li a {
+    display: inline-block;/* 약간 밑으로 */
+    padding: 8px 16px;
+    /
+}
+
+header .gnb li a:hover {
+    background: #333;
+}
+header .gnb li i {
+    margin-right: 8px;
+}
+
+/* footer area */
+footer {
+    background: #555;
+    text-align:center;
+    padding: 100px;
+}
+footer:hover {
+    background: #111;
+}
+/* to the top button */
+footer .top-btn {
+    display: inline-block;
+    background:#ddd; 
+    padding: 8px 16px;
+    
+}
+footer .top-btn i{
+    margin-right: 8px;
+}
+/* work+contact  section common area */
+.parallax-bg {
+    position: relative;
+    height: 400px;
+    background: no-repeat 50% 50% / cover fixed;
+}
+.container {
+    max-width: 900px;
+    margin: 48px auto 96px;
+    text-align: center;
+}
+button {
+    background: #f1f1f1;
+    padding: 12px 24px;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+    /* work section area:work.html */
+#work .parallax-bg {
+    background-image: url(/jfs/assets/img/parallax2.jpg);
+}
+#work .portfolio {
+    display: flex;
+    gap:16px;
+}
+#work .portfolio li {
+    width: 25%;
+    height: 162px;
+}
+
+#shadow {
+      margin: 64px 0 0;
+            width: 200px;
+            height: 50px;
+            background : inherit;
+            color:#000;
+            box-shadow: none;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            transition: .2s ease-out;
+        }
+#shadow:hover {
+    box-shadow: 0 0 6px rgba(35, 173, 278, 1);
+}
+   
+/*about  section common area */
+#about .parallax-bg {
+    background-image: url(/jfs/assets/img/bg-about.jpg);
+    background-position: 50% 100%;
+}
+#about .basic p {
+    text-align: left !important;
+}
+#about .basic strong {
+    text-decoration: underline 2px wavy rgba(255,0,0,0.8);
+}
+#about .basic b {
+    display: inline-block;
+    margin-bottom: 36px;
+}
+#about .basic img {
+    height: 280px;
+    border-radius: 5px;
+    filter:opacity(50%)
+}
+#about .basic img:hover {
+    filter:none;
+}
+#about .basic .inner {
+    display: flex;
+    gap: 48px;
+    margin:48px 0 130px;
+}
+#about .basic .inner div{
+   flex:50%
+}
+#about .basic .inner p{
+   flex:50% /* 수정 */
+}
+#about .skill > p {
+    /* margin: 64px 0; */
+    padding-bottom:36px ;
+    font-size: 1.8rem;  
+}
+#about .skill .inner p{
+    text-align: left;
+    letter-spacing: 1rem;
+    margin: 12px 0;
+}
+#about .progressbar {
+    background: #f1f1f1;
+    color:#fff;
+}
+#about .progressbar div{
+    /* height: 35px;
+    line-height: 35px; */
+    padding: 6px;
+    background: #616161;
+}
+#about .progressbar:nth-of-type(1) div{
+    width: 85%;
+}
+#about .progressbar:nth-of-type(2) div{
+    width: 95%;
+}
+#about .count ul {
+    display: flex;
+    text-align: center;
+    background-color: #616161;
+    color:#fff;
+    padding: 36px;
+}
+#about .count ul li{
+   flex:0 1  25%;
+}
+#about .count ul li span{
+    display: block;
+    font-size: 2.4vw;
+}
+/* <contact area> */
+#contact a {
+    color: #777;
+}
+
+#contact button {
+    color: #fff;
+}
+
+#contact .addr{
+    font-size: 1.8rem;
+}
+#contact .parallax-bg {
+    background-image: url(/jfs/assets/img/bg-contact.jpg);
+    background-position: 50% 50%;
+}
+
+#contact .container {
+    width: 1200px;
+    display: flex;
+   justify-content: space-between;
+}
+#contact .map {
+    width: 880px;
+    height: 400px;
+    border-radius: 5px;
+    /* i 프레임과 map radius로 인한 둥근모서리 와 map의 사각모서리 차이*/
+    overflow:hidden;
+    margin-right: 32px;
+}
+#contact .contact {
+    width: 600px;
+    text-align: left;
+}
+#contact .contact p {
+    margin: 24px 0 16px;
+}
+#contact .frm-input {
+    display: flex;
+    justify-content: space-between;
+    gap:10px;
+  
+}
+#contact input {
+   width:100%;
+   height: 45px;
+   padding-left: 16px; 
+}
+#contact textarea  {
+    width: 100%;
+    /* 텍스트영역 상자의 크기 조정 불가 */
+    resize: none;
+    height: 150px;
+    margin-top: 10px;
+    padding-top: 16px;
+    padding-left: 16px;
+}
+
+#contact button {
+    background: #111;
+  
+}
+#contact i {
+    margin-right: 8px;
+}
+#contact .addr i {
+    margin-right: 16px;
+}
+#contact .frm-btn {
+    text-align: right;
+}
+/* <--/contact area---> */
+        /* 
+            테블릿
+        */
+        @media (max-width: 1024px) {
+            body {
+                /*vw,vh,vmax,vmin */
+                font-size: 2vw;
+            }
+            h2 {
+                font-size: 6vw;
+            }
+            h3 {
+                font-size: 4vw;
+            }
+            button {
+                font-size: 2.5vw;
+            }
+            .top-btn {
+                font-size: 2.5vw;
+            }
+            footer .sns a i {
+                font-size: 4vw;
+            }
+             /* .container {
+                width: 100%;
+            
+            } */
+            /* about 섹션 - counter */
+            #about .count ul {
+            flex-wrap:wrap;
+            gap:16px;
+ 
+            }
+            #about .count ul li{
+              flex: calc(50% - 8px);
+            }
+            #work .portfolio {
+            flex-wrap: wrap;
+            padding: 0 24px;
+            }
+          #work .portfolio li {
+             flex:48%;
+             height: 240px;
+            }  
+            #contact .container {
+            width: 800px;
+            display: flex;
+            justify-content: space-between;
+}
+        }
+        /* 최대 767px -> 768px 이하의 장치;폰(360px) */    
+        @media (max-width:767px) {
+             body {
+                /*vw,vh,vmax,vmin */
+                font-size: 3.5vw;
+            }
+            h2 {
+                font-size: 10vw;
+            }
+            h3 {
+                font-size: 7vw;
+            }
+            button {
+                font-size: 4vw;
+            }
+            .top-btn {
+                font-size: 4.5vw;
+            }
+            p {
+                font-size:4.0vw;
+            }
+    
+        @keyframes circle {
+        0%{transform: rotate(0deg) scale(1.0)}
+        100%{transform: rotate(720deg) scale(1.0)}
+            
+}
+            
+
+           
+            #work .portfolio {
+                flex-wrap: wrap;
+                padding: 0 24px;
+            }
+            footer .sns a i {
+                 font-size: 6.5vw;
+             }
+             footer {
+              padding: 100px 0px;
+             }
+            #work .portfolio li {
+            flex:100%;
+        }
+        #contact .container {
+            margin-right: 15px;
+            display:block;
+            width: 350px;
+        }
+        #contact .frm-input  {
+            width:50%;
+            display:flex;
+            flex-direction: column;
+            
+        }
+        #contact .frm-btn {
+            display: flex;
+            flex-direction: column;
+            width:28%;
+            margin-left: 30%;
+        }
+        #contact form {
+            margin: 10px;
+        }
+        #contact .contact p {
+            padding-left: 5px;
+        }
+        #contact textarea {
+            width:340px;
+        }
+        }
+       

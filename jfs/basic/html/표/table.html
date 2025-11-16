@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>표:table</title>
+    <style>
+table {
+  display: table;
+  /* 기본값 */
+  font-family: arial, sans-serif;
+  /* border-collapse: separate; */
+  /* 기본값 */
+  border-collapse: collapse;
+  /* border-spacing은 border-collapse가 collapse일때는 적용되지않는다 */
+  border-spacing: 10px;
+}
+th,td {
+    
+    width: 300px;
+    /* table에도 설정가능하나, 일관된 크기를 원하면 */
+    border: 1px solid #ccc;
+    padding: 8px;
+}
+th {
+    /* 기본값 */
+    /* text-align: center; */
+}
+td {
+    /* 기본값 */
+  /* text-align: left; */
+}
+/* 줄무늬 */
+tr:nth-child(even) {
+  background-color: #ddd;
+}
+table {
+    margin-top: 50px;
+table1 {
+  /* 좌우 상하 */
+  border-spacing: 10px 20px;
+
+}
+}
+.table2 {
+    width: 100%;
+}
+.table2 th:first-of-type {
+    width: 70%;
+}
+.table2 tr:first-child ,.table2 tr:nth-child(2){
+    height: 150px;  
+    vertical-align: top;/*셀 내부 수직 정렬 */
+    text-align: right;  /*셀 내부 수평 정렬 */
+}
+</style>
+
+  </head>
+  <body>
+    <!-- 2차원
+            table
+                caption:테이블 제목.table태그 바로밑에 작성
+                colgroup
+                    col
+                thead
+                tbody
+                tfoot
+
+                tr:table row,행
+                    th:table header항목(item)의 제목,bold,가운데맞춤
+                    td:table cell, 내용
+                병합(merge):두 개이상의 셀을 하나로 묶는다.
+                <th colspan="숫자 rowspan="숫자>
+                <td colspan="숫자 rowspan="숫자>
+                    -->
+    <!-- 블록레벨요소: table -->
+    <table class="table1">
+        <!-- th와 td 는 tr의 자식이다. -->
+      <tr>
+        <th>Company</th>
+        <th>Contact</th>
+        <th>Country</th>
+      </tr>
+      <tr>
+        <td>Alfreds Futterkiste</td>
+        <td>Maria Anders</td>
+        <td>Germany</td>
+      </tr>
+      <tr>
+        <td>Centro comercial Moctezuma</td>
+        <td>Francisco Chang</td>
+        <td>Mexico</td>
+      </tr>
+      <tr>
+        <td>Ernst Handel</td>
+        <td>Roland Mendel</td>
+        <td>Austria</td>
+      </tr>
+     
+      </tr>
+    </table>
+    <table class="table2">
+      <tr>
+        <th>Company</th>
+        <th>Contact</th>
+        <th>Country</th>
+      </tr>
+      <tr>
+        <td>Alfreds Futterkiste</td>
+        <td>Maria Anders</td>
+        <td>Germany</td>
+      </tr>
+      <tr>
+        <td>Centro comercial Moctezuma</td>
+        <td>Francisco Chang</td>
+        <td>Mexico</td>
+      </tr>
+      <tr>
+        <td>Ernst Handel</td>
+        <td>Roland Mendel</td>
+        <td>Austria</td>
+      </tr>
+     
+      </tr>
+    </table>
+
+    <table class="table3">
+  <tr>
+    <th>Firstname</th>
+    <td>Jill</td>
+    <td>Eve</td>
+  </tr>
+  <tr>
+    <th>Lastname</th>
+    <td>Smith</td>
+    <td>Jackson</td>
+  </tr>
+  <tr>
+    <th>Age</th>
+    <td>94</td>
+    <td>50</td>
+  </tr>
+</table>
+
+<table class="table4">
+  <tr>
+    <!-- colspan="2"은 두개의 열 셀을 하나로 합치기 -->
+    <th colspan="2">Name</th>
+    <th>Age</th>
+    <!-- <th>Age</th> -->
+  </tr>
+  <tr>
+    <td>Jill</td>
+    <td>Smith</td>
+    <td>50</td>
+  </tr>
+  <tr>
+    <td>Eve</td>
+    <td>Jackson</td>
+    <td>94</td>
+  </tr>
+</table>
+
+<table class="table5">
+  <caption>Monthly savings</caption>
+  <tr>
+    <th>Month</th>
+    <th>Savings</th>
+  </tr>
+  <tr>
+    <td>January</td>
+    <td>$100</td>
+  </tr>
+  <tr>
+    <td>February</td>
+    <td>$50</td>
+  </tr>
+</table>
+  </body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS 함수 return</title>
+</head>
+<body>
+    <script>
+        /* 
+            선언적 함수 선언
+                function 함수명([매개변수, ...]) {
+                    코드;
+                    [return 값;]
+                }
+
+            함수 호출
+                함수명([인자, ...])
+        */
+
+        // 전역변수 vs 지역변수(매개 변수)
+        let sum = 12345; // 전역변수
+        // let sum; // 재선언❌
+        // Uncaught SyntaxError: Identifier 'sum' has already been declared
+
+        // 외부로 부터 값(자연수)을 입력받아
+        // 1부터 입력 받은 숫자까지 합계
+
+        let num; // 전역변수
+        function add(name, num) {
+            document.write(name + '이 숫자 ' + num + '을 입력하였습니다. 1부터' + num + '까지의 합은 <br>');
+
+            // 템플릿 리터럴
+            // 1. 문자열 전체를 백틱(`)으로 묶는다.
+            // 2. ${변수|표현식|함수호출문}
+            // 3. 불필요한 문자열(+, ')은 삭제
+            // 4. 참고: HTML 태그를 인식한다.
+            document.write(`${name}이 숫자<b style="color:red;">${num}</b>을 입력하였습니다. 1부터 ${num}까지의 합은 `);
+            sum = 0; // 전역변수
+            console.log(sum);//0
+            for (let i=1; i<=num; i++) {
+                sum += i;
+            }
+            return sum;
+        }
+        // Uncaught ReferenceError: 홍길동 is not defined
+        let result = add('홍길동', 10); // 전역변수
+        document.write(result + '입니다.<br>');
+
+        document.write(add('박길동', 100) + '입니다.');
+
+        console.log(sum);
+
+        // 덧셈 연산 함수
+        function add(x, y) {
+            return x + y
+        }
+        // 뺄셈 연산 함수
+        function subtract(x, y) {
+            return x - y
+        }
+        // 곱셈 연산 함수
+        function multiply(x, y) {
+            return x * y
+        }
+        // 나눗셈 연산 함수
+        function divide(x, y) {
+            return x / y
+        }
+
+        // 출력
+        document.write('<br>------------------------------------<br>');
+        document.write(add(5, 2)+'<br>');
+        const addition = add;
+        document.write(`${addition(5, 2)}<br>`);
+
+    </script>
+</body>
+</html>

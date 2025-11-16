@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>2D변환</title>
+    <style>
+      /* 
+            transform: 값 값 값 ...; (,없이 작성)
+                translate(x,y)  x,y위치이동
+                translateX(x)    x위치이동
+                translateY(y)    y위치이동
+                    - 0을 기준으로 양수이면 오른쪽, 아래쪽 이동
+                    - 음수이면 왼쪽/위쪽으로 이동한다.
+                rotate()     회전
+                scaleX()     크기
+                scaleY()
+                scale()
+                skewX()      기울기
+                skewY()
+                skew()
+                matrix()     혼합
+        */
+      .outer {
+        position: relative;
+        width: 300px;
+        height: 300px;
+        background: lightblue;
+      }  
+      .inner {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        /* transform: translate(-50%); */
+        width: 100px;
+        height: 40px;
+        border-radius: 50px;
+        background-color: lightcoral;
+        /*
+             transform: translate(x위치, y위치); 
+             transform: translate(x위치);
+             transform: translate(y위치);
+        */
+        transform: translate(-50%, 0%); 
+        /* 기본값..이라기 보다는 시작이자돌아올위치인거같다.포지션으로 left:50% 된위치에서 -50%이동함으로 center 위치하게 된것같다 */
+        transition:1.5s;
+        opacity: 0;/* 시작이자돌아올값:밑바닥에붙어있으나 투명처리 */
+        text-align: center;
+        line-height: 40px;
+    }
+    .outer:hover .inner{
+        transform: translate(-50%, -30px);/* 그자리(-50% x위치재지정하고, y값을(-)에서 위로 이동 */
+        opacity: 1;
+
+        
+      }
+    </style>
+  </head>
+  <body>
+    <div class="outer">
+        <div class="inner">
+            위치이동
+        </div>
+    </div>
+  </body>
+</html>

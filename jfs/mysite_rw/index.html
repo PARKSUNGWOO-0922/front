@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- 
+        페이지의 치수 및 크기조정을 제어   
+        - width=device-width:장치의화면 너비(장치에 따라 다름)를 따르도록 페이지너비를 설정
+        - initial-scale=1.0:브라우저에서 페이지를 처음 로드할때 초기 줌 레벨을 설정
+    -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>개인사이트</title>
+    <link rel="stylesheet" href="/jfs/mysite_rw/css/rw_style.css">
+    
+</head>
+<!-- 참고사이트:https://freehtml5.co/ -->
+ <!-- https://freehtml5.co/preview/?item=profile-free-html5-bootstrap-template-for-personal-and-vcard,-resume-websites -->
+<body class="body_hidden">
+    <!-- header -->
+     <header>
+    <!-- 1depth(깊이) GNB:Global(전역) Navigation Bar -->
+     <nav class="gnb">
+         <ul>
+             <li><a href="/jfs/index.html">Home</a></li>
+             <li><a href="/jfs/mysite_rw/sub/about.html"><i class="fa-solid fa-user-tie"></i>About</a></li>
+             <li><a href="/jfs/mysite_rw/sub/work.html"><i class="fa-solid fa-laptop-code"></i>Portfolio</a></li>
+             <li><a href="/jfs/mysite_rw/sub/"><i class="fa-solid fa-envelope"></i>contact</a></li>
+            </ul>
+    </nav>
+     </header>
+     <!-- section -->
+    <div id="home" >
+        <div class="bgimg"></div>
+        <h2 id="clock">Gil-dong Hong</h2>
+        <div class="circle_ani"><img src="assets/img/portfolio.svg" alt="나의작품"></div>
+    </div>
+    <!-- footer -->
+    <footer>
+        <div class="top-btn">
+            <a href="#top"><i class="fa-solid fa-arrow-up" ></i>To the top</a>
+        </div>
+        <div class="sns">
+            <a href="#"><i class="fa-brands fa-square-facebook"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-square-snapchat"></i></a>
+            <a href="#"><i class="fa-brands fa-pinterest-p"></i></a>
+            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+        <p>&copy; 2025 HGD. All rights reserved.</p>
+    </footer>
+    <script src="js/clock.js"></script>
+    <script src="js/dark.js"></script>
+</body>
+</html>

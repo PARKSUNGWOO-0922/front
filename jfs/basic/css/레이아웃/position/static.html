@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>static</title>
+    <style>
+        /* 들여쓰기(정렬)shift+alt+f */
+        div.static {
+            /* 
+                position:위치;
+                    기본값:static;
+                    relative
+                    absolute
+                    fixed
+                    sticky
+             */
+             /* static은 left,top,right,bottom속성은 적용되지 않는다. */
+             width: 100px;
+             height: 100px;
+             left: 100px;/* 작동안함 */
+             top: 100px;/* 작동안함 */
+            position: static;/* 기본값 */
+            border: 3px solid #73AD21;
+        }
+    </style>
+</head>
+<body>
+    <div class="static">static
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>폼의요소</title>
+    <style>
+        textarea:nth-last-of-type(2) {
+            width: 300px;
+            height: 150px;
+            resize: none;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- ---------------------------------fieldset---------------------- -->
+    <!-- w3c복사본 -->
+    <form action="/action_page.php">
+        <fieldset>
+            <legend>Personalia:</legend>
+            <label for="fname">First name:</label><br>
+            <input type="text" id="fname" name="fname" value="John"><br>
+            <label for="lname">Last name:</label><br>
+            <input type="text" id="lname" name="lname" value="Doe"><br><br>
+            <input type="submit" value="Submit">
+        </fieldset>
+        <!-- w3c복사본 -->
+        <!-- size:입력 상자에 표시할 글자 수, 한글의경우:2byte,영문/숫자의경우 1byte -->
+        <!-- 예)size=4: 한글4자,영문/숫자8자 -->
+        <label for="fname2">First name:size 40 입력칸의너비</label><br>
+        <input type="text" id="fname2" name="fname" size="50"><br>
+
+        <label for="pin">PIN:size4 입력칸의 너비</label><br>
+        <input type="text" id="pin" name="pin" size="4">
+    </form>
+
+        <!-- button은 기본값이 type="submit" -->
+        <!-- form,fieldest 블록요소 -->
+        <!-- 이벤트(event):click(클릭) -->
+        <!-- 이벤트(event):속성 onclick -->
+        <!-- 자바스크립트 이벤트란 웹 페이지에서 발생하는 사용자의 행동이나 시스템의 변화를 의미합니다 -->
+    <form action="ele.jsp">     
+        <fieldset>
+            <legend>캡션:설명글</legend>
+            <input type="text" id="naming">
+            <label for="naming"></label>
+            
+            <button>그냥button버튼</button>
+            <button type="submit">전송</button>
+            <button type="reset">초기화</button>
+            <button type="button">버튼</button>
+            <button type="button" onclick="alert('Hello World!')">Click Me!버튼으로 onclick="allert" 속성사용</button>
+        </fieldset>
+
+        <!-- -------------------------------------------textarea------------------------------- -->
+        <!-- 크기(width,height)를 지정하지 않았을때 rows:행갯수(화면에표시되는 줄 수), cols:열갯수(화면에표시되는 칸 수),style에서 크기를 지정하면 rows/cols는 무시된다. -->
+        <!-- 줄바꿈으로 첫줄에 공백이 생긴것임. 공백을 모두 인식하여 공간이생긴다. cf)pre와 같은성격이다.-->
+        <!-- 댓글,이메일 내용, 회원가입시 회칙(readonly)등에 사용  -->
+        <!-- readonly:읽기전용 -->
+        <div>textarea ............................................................textare-readonly</div>
+        <div>
+            <textarea name="message" rows="5" cols="15">
+                The cat was playing in the garden.
+            </textarea>
+            
+            <textarea name="message" rows="10" cols="30" readonly>-----------------------------The cat was playing in the garden.
+            </textarea>
+            <!-- select :폼의목록:목록상자 -->
+            <!-- value: 서버전송값 -->
+            <!-- selected:지정하지 않으면 option의 첫번째값이 보이고,지정하면 지정한 값이 초기값으로 보인다. -->
+            <!-- size:목록의 내용을 화면에 표시할 개수 -->
+            <!-- multiple:다중 선택 -->
+
+            <!-- datalist:콤보 상자:select+input -->
+            <!-- input의 list속성 값과 datalist의 id속성 값이 같아야 한다. -->
+            datalist
+            <input list="browsers">
+            <datalist id="browsers">
+                <option value="Edge">
+                <option value="Firefox">
+                <option value="Chrome">
+                <option value="Opera">
+                <option value="Safari">
+            </datalist><br>
+
+            <label for="cars2">Choose a car:select-option</label>
+            <select id="cars2" name="cars" size="3" multiple>
+                <option value="audi">Audi</option>
+                <option value="fiat">Fiat</option>
+                <option value="saab">Saab</option>
+                <option value="volvo" selected>Volvo</option>
+            </select><br>
+
+
+
+        </div>
+
+        <label for="cars">Choose a car :select-optgroup</label>
+        <select name="cars" id="cars">
+            <optgroup label="Swedish Cars">
+                <option value="volvo">Volvo</option>
+                <option value="saab">Saab</option>
+            </optgroup>
+            <optgroup label="German Cars">
+                <option value="mercedes">Mercedes</option>
+                <option value="audi">Audi</option>
+            </optgroup>
+        </select>
+
+    </form>
+</body>
+
+</html>

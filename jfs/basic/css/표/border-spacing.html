@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>표:border-spacing</title>
+    <style>
+        table {
+            border: 1px solid;
+            margin: 50px;
+            
+        }
+        td,th {
+            border:1px solid;
+        }
+        #table1 {
+            border-spacing: separate;/* bcls 기본값*/
+            border-spacing: 20px;/* dbf15, 기본값2px */
+        }
+        
+        #table2 {
+            border-collapse:  separate;
+             border-spacing: 15px 50px;/* 좌우 상하 */
+          }
+          #table3 {
+            border-collapse: collapse; 
+            border-spacing: 15px; /* 적용❌ */
+            /* border-collapse상태에서는 적용안됨 */
+        }
+
+    </style>
+  </head>
+  <body>
+    <table id="table1">
+      <tr>
+        <th>Firstname</th>
+        <th>Lastname</th>
+      </tr>
+      <tr>
+        <td>Peter</td>
+        <td>Griffin</td>
+      </tr>
+      <tr>
+        <td>Lois</td>
+        <td>Griffin</td>
+      </tr>
+    </table>
+    <table id="table2">
+      <tr>
+        <th>Firstname</th>
+        <th>Lastname</th>
+      </tr>
+      <tr>
+        <td>Peter</td>
+        <td>Griffin</td>
+      </tr>
+      <tr>
+        <td>Lois</td>
+        <td>Griffin</td>
+      </tr>
+    </table>
+    <table id="table3">
+      <tr>
+        <th>Firstname</th>
+        <th>Lastname</th>
+      </tr>
+      <tr>
+        <td>Peter</td>
+        <td>Griffin</td>
+      </tr>
+      <tr>
+        <td>Lois</td>
+        <td>Griffin</td>
+      </tr>
+    </table>
+  </body>
+</html>

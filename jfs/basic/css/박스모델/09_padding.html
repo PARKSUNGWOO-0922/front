@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS:박스모델</title>
+    <style>
+        /* 같은 내용을 동시선택하여 변경하는방법
+            1.선택후. ctrl+d
+            2.선택후 ctrl+f2
+        */
+        /* 
+            padding : 패딩;
+
+            padding-top
+            padding-right
+            padding-bottom
+            padding-left
+        */
+        /* body {
+            display:flex;
+            justify-content: flex-end;
+            } 
+            */
+        .box,span {
+            /*개별 속성  */
+        padding-top: 100px;
+        padding-bottom: 100px;
+        padding-right: 150px;
+        padding-left: 150px;
+            /* 속기 속성 */
+            /* padding:상 우 하 좌 */
+            /* m100-150-100-80 */
+            /* padding: 100px 150px 100px 150px; */
+            /* padding: 100px 150px 와 동일  */
+        padding: 100px 150px 80px 150px;
+
+             /* padding: 상 좌우 하 */
+         padding: 100px 150px 80px;
+
+             /* padding:상하좌우 */
+         padding: 20px;
+             /* 음수지정 안됨...cf)지정하면 겹쳐진다..me */
+        background-color: darkgoldenrod;
+        margin-bottom: 30px;
+        /* p와,인라인요소 span 겹침.span의  padding보다는 크게 주어야함 그래야 분리됨*/
+    }
+            span {
+                /* 인라인 요소의 상하 margin은 적용안됨 그래서 붙는현상 */
+                
+                margin:100px;
+                padding: 20px;
+                background-color: darkgoldenrod;
+    }
+    
+    </style>
+</head>
+<body>
+   
+    <p class="box" >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore atque suscipit sed tempora id dolor asperiores beatae labore totam perspiciatis deleniti aut ad minus vitae ipsa, error velit quidem illo!</p>
+
+    <span>Lorem ipsum</span>
+
+    
+</body>
+</html>

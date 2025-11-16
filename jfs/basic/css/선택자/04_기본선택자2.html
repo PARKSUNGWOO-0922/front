@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS선택자</title>
+    <style>
+        /* 
+            1.하위(desendant자식+손자) 선택자
+                기호는 공백(한 칸 띄어쓰기)
+                예)선택자1 선택자2
+                    부모    하위
+                예)body h1 (o)
+                   h1 body (x)
+                   body li (o)
+                   ul .li  (o)
+                   .li     (o)
+                   ul *    (o)
+                   body #l (o)
+            2. 자식(child) 선택자(공백은 상관없다.)
+                기호는  >
+                선택자1 > 선택자2 
+                부모    > 자식 cf)손자는 안됨
+                 예)body > h1 (o)
+                   h1    > body (x)
+                   body  > li (x) cf)손자는 안됨.
+            3.복합(Compound) 선택자??
+                예)ul.li (o) : 
+--------------1.2.3번은  클래클래스로 대신작업 가능하다---            
+            4.가상 클래스 선택자[나중에 수업]
+                예):hover
+            5.가상 요소 선택자[나중에 수업]
+                예)
+        */
+
+        ul h2 {border: 1px solid red}
+        /* .descendant {border: 1px solid red} 위와같음*/
+
+        /* ul > p {border: 2px dashed blue;} 직계자식이 아니어서error */
+         li > p {border: 2px dashed blue;}  /*위error수정본  */
+
+
+         ul p {border: 2px dashed blue;} 
+         
+         /* ui태그중에 li클래스를 가진 요소 */
+         ul.li {border:4px dotted goldenrod}   
+
+         /*li 태그의 하위또는 동등 요소 중에서 li 클래스를가진 요소  */
+         li.li {border:3px dotted blue;} 
+
+         /* li태그 하위, p태그중에 li클래스를 가진요소 :아래표현 */
+         li p.li {border:3px double palegreen;}    
+        
+    </style>
+</head>
+<body>
+    <h1 class="li">CSS선택자2</h1>
+    <h2>두개 이상의 선택자를 활용한 선택자</h2>
+        <ul class="li">
+            <li class="li">
+                <h2 class="descendant li">하위 선택자 </h2>
+                <p class="li">하위 선택자란? 공백을 사용하여 두개의 선택자를 사용한 선택자를 말한다.</p>
+                <!-- li태그 안에 li태그는 자식으로 가질수 없다. -->
+            </li>
+            <li id="li" class="li li2 li3">자식 선택자</li>
+            <li class="li">결합 선택자</li>
+            <li>가상클래스  선택자</li>
+            <li>가상 요소 선택자</li>
+        </ul>
+</body>
+</html>

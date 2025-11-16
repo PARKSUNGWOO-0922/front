@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS플렉스 아이템</title>
+    <style>
+        /* 
+            CSS Flex Items(플렉스항목)
+
+        */
+    .flex-container {
+        display: flex;
+        background-color: dodgerblue;
+        gap:10px;
+        height: 300px;
+        font-size: 30px;
+        text-align: center;
+        align-items: center;
+        
+    } 
+    .flex-container div {
+        background-color: #f1f1f1;
+        margin: 10px;
+        padding: 10px;
+        width: 100px;
+        
+    }
+    /* .flex-container div:nth-child(3) {align-self: center;}    */
+    /* .flex-container div:nth-child(3) {align-self: flex-start;}    */
+    /* .flex-container div:nth-child(3) {align-self: flex-end;}    */
+    .flex-container div:nth-child(3) {align-self: stretch;}   
+        
+    </style>
+</head>
+<body>
+    <div class="flex-container">
+  <div >1</div>
+  <div >2</div>
+  <div >3</div>
+  <div >4</div>
+  
+</div>
+</body>
+</html>

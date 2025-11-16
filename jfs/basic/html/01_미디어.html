@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!-- body는 기본적으로 8px의 여백을갖는다 -->
+<!-- <body style="margin: 0;"> -->
+
+<body>
+    <!-- !탭:emmet(에밋) https://docs.emmet -->
+    <!-- h1+p+a+img 탭 -->
+    <h1 style="background: yellow;">제목</h1>
+    <P style="border:5px solid red">본문 텍스트 입니다.</P>
+    <a style="text-decoration: none; color:blue;font-size:32px" https://github.com/PARKSUNGWOO-0922/jfs">마이 깃허브 사이트</a>
+    <img src="figma.png" alt="대체텍스트" style="border:1px solid gray; transform:rotate(45deg);">
+    <!-- 저장된그림 원래크기에서변형이없었다. -->
+    <!-- 취소 : ctrl+z -->
+    <!-- html,jpg -->
+    <!-- 웹표준
+         웹접근성:모든사람이 동등하게 웹을
+         사용!(장애인,어르신 등)  그래서 유효성검사(HTML을 표준에 맞게했는지 확인
+         https://validator.w3.org/)   
+    -->
+    <!-- 이미지 영역 -->
+    <img src="https://kyf.or.kr/utl/web/imageSrc.do?path=20220725&physical=FE0766CA00A847BE9719D8EF205586EC&contentType=image/jpeg"
+        alt="인스타그램 SNS 아이콘" width="100">
+    <!-- 인라인 스타일 CSS 베스트는 분리작업을 해야한다.-->
+    <img src="https://kyf.or.kr/utl/web/imageSrc.do?path=20220725&physical=FE0766CA00A847BE9719D8EF205586EC&contentType=image/jpeg"
+        alt="인스타그램 SNS 아이콘" style="width: 100px;">
+    <!-- alt는 이미지가 표시되지않았을때 표시되는 항목 -->
+    <!-- href,src 등으 속성으로 ''로해도되지만 ""로 통일한다. 속성이 여럿인경우 최소한 한칸이상
+            으로 구분한다(관례상  한칸) -->
+    <!-- 복제:shift+alt+아래/위방향키 -->
+    <!-- 순서없는 목록 -->
+    <!--yl>li*5  -->
+    <ul style="list-style:none;">
+        <li>아메리카노</li>
+        <li>카페라떼</li>
+        <li style="font-style: italic;">카페모카</li>
+        <li style="font-weight:700;">카푸치노</li>
+        <li>펩시 제로 슈가</li>
+    </ul>
+    <!-- 순서있는 목록 -->
+    <!-- ol>li*3 -->
+    <h2 style="border-bottom: 3px solid red;">올림픽 양궁 순위</h2>
+    <ol style="line-height: 1.5;">
+        <li>한국</li>
+        <li>미국</li>
+        <li>????</li>
+    </ol>
+    <!-- 비디오 영역 -->
+    <!-- 유투브 링크: "소스코드복사" 예시 -->
+    <iframe width="689" height="296" src="https://www.youtube.com/embed/-4vv5mT5Tkw"
+        title="Hyundai Genesis Time to HTRAC commercial 현대자동차 제네시스 광고" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="width:200px; height: 150px; "></iframe>
+    <!--img 의 파일형식 :jpg,png,svg  -->
+    <!-- video의 파일 형식: mp4, webm -->
+
+    <!-- poster 사용자가 동영상을 재생하거나 탐색하기 전까지 출력되는 포스터 이미지 -->
+    <video controls poster="mov_bbb.png" style="width:400px" ;height="240">
+        <source src="mov_bbb.mp4" type="video/mp4">
+        <!-- <source src="videoframe.ogg" type="videl/ogg"> -->
+        <!-- <source src="videoframe_0.png" type="videl/png">  -->
+        Your brower does not support the video tag
+    </video>
+    <video controls poster="mov_bbb.png" style="width:400px" ;height="240">
+        <source src="mov_bbb.mp4" type="video/mp4">
+        <!-- <source src="videoframe.ogg" type="videl/ogg"> -->
+        <!-- <source src="videoframe_0.png" type="videl/png">  -->
+        Your brower does not support the video tag
+    </video>
+    <video controls poster="mov_bbb.png" style="width:400px" ;height="240">
+        <source src="mov_bbb.mp4" type="video/mp4">
+        <!-- <source src="videoframe.ogg" type="videl/ogg"> -->
+        <!-- <source src="videoframe_0.png" type="videl/png">  -->
+        Your brower does not support the video tag
+    </video>
+    
+    <!-- 빈 요소: <img>,<br>, <hr>  -->
+    <hr style="border: 10px solid red">
+    <!-- 기본단위:px(픽셀) 이고 별도필요한경우 ex)%, -->
+    <!-- 자동플레이 autoplay + muted -->
+    <!-- 무한반복:loop -->
+    <video src="main_video1.mp4" width="100%" controls autoplay muted loop style="width:100%" ; height="100vh" ;
+    object-fit:cover;>
+</video>
+<!--오디오영역  -->
+<!-- 검색어 : 유투브 오디오 라이브러리 -->
+<!-- https://studio.youtube.com/channel/UC7lqeQlV9RdM3Ajj0n_6gfg/music  -->
+ 
+    <audio src="Last Cappuccino in Rio - Chris Haugen.mp3"  type="audio/mp3">
+        
+    </audio>
+    <audio controls>
+        <source src="horse.ogv" type="audio/ogg">
+        <source src="horse.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    
+</body>
+
+</html>

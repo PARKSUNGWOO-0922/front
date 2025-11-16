@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- 단위:px,부모의 몇 % -->
+    <!-- 부모/자식 요소,형제(sibling) -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 웹 브라우저의 제목표시줄에 표시할 내용 -->
+    <title>Document</title>
+</head>
+    <!--  -->
+<body style="margin: 0; width:100%">
+    <h1>그룹핑</h1>
+    <P>div는 블록레벨 요소를 그룹핑한다. span은 인라인 요소만를 그룹핑한다(써도 표시는되지만,비표준).
+     </P>
+    <!-- css의 display속성:block,inline,inline-block -->
+    <!-- shift+alt+f 정렬 -->
+    <!-- 들여쓰기:tab, 내어쓰기:shift+tab  -->
+     <div>
+         <div>블록레벨 요소의 대표 태그</div>
+         <div style="border: 1px solid red; width:50%">div,h1~h6,p,ul,ol,li</div>
+         <div>위에서 아래 세로로 배치</div>
+         <div>크기(width,height) ,여백(margin,padding),테두리(border) 지정가능</div>
+     </div>
+    <hr>
+    <div>
+        <span style="border: 1px solid red;">인라인 요소의 대표 태그</span>
+        <span>span,a,img,video,audio,iframe</span>
+        <span>왼쪽에서 오른쪽으로 가로로 배치</span>
+        <span>크기 지정안됨,margin은 상하안됨(좌우는됨)(단,img,video,iframe예외)</span>
+    </div>
+
+</body>
+
+</html>

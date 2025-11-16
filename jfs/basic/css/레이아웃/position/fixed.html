@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fixed</title>
+    <style>
+        body {
+            height: 1800px;
+        }
+        /* 들여쓰기(정렬)shift+alt+f */
+        div.fixed {
+            /* 
+                position: 위치;
+                기본값: static;
+                relative
+                    - static과 같지만 left,top,right,bottom을 사용 
+                    - left,top,right,bottom의 기준은?
+                        -> left, top, right, bottom을 지정하지 않았을 때의 위치, 즉 원래 위치
+                absolute
+                    - left,top,right,bottom의 기준은? 
+                        -> position이 static이 아닌 조상(부모)
+                fixed(고정된): 
+                    - left,top,right,bottom의 기준은? 뷰포트 
+                sticky
+
+            left
+            top
+            right
+            bottom
+             */
+            position: fixed;/* pof */
+            width: 100px;
+            height: 100px;
+            right: 0;
+            bottom:0;
+            border: 3px solid #73AD21;
+        }
+    </style>
+</head>
+<body>
+    <div class="fixed">fixed
+
+    </div>
+</body>
+</html>

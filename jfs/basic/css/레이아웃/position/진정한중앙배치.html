@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>중앙배치</title>
+    <style>
+         /* 뷰포트 전체를 차지하게 설정하기 */
+        body {
+            margin: 0;
+        }
+        .outer {
+            background-color: lightblue;
+            height: 100vh;
+        }
+        .inner {
+            position: absolute;
+            /* 박스좌측상단기준 가운데 정렬 그래서tr로 50% 좌/상 이동사용 */
+            left: 50%;
+            top: 50%;
+            /* 
+                transform : translateX(h위치);
+                transform : translateY(v위치);
+                transform : translate(h,v);
+                    h: horizontal(수평)
+                    v: vertical(수직)
+            */
+            transform: translate(-50%,-50%);
+            width: 400px;
+            height: 400px;
+            /* margin:-200px 0 0 -200px; */
+            /* 마진을 이용하는 위방법도 있으나 너비/높이가 변동시 유지보수가 힘들다.tr은 자동바뀜 */
+            background-color: lightpink;
+            text-align: center;
+            line-height: 400px;
+           
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="outer"></div>
+        <div class="inner">콘텐츠</div>
+    </div>
+</body>
+</html>

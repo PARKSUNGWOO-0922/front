@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>relative</title>
+    <style>
+        /* 들여쓰기(정렬)shift+alt+f */
+        div.relative {
+            /* 
+                position:위치;
+                    기본값:static;
+                    relative:기본성격이 static와 같지만 left,top,right,bottom을 사용하여 위치변경가능 cf(static안됨)
+                    absolute
+                    fixed
+                    sticky
+                left
+                right
+                top
+                bottom
+             */
+            position: relative;/* po */
+            width: 100px;
+            height: 100px;
+            left: 100px;/* l30 ,자기자신을 기준으로 이동*/
+            top: 100px;/* t100 */
+            border: 3px solid #73AD21;
+        }
+    </style>
+</head>
+<body>
+    <div class="relative">relative
+
+    </div>
+</body>
+</html>
