@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제이쿼리이벤트</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js">  </script>
+    <script>
+        /* 
+            이벤트의 종류
+                1.window
+                    error,resize(반응형),scroll
+                2.document
+                    ready
+                3.mouse
+                    click,mouseenter,mouseleave,mousedown(누른상태),mouseup(down->)
+                4.keyboard
+                    keydown,keyup
+                5.form
+                    submit,focus,blur,change,select
+        */
+        //$(function(){};)
+        $(()=>{
+            //버튼 선택
+            $('button:nth-of-type(1)').click(function(){
+                //p가 보인다.
+                $('p').show();
+            });
+            $('button:nth-of-type(2)').click(()=>{
+                //p가 숨긴다.
+                $('p').hide();
+                
+            });
+        });
+        $(()=>{
+            //버튼 선택
+            $('.show)').click(function(){
+                //p가 보인다.
+                $('p').show();
+            });
+            $('.hide').click(()=>{
+                //p가 숨긴다.
+                $('p').hide();
+                
+            });
+        });
+       //[예제12-03]     
+    </script>
+</head>
+<body>
+    <!-- <h1>퀴즈</h1>   
+    <h2>문1.대한민국의 수도는:</h2>
+    <button type="button" class="show">정답</button>
+    
+    -->
+    <button type="button" class="show"> 보이기</button>
+    <button type="button" class="hide">숨기기</button>
+    <p>버튼을 눌러보세요</p>
+</body>
+</html>

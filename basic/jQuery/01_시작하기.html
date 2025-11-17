@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제이쿼리시작하기</title>
+     <!-- 제이쿼리 라이브러리 --> 
+    <!-- cdn방식 -->
+     <!-- jquery.com -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" ></script> >
+        <cdn>
+      <!-- 구글 -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+      <!-- ms cdn -->     
+      <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.7.1.min.js"></script>
+      
+      <!-- jsdelivr -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+      <!-- 파일다운 -->
+    <script src="jquery-3.7.1.min.js" ></script>
+    <script>
+        /* 
+            제이쿼리란?
+
+        */
+        //    window.addEventListener("DOMContentLoaded",()=>{
+        //        document.querySelector('p').innerHTML = "웹 프로그래밍";
+        //     });
+
+       // jQuery(document.ready(()=>{}));
+       // $(document.ready(()=>{}));
+       // $(()=>{});
+       
+       //$(document),$(window),$(this) 
+       //DOm 요소를 선택할 때 대체로 문자열로 표기(예외:윗줄)
+       //$('선택자'),$('body'), $('html'),$("button")
+       /* [소스12-01]
+            메서드 유형
+                1.이벤트 메서드
+                2.효과 메서드:hide()<->show()
+                3.탐색 메서드:
+                4.HTML/CSS 메서드:attr() 
+       */
+        //이벤트 메서드:click(콜백함수)
+        //객체.click()
+        //효과 메서드:$("p").hide();
+        //객체.hide
+        $(()=>{
+            $('p').html("웹 프로그래밍") ;
+        });
+    </script>
+</head>
+<body>
+    <p></p>
+</body>
+</html>
