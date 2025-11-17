@@ -19,42 +19,82 @@
                 5.form
                     submit,focus,blur,change,select
         */
+        // 요소 선택
+        // $(document), $(window), 
+        // $(this)는 자기 자신
+        // DOM 요소를 선택할 때 대체로 문자열로 표기
+        // $('선택자')
+        // $('body'), $('html')
+        // $("button")
+
+        /* 
+            메서드 유형
+                1. 이벤트 메서드: click()
+                    이벤트명(콜백함수)
+                2. 효과 메서드: hide(), show()
+                3. 탐색 메서드: 
+                4. HTML/CSS 메서드:         
+        */
+        // 이벤트 메서드
+        // 객체.click()
+        // 효과 메서드
+        // 객체.hide()
+
+        // jQuery(document).ready(function(){});
+        // $(function(){});
+        // 문서가 준비되면
         //$(function(){};)
         $(()=>{
             //버튼 선택
-            $('button:nth-of-type(1)').click(function(){
-                //p가 보인다.
-                $('p').show();
-            });
-            $('button:nth-of-type(2)').click(()=>{
-                //p가 숨긴다.
-                $('p').hide();
+        //     $('button:nth-of-type(1)').click(function(){
+        //         //p가 보인다.
+        //         $('p').show();
+        //     });
+        //     $('button:nth-of-type(2)').click(()=>{
+        //         //p가 숨긴다.
+        //         $('p').hide();
                 
+        //     });
+        // });
+        // 버튼 선택
+            // 객체.메서드();
+            // p를 숨긴다.
+            $('p').hide();
+            
+            $('#a1').click(function () {
+                // p가 보인다.
+                $('p:nth-of-type(1)').show();
             });
-        });
-        $(()=>{
-            //버튼 선택
-            $('.show)').click(function(){
-                //p가 보인다.
-                $('p').show();
+            $('.a2').click(() => {
+                // p가 보인다.
+                $('p:nth-of-type(2)').show();
             });
-            $('.hide').click(()=>{
-                //p가 숨긴다.
-                $('p').hide();
-                
+
+            // p를 클릭하면
+            $('p').click(function(){
+                // p를 숨긴다.
+                // $('p').hide();
+                // 클릭한 자기 자신만 숨긴다.
+                // 단, 화살표함수에서 $(this)는 자기자신이 아닌 무얼까? $(window)
+                console.log($(this));
+                $(this).hide();
             });
         });
        //[예제12-03]     
     </script>
 </head>
 <body>
-    <!-- <h1>퀴즈</h1>   
+    <h1>퀴즈</h1>   
     <h2>문1.대한민국의 수도는:</h2>
-    <button type="button" class="show">정답</button>
+    <button type="button"  id="a1">정답</button>
+    <p>서울입니다.</p>
+    <h2>문2. 대한민국의 국보1호는?</h2>
+    <button type="button" class="a2">정답</button>
+    <p>숭례문입니다.</p>
     
-    -->
-    <button type="button" class="show"> 보이기</button>
+   
+    <!-- <button type="button" class="show"> 보이기</button>
     <button type="button" class="hide">숨기기</button>
-    <p>버튼을 눌러보세요</p>
+    <p>버튼을 눌러보세요</p> -->
 </body>
 </html>
