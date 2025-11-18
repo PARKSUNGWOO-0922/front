@@ -10,8 +10,17 @@
        
         /* 
             메서드 유형
-                1. 이벤트 메서드: click(), mouseenter() moueleave() mousedown() mouseup()
-                2. 효과 메서드: hide(), show()
+                1. 이벤트 메서드: 
+                    click(): 요소를 클릭한다.
+                    mouseenter(): 요소 안으로 마우스가 들어간다.
+                    mouseleave(): 요소 밖으로 마우스가 나간다.
+                    mousedown(): 요소를 마우스로 누르고 있다.
+                    mouseup(): 요소를 mousedown 후에 마우스를 뗀다.
+
+                2. 효과 메서드: 
+                    hide(): 요소를 숨긴다.
+                    show(): 요소가 보인다.
+
                 3. 탐색 메서드: eq()
                 4. HTML/CSS 메서드: text():HTML의 내용을 가져온다/지정한다.(태그인식x)
                                     html():HTML의 내용을 가져온다/지정한다.(태그인식o) 
@@ -28,18 +37,23 @@
                     css({'속성','값',...}):하나 이상의 속성
                     css({'속성','값'}):하나 이상의 속성,카멜표기법
                     
-                    width()
-                    height
+                    width(): 크기를 가져오기
+                    height(): 크기를 가져오기
+                    width(크기): 크기를 지정하기
+                    height(크기): 크기를 지정하기
                     */
 
-
+        // 2. 준비 이벤트
         //jQuery(document).ready(function(){});
         $(()=>{
             //버튼을 클릭하면
             $('button').click(function(){
-                    //이름 부분을 노란 배경색과 글자 크기를 200% 지정
-                    $('p').css('background-color',"yellow");
-                    $('p').css('font-size','200%');
+                     // 이름 부분을 선택하여
+                     // p요소를 선택하여
+                     // 노란 배경색과 
+                    //$('p').css('background-color',"yellow");
+                     // 글자 크기를 200% 지정
+                   //$('p').css('font-size','200%');
 
                     $('p').css ({
                             // 'background-color': 'yellow',

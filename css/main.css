@@ -1,12 +1,10 @@
 @charset "utf-8";
-@import url('reset.css');
-@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css');
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Noto+Sans+KR:wght@100..900&display=swap');
+/* 웹 폰트 */
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap");
 
      @font-face {
          font-family: "Lato-Regular";
-         src: url(./../assets/font/Lato/Lato-Regular.ttf);
+         src: url(/jfs/assets/font/Lato/Lato-Regular.ttf);
      }
      @font-face {
         font-family: Lato-Thin;
@@ -17,21 +15,15 @@
     max-width: 980px;
 }
 /* 배경 */
-/* img제거  방법 확인~ */
-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
+
 #home .bgimg {
-    background: url(./../assets/img/light_mode.jpg) no-repeat 30% 30%/cover fixed;
+    background: url(/jfs/assets/img/light_mode.jpg) no-repeat 30% 30%/cover fixed;
 }
 #home.dark .bgimg {
     /* filter:brightness(100%); */
-    background-image: url(./../assets/img/dark_mode.jpg) ;
+    background-image: url(/jfs/assets/img/dark_mode.jpg) ;
 }
 .parallax-bg {
-    /* position: relative; ?*/
     height: 400px;
     background: no-repeat 50% 50% / cover fixed;
 }
@@ -39,10 +31,7 @@ img {
     background-image: url(/jfs/assets/img/bg-about.jpg);
     background-position: 50% 100%;
 }
-#about .parallax-bg {
-    background-image: url(/jfs/assets/img/bg-about.jpg);
-    background-position: 50% 100%;
-}
+
 #work .parallax-bg {
     background-image: url(/jfs/assets/img/parallax2.jpg);
     background-position: 50% 30%;
@@ -55,9 +44,6 @@ img {
 /* 애니메이션 */
 
    .circle_ani {
-    /* position: absolute; *//* html적용? */
-   /*  top: 0px;
-    right: 0px; */
     width: 135px;
     height: 136px;
     transition: linear 5s;
@@ -66,16 +52,14 @@ img {
     @keyframes circle {
         0%{transform: rotate(0deg) scale(2.5)}
         100%{transform: rotate(720deg) scale(2.5)}
+    }
             
+/* 텍스트 그림자 */
+#home.dark h2 {
+    text-shadow: 1px 1px 5px red, 0 0 25px red, 0 0 35px red;
 }
-h2 {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    /* trft */
-    transform: translate(-50%, -50%);/* trft */
-    text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
 }
+
 /* 나의사진 */
 .myimg {
     width: 425px;

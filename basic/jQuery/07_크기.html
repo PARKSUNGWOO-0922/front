@@ -8,13 +8,34 @@
         div {
             width: 100px;
             height: 100px;
-            float:left;
+            /* 
+                레이아웃 설정
+                    0 테이블 태그 사용 -> 비표준
+                    1. display: block, inline, inline-block, none;
+                    1. float: left|right;
+                        - clear:left|rihgt|both(둘 다) -> float 영향 제거
+                    1. position: static|relative|absolute|fixed;
+
+                    2. display: flex; (1차원)
+                        - flex-direction
+                        - flex-wrap
+                        - flex-flow
+                        - justify-content: flex-start, flex-end, center, space-between, space-around, space-evenly
+                        - align-items
+                        - align-content, ...
+
+                    3. display: grid; (2차원)
+            */
+            float:right;/* 공중에 뜬다 */
             margin: 5px;
             background: yellow;
         }
         .box { 
             background: red; 
         }
+        /* p:first-of-type {
+            clear:both;
+        } */
         .clearboth {
             display: block;
             clear:both;
@@ -22,7 +43,14 @@
     </style> 
      <script src="https://code.jquery.com/jquery-3.7.1.min.js">  </script>
      <script>
+        /*
+            HTML/CSS 관련 메서드
+                width()
+                height()
+        */
+
         $(()=>{
+          // 변수 선언 및 초기화  
             let x = y = 100;
             //let y = 100;
             //박스을 클릭하면 박스 배경색을 빨강으로
@@ -34,19 +62,28 @@
             // });
             //화살표 함수로~
             /* 
-                $(this)
+                this
                 event객체-> 매개변수(e)로 사용 가능
                 event.target
                 event.curentTarget
 
+                $(this)
+                event 객체 -> 매개변수(e)로 사용 가능!
+                $(event.target)
+                $(event.currentTarget)            
             */
+           // div를 클릭하면
             $('div').click((e)=>{
                 console.log($(this));
                 console.log($(e.target));
-                console.log($(e.curentTarget));
-                $(e.curentTarget).css({background:'red'});
+                console.log($(e.currentTarget));
+
+                // div를 클릭한 것만 div 배경색을 빨강으로
+                // $(this)는 클릭한 div
+                $(e.currentTarget).css({background: 'red'});
+                // 클릭할 때마다 가로/세로 10px씩 작아지게
                 $(e.target).width(x-=10);
-                $(e.curentTarget).height(x-=10);//같은값으로 x 로 
+                $(e.currentTarget).height(x-=10);//같은값으로 x 로 
             });
         });
 
