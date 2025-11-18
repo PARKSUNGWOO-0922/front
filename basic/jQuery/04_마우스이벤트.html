@@ -13,14 +13,71 @@
                 background-color: yellow;
             }
      </style>
-     <script src="jquery-3.2.1.min.js"></script>
+    <script src="jquery-3.7.1.min.js">  </script>
     <script>
         /* 
             마우스 이벤트
+            //
+            //p에 들어있는 숫자가 증가
+                //:nth-child(n) 여기서 n은 1,2,...
+                //$('p:nth-child(2)').text(num++);
+                //:eq(n) 여기서 n은 0,1,2, ...
+                //$('p:eq(1)').text(num++);
+                
+                //메서드.eq(n) 여기서 n은 0,1,2, ...
+                //메서드 체이닝 방식!
+                //객체.메서드().메서드().메서드()...
+                // 메서드 간 순서는 있다.
+
+                // :first-of-type
+                // :first
+                // :last-of-type
+                // :last
+                // :nth-of-type(n) ->n은 1번부터
+                // :eq(n) -> n은 0번부터
+                // .eq(n)
         */
-       $('div').mouseenter(()=>{
-           $('p')
-       });
+       // 예제12-05
+        $(document).ready(function(){
+            let num = 1;
+            
+            $('div').mouseenter(function(){
+                //p에 들어있는 숫자가 증가
+                //:nth-child(n) 여기서 n은 1,2,...
+                //$('p:nth-child(2)').text(num++);
+                //:eq(n) 여기서 n은 0,1,2, ...
+                //$('p:eq(1)').text(num++);
+                
+                //메서드.eq(n) 여기서 n은 0,1,2, ...
+                //메서드 체이닝 방식!
+                //객체.메서드().메서드().메서드()...
+                // 메서드 간 순서는 있다.
+                //
+                $('p:first').text('마우스들어감(enter)');
+                $('p').eq(1).text(++num);
+                         });
+             $('div').mouseleave(function(){
+                $('p:first').text('마우스나감(leave)');
+                $('p').eq(1).text(`최종횟수: ${num-1}`);
+             });
+
+             //예제12-06
+              $('div').mousedown(function(){
+                 $('p').eq(0).hide();
+                 $('p').eq(1).text('메세지사라짐');
+              });   
+              $('div').mouseup(function(){
+                 $('p').eq(0).show();
+                 $('p').eq(1).text(`최종횟수: ${num-1}`);
+              });   
+             //예제12-07
+             // 객체.classList.add() -> 객체.addClass() 
+             // 객체.classList.remove() -> 객체.removeClass() 
+             // 객체.classList.toggle() -> 객체.toggleClass() 
+             // 객체.classListcontain() -> ?? 
+
+            });
+            //마우스가 div에 들어가면
     </script>
 </head>
 <body>

@@ -1,0 +1,73 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제이쿼리이벤트</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js">  </script>
+    <script>
+       
+       
+        /* 
+            메서드 유형
+                1. 이벤트 메서드: click(), mouseenter() moueleave() mousedown() mouseup()
+                2. 효과 메서드: hide(), show()
+                3. 탐색 메서드: eq()
+                4. HTML/CSS 메서드: text():HTML의 내용을 가져온다/지정한다.(태그인식x)
+                                    html():HTML의 내용을 가져온다/지정한다.(태그인식o) 
+                                    text('텍스트'):HTML의 내용을 지정한다.(태그인식x)
+                                    html('텍스트'):HTML의 내용을 지정한다.(태그인식o) 
+
+                5. CSS메서드:
+                    addClass('클래스명 클래스명 ...'):클래스추가
+                    removeClass('클래스명 클래스명 ...'):클래스 제거
+                    toggleClass('클래스명 클래스명 ...'):클래스 추가/제거
+                    hasClass('클래스명 클래스명 ...'):클래스포함여부->포함이면 true, 아니면 false      
+                    
+                    css('속성','값'):하나의 속성의 값을 지정하기
+                    css({'속성','값',...}):하나 이상의 속성
+                    css({'속성','값'}):하나 이상의 속성,카멜표기법
+                    
+                    width()
+                    height
+                    */
+
+
+        //jQuery(document).ready(function(){});
+        $(()=>{
+            //버튼을 클릭하면
+            $('button').click(function(){
+                    //이름 부분을 노란 배경색과 글자 크기를 200% 지정
+                    $('p').css('background-color',"yellow");
+                    $('p').css('font-size','200%');
+
+                    $('p').css ({
+                            // 'background-color': 'yellow',
+                            // 'font-size': '200%'
+                            background:'yellow',
+                            fontSize:'200%'
+                    })
+
+
+            });
+        });
+
+       
+    </script>
+</head>
+<body>
+      <p>김길동</p>
+    <div>02-123-4567</div>
+    <p>이길동</p>
+    <div>042-567-2929</div>
+    <p>홍길동</p>
+    <div>051-278-9485</div>
+    <br><br>
+    <button type="button">이름 강조</button>
+    
+   
+    <!-- <button type="button" class="show"> 보이기</button>
+    <button type="button" class="hide">숨기기</button>
+    <p>버튼을 눌러보세요</p> -->
+</body>
+</html>

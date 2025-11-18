@@ -3,23 +3,12 @@
    License: none (public domain)
 */
 @charset "utf-8";
-html, body, div, span,h1,h2,h3,h4,p,ul {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
-}
+
 /* HTML5 display-role reset for older browsers */
 
 
-ol, ul {
-	list-style: none;
+ul {
+	/* list-style: none; *//* list-unstyled(자신만적용 하위적용x) */
 }
 
-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
+

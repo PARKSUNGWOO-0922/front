@@ -22,6 +22,7 @@
         // 요소 선택
         // $(document), $(window), 
         // $(this)는 자기 자신
+        // $('선택자:eq(n)'), n = 0,1,2, .....
         // DOM 요소를 선택할 때 대체로 문자열로 표기
         // $('선택자')
         // $('body'), $('html')
@@ -29,11 +30,11 @@
 
         /* 
             메서드 유형
-                1. 이벤트 메서드: click()
-                    이벤트명(콜백함수)
+                1. 이벤트 메서드: click(), mouseenter() moueleave() mousedown() mouseup()
                 2. 효과 메서드: hide(), show()
-                3. 탐색 메서드: 
-                4. HTML/CSS 메서드:         
+                3. 탐색 메서드: eq()
+                4. HTML/CSS 메서드: text():HTML의 내용을 가져온다/지정한다.(태그인식x)
+                                    html():HTML의 내용을 가져온다/지정한다.(태그인식o)            
         */
         // 이벤트 메서드
         // 객체.click()

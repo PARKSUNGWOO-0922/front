@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>크기</title>
+     <style>
+        div {
+            width: 100px;
+            height: 100px;
+            float:left;
+            margin: 5px;
+            background: yellow;
+        }
+        .box { 
+            background: red; 
+        }
+        .clearboth {
+            display: block;
+            clear:both;
+        }
+    </style> 
+     <script src="https://code.jquery.com/jquery-3.7.1.min.js">  </script>
+     <script>
+        $(()=>{
+            let x = y = 100;
+            //let y = 100;
+            //박스을 클릭하면 박스 배경색을 빨강으로
+            //클릭시 마다10px씩 작아지게
+            // $('div').click(function(){
+            //     $(this).css({background:'red'});
+            //     $(this).width(x-=10);
+            //     $(this).height(x-=10);//같은값으로 x 로 
+            // });
+            //화살표 함수로~
+            /* 
+                $(this)
+                event객체-> 매개변수(e)로 사용 가능
+                event.target
+                event.curentTarget
+
+            */
+            $('div').click((e)=>{
+                console.log($(this));
+                console.log($(e.target));
+                console.log($(e.curentTarget));
+                $(e.curentTarget).css({background:'red'});
+                $(e.target).width(x-=10);
+                $(e.curentTarget).height(x-=10);//같은값으로 x 로 
+            });
+        });
+
+     </script>
+</head>
+<body>
+    <div>박스1</div>
+    <div>박스2</div>
+    <div>박스3</div>
+    <p class="clearboth">박스4</p>
+    <p>박스5</p>
+</body>
+</html>

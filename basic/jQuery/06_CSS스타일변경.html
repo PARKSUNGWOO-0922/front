@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS스타일변경</title>
+     <style>
+        .important {
+            font-weight: bold;
+            font-size: xx-large;
+            /* 
+                xx-small(10px) x-small(10px) small(13px) smaller(13.333px)
+                medium(16px)
+                large(18px)  larger(19.2px) x-large(24px) xx-large(32px)
+            */
+        }
+        .blue {
+            color: blue;
+        }
+         .red {
+            color: red;
+	        border: 1px solid blue;
+        }
+    </style>
+     <script src="https://code.jquery.com/jquery-3.7.1.min.js">  </script>
+     <script>
+        /* 
+            CSS 스타일 변경
+                .addClass('클래스명'): 클래스 추가
+                .removeClass('클래스명'): 클래스 제거
+        */
+        //
+        //jQuery(document).ready(function(){});
+        //h1,h2,p첫번째를 선택하여
+        //글자색을 파랑으로 지정
+        /* 
+            순수 자바스크립트(바닐라 스크립트)
+                객체.style.color = 'blue';
+                객체.style.border ='1px solid red';
+                객체.style.cssText = `
+                        color:blue; 
+                        border:1px solid red;`; 
+            제이쿼리
+                $('선택자').css("color","blue")
+                $('선택자').css("border","1px solid red")
+               ......
+
+
+        */
+          
+        //예제12-07
+        $(()=>{
+            //$('h1,h2,p:first').css('color','blue');
+            //.blue클래스를 추가하라
+            //두번째 p를 선택하여 글자크기는 xx-large,굵기는 bold를 지정 
+            //$('p:last').css('font-size','xx-large');
+            //$('p:last').css('font-wdight','bold');
+            $('p:last').css({
+                fontSize:'xx-large',//'font-size':'xx-large', 
+                fontWeight:'bold'})//'font-weight':'bold')} 
+                
+                //이벤트 작성
+                
+                $('button:first').click(function(){
+                    
+                    $('h1,h2,p:first').addClass('blue red');
+                    
+                    $('p:last').addClass('red');
+            });
+                $('button').eq(1).click(function(){
+
+                    $('h1,h2,p:first').removeClass('red');
+                    
+                    $('p:last').removeClass('red');
+            });
+                const btn = $('button');
+               btn.eq(2).click(function(){
+
+                    $('h1,h2,p').toggleClass('red');
+                    
+                  //  $('p:last').toggleClass('red');
+            });
+        });
+
+     </script>
+
+</head>
+<body>
+    <h1 >HTML5</h1>
+    <h2>CSS3</h2>
+    <p >자바스크립트</p>
+    <p>제이쿼리</p>
+    <button type="button">CSS 적용</button>
+    <button type="button">CSS 적용 해제</button>
+    <button type="button">toggle</button>
+</body>
+</html>
