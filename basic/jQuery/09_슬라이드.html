@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>슬라이드</title>
     <!-- 예제12-15 -->
         <style> 
         #slide, #panel, #flip {
@@ -22,19 +22,28 @@
      <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
      <script>
         $(()=>{
+              // #slide를 클릭하면
             $('#slide').on('click',()=>{
-                $('#panel1').slideDown();
+                 // #panel이 슬라이드 다운
+                $('#panel').slideDown();
             });
-            //축약형
-            $('#panel1').on('click', e =>
+            // #panel을 클릭하면
+            $('#panel').on('click', e =>
+            // #panel이 슬라이드 업
+                // 화살표 함수
+                // - 매개변수가 1개이면 () 생략 가능
+                // - 실행문이 1개이면 {} 생략 가능
             $(e.currentTarget).slideUp()
         );
-        
+        // #flip을 클릭하면
         $('#flip').on('click',()=>{
-            $('#panel1').slideToggle('1000');
+            // #panel을 슬라이드토글
+            $('#panel').slideToggle('1000');
         });
-        $('#stop').on('click',()=>{
-            $('#panel1').stop();
+        // 버튼을 클릭하면
+        $('button').on('click',()=>{
+            // #panel 애니메이션을 멈춤
+            $('#panel').stop();
         });
         
 

@@ -4,7 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>제이쿼리효과메서드</title>
+    <style>
+        .css_pic {
+            height: 430px;
+            text-align: center;
+        }
+        .css_pic img {
+            width: 250px;
+        }
+    </style>
+    <!-- 제이쿼리 라이브러리 -->
      <script src="https://code.jquery.com/jquery-3.7.1.min.js">  </script>
+     <!-- 제이쿼리 UI 라이브러리 -->
 
      <!-- animate()메서드 사용시 색과 가속도를 사용 가능하게 한다 -->
      <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
@@ -19,26 +30,26 @@
                                      효과 메서드가 끝나면 수행할 함수
 
                 //나타남, 사라짐
-                $('선택자').hide([speed],[easing],[callback]);
+                $('선택자').hide([속도],[가속도],[함수]);
                 $(selector).show([speed],[easing],[callback]);
                 $(selector).toggle([speed],[easing],[callback]);
                             
                             
                 //서서히 나타남/사라짐
-                $(selector).fadeIn(speed,[easing],[callback]);//나타남(0->1)
-                $(selector).fadeOut(speed,[easing],[callback]);//사라짐(1->0)
-                $(selector).fadeToggle(speed,[easing],[callback]);
+                $(selector).fadeIn([speed],[easing],[callback]);//나타남(0->1)
+                $(selector).fadeOut([speed],[easing],[callback]);//사라짐(1->0)
+                $(selector).fadeToggle([speed],[easing],[callback]);
                 $(selector).fadeTo(speed,opacity,[easing],[callback]);
                     - opacity:
                         0 ~ 1 사이 값
 
                 //슬라이드되면서 나타남, 사라짐
-                $(selector).slideDown(speed,[easing],[callback]);//나타남(위->아래)
-                $(selector).slideUp(speed,[easing],[callback]);//사라짐(아래->위)
-                $(selector).slideToggle(speed,[easing],[callback]);//번갈아
+                $(selector).slideDown([speed],[easing],[callback]);//나타남(위->아래)
+                $(selector).slideUp([speed],[easing],[callback]);//사라짐(아래->위)
+                $(selector).slideToggle([speed],[easing],[callback]);//번갈아
 
                 //애니메이션
-                (selector).animate({styles},speed,easing,callback)
+                (selector).animate({styles},[speed],easing,callback)
                 $(selector).animate({params},[speed],[easing],[callback]);
                     {styles} ->{CSS속성: 값, ...}
                     easing:swing( 기본값,가속), linear(등속)
@@ -65,35 +76,71 @@
 
         */
        //예제12-
-        $(()=>{
-           $('button').eq(0).click(function(){
-            $('img').animate({width:100});
+            $(()=>{
+                //my fadeTo 해제
+                $('button').on('click', ()=>{
+                $('img').stop(true).css('opacity', 1);
+                });
+            // 버튼을 클릭하면
+            function imgWidth(w) {
+                // 펭귄의 가로 크기를 100으로 지정
+                $('img').animate({width: w * 100});
+            }
+
+            // on('이벤트', 함수) 메서드를 사용한 이벤트 처리
+            $('button').eq(0).on('click', ()=>{
+                imgWidth(1);
            }); 
+             // 이벤트 메서드를 이용한 이벤트 처리
            $('button').eq(1).click(function(){
-            $('img').animate({width:200});
+                imgWidth(2);
            }); 
            $('button').eq(2).click(function(){
-            $('img').animate({width:300});
+                imgWidth(3);
            }); 
-           //예제12-12
-           $('button').eq(3).on('click',()=>{
-            $('img').css({position:"relative"}) .stop().animate({width:250, top:0},2000,'easeOutBounce');
-           }); 
+
+            // 축소 버튼을 클릭하면
            $('button').eq(4).on('click',()=>{
-            $('img').css({position:"relative"}) .stop().animate({width:100, top:400},4000,'easeInOutBounce');
-           }); 
-           //예제12-13
-           $('button').eq(5).on('click',()=>{
+                // 이미지의 크기는 100으로, 위치는 아래로 이동
+                $('img').css({position: 'relative'}).stop().animate({
+                    width: 100,
+                    top: 300
+                }, 2000, 'easeOutBounce');
+            })
+            // 확대 버튼을 클릭하면
+            $('button').eq(3).on('click',()=>{
+                // 크기는 원래 크기로(494)로, 위치는 원래 위치로
+                $('img').css({position: 'relative'}).stop().animate({
+                    width: 250,
+                    top: 0
+                });
+            })
+
+            // hide, show, toggle
+            // 속도: 400(기본값, 0.4초)
+            //  - slow(600), fast(200) 
+            // hide 버튼을 누르면 펭귄 hide
+            $('button').eq(5).on('click', ()=>{
             $('img').hide('slow');
            }); 
+            // show 버튼을 클릭하면 펭귄 show
            $('button').eq(6).on('click',()=>{
             $('img').show('fast');
            }); 
-           $('button').eq(7).on('click',()=>{
+            // toggle 버튼을 클릭하면 펭귄 hide/show 번갈아
+            $('button').eq(7).on('click', ()=>{
             $('img').toggle(200);
            }); 
-           //예제12-14
-           $('button').eq(8).on('click',()=>{
+
+            //////////////페이드 효과///////////////
+            // fadeIn: 서서히 나타남
+            // fadeOut: 서서히 사라짐
+            // fadeToggle: 서서히 나타남/사라짐 번갈아
+            // fadeTo: 불투명도 지정
+
+            // 버튼을 클릭하면
+            $('button').eq(8).on('click', ()=>{
+                // 펭귄이 서서히 나타남
             $('img').fadeIn();
            }); 
            $('button').eq(9).on('click',()=>{
@@ -111,15 +158,7 @@
 
         });
     </script>
-    <style>
-        .css_pic {
-            height: 430px;
-            text-align: center;
-        }
-        .css_pic img {
-            width: 250px;
-        }
-    </style>
+    
 </head>
 <body>
      <div class="css_pic">
@@ -139,7 +178,8 @@
             <button type="button" >fadeToggle</button>
             <button type="button" >fadeTo</button><br><br>
         </div>
-        <img name="pic1" src="./ch12/pic1.jpg"/>
+        <img src="https://marketplace.canva.com/bpcg0/MAG0W8bpcg0/1/tl/canva-cute-cartoon-penguin-waving-illustration-MAG0W8bpcg0.png"
+            alt="펭퀸 1마리">
     </div>
 </body>
 </html>
