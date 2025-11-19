@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제이쿼리효과메서드</title>
+     <script src="https://code.jquery.com/jquery-3.7.1.min.js">  </script>
+
+     <!-- animate()메서드 사용시 색과 가속도를 사용 가능하게 한다 -->
+     <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.14.1/jquery-ui.min.js"></script>
+    <script>
+
+        /* 
+            효과 메서드
+                - speed : 400 (기본값,단위:ms)
+                                     "slow", "fast", or milliseconds.
+                - callback(콜백함수):
+                                     효과 메서드가 끝나면 수행할 함수
+
+                //나타남, 사라짐
+                $('선택자').hide([speed],[easing],[callback]);
+                $(selector).show([speed],[easing],[callback]);
+                $(selector).toggle([speed],[easing],[callback]);
+                            
+                            
+                //서서히 나타남/사라짐
+                $(selector).fadeIn(speed,[easing],[callback]);//나타남(0->1)
+                $(selector).fadeOut(speed,[easing],[callback]);//사라짐(1->0)
+                $(selector).fadeToggle(speed,[easing],[callback]);
+                $(selector).fadeTo(speed,opacity,[easing],[callback]);
+                    - opacity:
+                        0 ~ 1 사이 값
+
+                //슬라이드되면서 나타남, 사라짐
+                $(selector).slideDown(speed,[easing],[callback]);//나타남(위->아래)
+                $(selector).slideUp(speed,[easing],[callback]);//사라짐(아래->위)
+                $(selector).slideToggle(speed,[easing],[callback]);//번갈아
+
+                //애니메이션
+                (selector).animate({styles},speed,easing,callback)
+                $(selector).animate({params},[speed],[easing],[callback]);
+                    {styles} ->{CSS속성: 값, ...}
+                    easing:swing( 기본값,가속), linear(등속)
+                        ->제이쿼리 UI를 설정하면 더 많은easing 값을 사용 가능!
+
+                //애니메이션 중지
+                $(selector).stop([clearQueue],[jumpToEnd]).애니메이션관련메서드();
+                $(selector).stop(false,false)->기본값
+                $(selector).stop()->기본값
+                    - clearQueue:false(기본값),true(큐에 쌍여있는 애니메이션까지 모두 삭제)
+                    - jumpToEnd:false(기본값),true(현재 애니메이션을 마지막 상태로 즉시 이동)
+                
+                /HTML/CSS 메서드
+                css("속성");//속성 값을 가져오기
+                css("속성","값");//속성 값으로 지정하기
+                css({"params"});
+                css({"속성":"값","속성":"값",...}); // 하나 이상의 속성값 지정
+                        ->speed가 없다
+
+
+                animate({"속성":"값","속성":"값",...}); // 하나 이상의 속성값 을 애니메이션
+                        ->speed(기본값:400)가 있어서 애니메이션 된다
+                        -일부 속성은 사용불가! 예)배경색지정x, 추가가속도x, 변형x,..등 
+
+        */
+       //예제12-
+        $(()=>{
+           $('button').eq(0).click(function(){
+            $('img').animate({width:100});
+           }); 
+           $('button').eq(1).click(function(){
+            $('img').animate({width:200});
+           }); 
+           $('button').eq(2).click(function(){
+            $('img').animate({width:300});
+           }); 
+           //예제12-12
+           $('button').eq(3).on('click',()=>{
+            $('img').css({position:"relative"}) .stop().animate({width:250, top:0},2000,'easeOutBounce');
+           }); 
+           $('button').eq(4).on('click',()=>{
+            $('img').css({position:"relative"}) .stop().animate({width:100, top:400},4000,'easeInOutBounce');
+           }); 
+           //예제12-13
+           $('button').eq(5).on('click',()=>{
+            $('img').hide('slow');
+           }); 
+           $('button').eq(6).on('click',()=>{
+            $('img').show('fast');
+           }); 
+           $('button').eq(7).on('click',()=>{
+            $('img').toggle(200);
+           }); 
+           //예제12-14
+           $('button').eq(8).on('click',()=>{
+            $('img').fadeIn();
+           }); 
+           $('button').eq(9).on('click',()=>{
+            $('img').fadeOut();
+           }); 
+           $('button').eq(10).on('click',()=>{
+            $('img').fadeToggle();
+           }); 
+           $('button').eq(11).on('click',()=>{
+            $('img').fadeTo(200,0.5);
+           }); 
+
+
+
+
+        });
+    </script>
+    <style>
+        .css_pic {
+            height: 430px;
+            text-align: center;
+        }
+        .css_pic img {
+            width: 250px;
+        }
+    </style>
+</head>
+<body>
+     <div class="css_pic">
+        버튼을 누르면 그림의 크기가 바뀝니다.</p>
+        <div>
+            <button type="button" >가로 100픽셀</button>
+            <button type="button" >가로 200픽셀</button>
+            <button type="button" >가로 300픽셀</button><br><br>
+            <button type="button" >확대+위치</button><br><br>
+            <button type="button" >축소+위치</button><br><br>
+            <button type="button" >hide</button>
+            <button type="button" >show</button>
+            <button type="button" >toggle</button><br><br>
+            
+            <button type="button" >fadeIn</button>
+            <button type="button" >fadeOut</button>
+            <button type="button" >fadeToggle</button>
+            <button type="button" >fadeTo</button><br><br>
+        </div>
+        <img name="pic1" src="./ch12/pic1.jpg"/>
+    </div>
+</body>
+</html>

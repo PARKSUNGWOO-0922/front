@@ -1,6 +1,6 @@
 @charset "utf-8";
 /* 웹 폰트 */
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap");
+     @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap");
 
      @font-face {
          font-family: "Lato-Regular";
@@ -10,6 +10,11 @@
         font-family: Lato-Thin;
         src:url(https://PARKSUNGWOO-0922.github.io/jfs/assets/font/Lato-Thin.ttf)
      }
+
+
+   .ls10px{
+        letter-spacing: 0.625rem;
+    }
 /* 공통 */
 .container {
     max-width: 980px;
@@ -58,10 +63,21 @@
 #home.dark h2 {
     text-shadow: 1px 1px 5px red, 0 0 25px red, 0 0 35px red;
 }
-}
+
 
 /* 나의사진 */
 .myimg {
     width: 425px;
     height: 280px;
+}
+
+/* 진행률 바 */
+.progress {
+    height: 35px;
+}
+.progress:first-of-type .progress-bar{
+    width: 30%;
+}
+.progress:first-of-type .progress-bar{
+    width: 30%;
 }
