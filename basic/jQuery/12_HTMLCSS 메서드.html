@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>htmlcss메서드</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
+    <script>
+      /*  이거살리고 샘 화일 새로(콘솔창출력이 변경되는것 확인용) 만들어..............
+
+            HTML/CSS    관련 메서드
+                text()    -태그 내용 가져오기
+                html()    -태그 내용 가져오기
+                    -태그 내용 가져오기
+                val()      innerHTML
+                    -폼의  내용 가져오기
+
+
+                attr()     
+                <태그 attribute="value">내용</태그>
+                $(selector).css(attribute) : value로 가져오기
+                $(selector).css(attribute,value) : value로 지정하기
+                $(selector).css({attribute:value, attribute:value,...})
+                
+                선택자{peoperty:value}
+                $(selector).css(property):  value로 가져오기
+                $(selector).css(property,value): value로 지정하기
+                $(selector).css({property:value, property:value,...})
+
+                    -태그 내용 가져오기
+        */
+      //<태그명 속성='값'>내용</태그>
+      $(() => {
+        $("#btn1").click(function () {
+          alert("Text: " + $("#test").text());
+        });
+        $("#btn2").click(function () {
+          alert("HTML: " + $("#test").html());
+        });
+        $("#btn3").click(function () {
+          alert("val(): " + $("#test2").val());
+        });
+        $("#btn4").click(function () {
+            alert("val(): " + $("#test3").val());
+        });
+          
+          //-------------------------------------------------
+
+        $("#btn5").click(function () {
+         alert($("#w3s").attr("href"));
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <button id="btn1" type="button">text() 버튼1</button>
+    <button id="btn2" type="button">html()버튼2</button>
+    <button id="btn3" type="button">val()버튼3</button>
+    <button id="btn4" type="button">val()a버튼4</button>
+    <button id="btn5" type="button">attr()버튼5</button>
+
+    <p id="test">가져오기</p>
+
+    <p>Name: <input type="text" id="test2" value="Mickey Mouse" /></p>
+    <p><textarea name="" >텍스트 영역 입력 폼</textarea></p>
+
+    <a id="w3s" href="https:///www.w3schoolls.com" >링크</a>
+  </body>
+</html>
