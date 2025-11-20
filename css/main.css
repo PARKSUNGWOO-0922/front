@@ -16,6 +16,10 @@
         letter-spacing: 0.625rem;
     }
 /* 공통 */
+html {
+
+    scroll-padding-top: 56px;/* 페이지이동시 헤더와 좁아지는거 해결chat~^^ */
+}
 .container {
     max-width: 980px;
 }
