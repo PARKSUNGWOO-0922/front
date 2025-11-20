@@ -1,70 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>htmlcss메서드</title>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제이쿼리 HTML 메서드</title>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
     <script>
-      /*  이거살리고 샘 화일 새로(콘솔창출력이 변경되는것 확인용) 만들어..............
+        /* 
+            HTML/CSS 관련 메서드
+                get(가져오기, 반환(return))
+                    $(선택자).text()
+                    $(선택자).html()
+                    $(선택자).val() -> 폼 요소
+                    $(선택자).attr(HTML속성명): HTML 속성 값
+                    $(선택자).css(CSS속성명): CSS 속성 값
 
-            HTML/CSS    관련 메서드
-                text()    -태그 내용 가져오기
-                html()    -태그 내용 가져오기
-                    -태그 내용 가져오기
-                val()      innerHTML
-                    -폼의  내용 가져오기
+                set(지정하기, 설정)
+                    $(선택자).text('내용')
+                    $(선택자).html('내용')
+                    $(선택자).val(값)
+                    $(선택자).attr(HTML속성명,값)
+                    $(선택자).attr({속성1:값1, 속성2:값2,...})
+                    $(선택자).css(CSS속성명,값)
+                    $(선택자).css({속성:값, 속성:값,...})
 
-
-                attr()     
-                <태그 attribute="value">내용</태그>
-                $(selector).css(attribute) : value로 가져오기
-                $(selector).css(attribute,value) : value로 지정하기
-                $(selector).css({attribute:value, attribute:value,...})
-                
-                선택자{peoperty:value}
-                $(selector).css(property):  value로 가져오기
-                $(selector).css(property,value): value로 지정하기
-                $(selector).css({property:value, property:value,...})
-
-                    -태그 내용 가져오기
         */
-      //<태그명 속성='값'>내용</태그>
-      $(() => {
-        $("#btn1").click(function () {
-          alert("Text: " + $("#test").text());
-        });
-        $("#btn2").click(function () {
-          alert("HTML: " + $("#test").html());
-        });
-        $("#btn3").click(function () {
-          alert("val(): " + $("#test2").val());
-        });
-        $("#btn4").click(function () {
-            alert("val(): " + $("#test3").val());
-        });
-          
-          //-------------------------------------------------
+        $(() => {
 
-        $("#btn5").click(function () {
-         alert($("#w3s").attr("href"));
+            console.log("text(): " + $("#test1").text());
+            console.log("html(): " + $("#test2").html());
+            console.log("val(): " + $("#test3").val());
+            console.log("val(): " + $("#test4").val());
+            console.log($("#w3s").attr("href"));
+
+            $("#btn1").click(function () {
+                // 태그를 문자열로 인식한다.
+                $("#test1").text("<b>Hello world!</b>");
+            });
+            $("#btn2").click(function () {
+                // 태그를 태그로 인식한다. -> 굵은 글자로 표시
+                $("#test2").html("<b>Hello world!</b>");
+            });
+            $("#btn3").click(function () {
+                $("#test3").val("Dolly Duck");
+            });
+            $("#btn4").click(function () {
+                $("#w3s").attr('href', "https://www.w3schools.com/jquery/");
+                console.log($("#w3s").attr("href"));
+            });
+            $("#btn5").click(function () {
+                $("#w3s").attr({
+                    href: "https://www.w3schools.com/jquery/",
+                    title: "W3Schools jQuery Tutorial"
+                });
+            });
+
+
+
         });
-      });
     </script>
-  </head>
-  <body>
+</head>
+
+<body>
     <button id="btn1" type="button">text() 버튼1</button>
-    <button id="btn2" type="button">html()버튼2</button>
-    <button id="btn3" type="button">val()버튼3</button>
-    <button id="btn4" type="button">val()a버튼4</button>
-    <button id="btn5" type="button">attr()버튼5</button>
+    <button id="btn2" type="button">html() 버튼2</button>
+    <button id="btn3" type="button">val() 버튼3</button>
+    <button id="btn4" type="button">attr() 버튼4</button>
+    <button id="btn5" type="button">attr() 버튼5</button>
 
-    <p id="test">가져오기</p>
+    <p id="test1">가져오기1</p>
+    <p id="test2">가져오기2</p>
+    <p>Name: <input type="text" id="test3" value="Mickey Mouse"></p>
+    <p>textarea: <textarea name="" id="test4">텍스트 영역 입력 폼</textarea></p>
 
-    <p>Name: <input type="text" id="test2" value="Mickey Mouse" /></p>
-    <p><textarea name="" >텍스트 영역 입력 폼</textarea></p>
+    <a href="https://www.w3schools.com" id="w3s">링크</a>
+</body>
 
-    <a id="w3s" href="https:///www.w3schoolls.com" >링크</a>
-  </body>
 </html>
