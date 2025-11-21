@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>스크롤 이벤트</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
+
+    <style>
+        body {
+            margin: 0;
+        }
+      div {
+        position: relative;
+        
+        /* 창(window)스크롤바 생성 */
+        height:2000px;/* 화면창 높이만큼 차감되어 실질적으로 4000이 안나온다. */
+
+      }
+      div:nth-of-type(1){background-color: gray;}
+      div:nth-of-type(2){background-color: pink;}
+      p {
+        position: absolute;
+        top: 200px;
+        left: 100px;
+        border:1px solid red;
+        margin: 0;
+      }
+    </style>
+    <script>
+      /* 
+            이벤트
+                scroll
+
+            기타 메서드
+              
+                scrollTop() -> 스크롤 양
+                    $(selector).scrollTop()
+                    $(selector).scrollTop(position)
+
+                offset().top -> 요소의 위치(창 기준)
+                position().top -> 요소의 위치(부모 기준)
+        
+        */
+
+      $(() => {
+            //position과 offset 차이를 확인할것~~~
+            
+            //p요소의 창의 최상단에서 부터 위치
+            // const pTop =$('p').offset().top;
+            // const pLeft =$('p').offset().left;
+            // console.log(`top:${pTop} left:${pLeft}`);
+            const pTop =$('p').position().top;
+            const pLeft =$('p').position().left;
+            console.log(`top:${pTop} left:${pLeft}`);
+
+            //창이 스크롤 되면
+            $(window).scroll(()=>{
+                //p요소에창의 스크롤 양을 표시
+                let wst = $(window).scrollTop();
+                //소수점을 버림해서 p요소의 내용으로 가져오기
+                let intNumber = Math.floor(wst);
+                $('p').text(intNumber);
+                
+                //만약 창 스크롤 양이 200 이상이면
+                //div의 배경색을 바꾼다.
+                if (intNumber>=200) {
+                    $('div').css({background:'lightgreen'});
+                    
+                } else {
+                    $('div').css({background:'gray'});
+
+                }
+               
+            });
+            
+        });
+        
+    </script>
+  </head>
+  <body>
+     <div  class="section"> 
+
+         <p>여기에 출력된다</p>
+         
+
+     </div>
+    <div class="section"> </div>
+
+   
+  </body>
+</html>

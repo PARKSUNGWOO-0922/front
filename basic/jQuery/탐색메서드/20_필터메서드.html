@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>탐색메서드</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
+    <style>
+      body > div {
+            border:1px solid black;
+        }
+   
+      div {
+        padding-left: 5px;
+        margin: 20px;
+        width: 800px;
+      }
+     
+  
+    </style>
+    <script>
+      /* 
+            탐색메서드
+                조상
+                    parent([filter]): 요소의 부모 선택
+                    parents([filter]) : 요소의 모든 조상(html까지)
+                    parentsUntil([stop],[filter]): '선택자'의 자식 까지 선택
+                                        요소~stop선택자 까지 선택(요소와 선택자 제외)
+                                        인자를 생략하면 parents()와 같다.
+                자손
+                    요소.children([filter]): 요소의 자식 선택
+                    요소.find(filter):요소의 하위요소[손자(자식 포함)]선택
+                형제
+                    요소.siblings([filter]) :요소의 형제 요소들을 선택
+                    요소.next()
+                    요소.nextAll()
+                    요소.nextUntil()
+                    요소.prev()
+                    요소.prevAll()
+                    요소.prevUntil()
+                필터
+                    first() 
+                    last() 
+                    eq() 
+                    filter()  
+                    not() 
+
+
+
+        */
+      $(() => {
+            // $('div').first().css({border:'2px solid red'});
+            $('div:first').first().css({border:'2px solid blue'});
+            
+            //$('div').last().css({border:'2px solid red'});
+            $('div:last').first().css({border:'2px solid blue'});
+            
+            //$('div').eq(1).css({border:'3px solid green'});
+            $('div').eq(1).css({border:'3px solid blue'});
+
+
+      });
+    </script>
+  </head>
+  <body>
+    <h1>Welcome to My Homepage</h1>
+
+<p>This is a paragraph.</p>
+
+<div style="border: 1px solid black;">
+  <p>A paragraph in a div.</p>
+  <p>Another paragraph in a div.</p>
+</div>
+
+<div style="border: 1px solid black;">
+  <p>A paragraph in another div.</p>
+  <p>Another paragraph in another div.</p>
+</div>
+
+<div style="border: 1px solid black;">
+  <p>A paragraph in another div.</p>
+  <p>Another paragraph in another div.</p>
+</div>
+<div style="border: 1px solid black;">
+  <p>A paragraph in another div.</p>
+  <p>Another paragraph in another div.</p>
+</div>
+<div style="border: 1px solid black;">
+  <p>A paragraph in another div.</p>
+  <p>Another paragraph in another div.</p>
+</div>
+
+    
+  </body>
+</html>
