@@ -4,7 +4,7 @@
 
      @font-face {
          font-family: "Lato-Regular";
-         src: url(/jfs/assets/font/Lato/Lato-Regular.ttf);
+         src: url(../assets/font/Lato/Lato-Regular.ttf);
      }
      @font-face {
         font-family: Lato-Thin;
@@ -19,31 +19,31 @@
 .container {
     max-width: 980px;
 }
-/* 배경 */
+/* 배경 이미지*/
 
 #home .bgimg {
-    background: url(/jfs/assets/img/light_mode.jpg) no-repeat 30% 30%/cover fixed;
+    background: url(../assets/img/light_mode.jpg) no-repeat 30% 30%/cover fixed;
 }
 #home.dark .bgimg {
     /* filter:brightness(100%); */
-    background-image: url(/jfs/assets/img/dark_mode.jpg) ;
+    background-image: url(../assets/img/dark_mode.jpg) ;
 }
 .parallax-bg {
     height: 400px;
     background: no-repeat 50% 50% / cover fixed;
 }
 #about .parallax-bg {
-    background-image: url(/jfs/assets/img/bg-about.jpg);
+    background-image: url(../assets/img/bg-about.jpg);
     background-position: 50% 100%;
 }
 
 #work .parallax-bg {
-    background-image: url(/jfs/assets/img/parallax2.jpg);
+    background-image: url(../assets/img/parallax2.jpg);
     background-position: 50% 30%;
 }
 #contact .parallax-bg {
-    background-image: url(/jfs/assets/img/bg-contact.jpg);
-    background-position: 50% 50%;
+    background-image: url(../assets/img/bg-contact.jpg);
+    background-position: 50% 20%;
 }
 
 /* 애니메이션 */
@@ -58,12 +58,14 @@
         0%{transform: rotate(0deg) scale(2.5)}
         100%{transform: rotate(720deg) scale(2.5)}
     }
-
+/* 헤더 배경색 지정 */
     #header {
         background: transparent;
+        transition: 0.3s;
     }
     #header a {
-        color:#eee
+        color:#eee;
+        transition: 0.3s;
 
     }
     #header a:hover {
@@ -76,10 +78,11 @@
     box-shadow:0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
 }
 #header.active a {
-    background:#222;
+    color:#222;
+    transition: 0.3s;
 }
 #header.active a:hover {
-    background:#111;
+    color:#111;
 }
 /* 텍스트 그림자 */
 #home.dark h2 {
@@ -122,7 +125,6 @@
 }
 /* 텍스트 상자 */
 input {
-    /* width: 48%; ??*/
     height: 45px;
 }
 #name, #email {
