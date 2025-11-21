@@ -4,7 +4,7 @@
             //변수 선언
             const windowHeight = $(window).height();
             let windowScrollTop = $(window).scrollTop();
-            const speed = 2000, 
+            const speed = 1000, 
                   easing = "easeOutExpo", 
                   pos = 0, 
                   offset = 2.5;
@@ -26,7 +26,7 @@
 
             //윈도우의 스크롤 이벤트가 발생하면
             //창의 스크롤 양이 0보다 크면
-            if ($( windowScrollTop).scrollTop() > 0) {
+            if ( windowScrollTop > 0) {
                 //헤더 요소에 active클래스 추가
                 $("#header").addClass("active");//개발자 모드에서 확인가능
             } else {
