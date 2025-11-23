@@ -31,11 +31,12 @@
             const imgObj = $('img').width(150);
             const imgWidth = imgObj.width();
             //moving 박스 가로 크기를 가져오기(get)
+            const boxWidth = $('.moving').width();
             console.log(imgWidth);
             console.log(boxWidth);
             function move(e,speed){
-                 // 이미지가 왼쪽으로 움직임
-                   $(e.currentTarget).animate({left:-boxWidth+imgWidth.width()},speed);
+                 // 이미지가 왼쪽으로 움직임 그림크기만큼 박스를 벗어난 부분 더함.
+                   $(e.currentTarget).animate({left:-boxWidth+imgWidth},speed);
             }
             // 이미지를 클릭하면
            img.eq(0).on('click',e => move(e,1000));
