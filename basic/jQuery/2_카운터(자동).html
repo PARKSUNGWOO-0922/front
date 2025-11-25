@@ -11,26 +11,23 @@
             let i = 0 ;
             // 1부터 100까지 숫자가 증가
             function counter() {
-                if(i< 20) {
+                if(i < 20) {
                     //break: 반복문(선택문)을 벗어남
-                    return;    
+                    return  $('span').text(i++);
                 }
-                $('span').text(i++);
             }
             //const 변수명 = setInterval(함수,시간)
             //시간은 밀리초(ms):1000 -> 1초
             //setInterval(function(){counter();},50);
-            setInterval(counter,50);
-            //clearInterval(변수명)
-            clearInterval()
+            const timer = setInterval(counter,50);
+            //clearInterval(변수명):setInterval 멈춤
+            clearInterval(timer);
         });
     </script>
 </head>
 <body>
-    <!-- data-* 사용자 정의 속성 -->
+    <!-- data- * 사용자 정의 속성 data-로 시작 -->
     <p><span data-count="55">0</span>+</p>
-    <p><span data-count="20">0</span>+</p>
-    <p><span data-count="20">0</span>+</p>
-    <p><span data-count="20">0</span>+</p>
+    
 </body>
 </html>

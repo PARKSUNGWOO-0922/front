@@ -26,21 +26,13 @@
               
                     function counter() {
                         counters.forEach((item)=>{
-                        if(i<=item) {
-                            span.text(i++);
-                        }
-
-                    });
-             
+                            if(i<=item) {
+                                span.text(i++);
+                            }
+                        });
+                    }
                     
-                }
-
-            });
-
-        
-
-           
-            
+                });
             //const 변수명 = setInterval(함수,시간)
             //시간은 밀리초(ms):1000 -> 1초
             //setInterval(function(){counter();},50);

@@ -28,11 +28,14 @@
                 console.log(str);
             });
 
+            
+            //data-count 값을 가져오기
             const num0 = $('p').eq(0).find('span').attr('data-count');
             const num1 = $('p').eq(1).find('span').attr('data-count');
             const num2 = $('p').eq(2).find('span').attr('data-count');
             const num3 = $('p').eq(3).find('span').attr('data-count');
-           console.log(num);
+           
+
             let i0 = 0 ;
             let i1 = 0 ;
             let i2 = 0 ;
@@ -43,22 +46,18 @@
                 if(i0 <= num0) {
                     //break: 반복문(선택문)을 벗어남
                     $('p').eq(0).find('span').text(i0++);
-                    //return;    
                 }
                 if(i1 <= num1) {
                     //break: 반복문(선택문)을 벗어남
                     $('p').eq(1).find('span').text(i1++);
-                    //return;    
                 }
                 if(i2 <= num2) {
                     //break: 반복문(선택문)을 벗어남
                     $('p').eq(2).find('span').text(i2++);
-                    //return;    
                 }
                 if(i3 <= num3) {
                     //break: 반복문(선택문)을 벗어남
                     $('p').eq(3).find('span').text(i3++);
-                    //return;    
                 }
                 return;
             }
