@@ -14,29 +14,28 @@
 
             let num;
             const counters = [];
-            let i=0;   
+            //let i=0;   
       
             $('p').each(function(idx,ele){
+                 const span = $(ele).find('span');
                // num =  $('p').eq(idx).find('span').attr('data-count');
                 num =  $(ele).find('span').attr('data-count');
                 console.log(parseInt(num));
 
                 counters.push(num);
                     console.log(counters);
-              
+                    let i=0;
                     function counter() {
-                        counters.forEach((item)=>{
-                            if(i<=item) {
+                            if(i<=counters[idx]) {
                                 span.text(i++);
                             }
-                        });
                     }
                     
+                    setInterval(counter,50);//each 내부ㄹ
                 });
             //const 변수명 = setInterval(함수,시간)
             //시간은 밀리초(ms):1000 -> 1초
             //setInterval(function(){counter();},50);
-            setInterval(counter,50);
             //clearInterval(변수명)
            // clearInterval()
         });

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS 구조분해할당</title>
+  </head>
+  <body>
+    <script>
+      //1.배열 선언
+      const arr = [1, 2, 3];
+      //배열구조분해할당 : 좌변의 순서대로 변수에 할당됩니다.
+      //const [변수1,변수2,..] = [값1,값2,..];
+      //변수1=값1, 변수2=값2
+      const [a, b, c] = arr;
+
+      console.log("a = " + a); // 1
+      console.log("b = " + b); // 2
+      console.log("c = " + c); // 3
+      // + , 모두사용가능
+      const [x, y, z = 100] = [10, 20];
+      console.log("x =", x); // 100 (값이 없으면 기본값)
+      console.log("y =", y); // 100 (값이 없으면 기본값)
+      console.log("z =", z); // 100 (값이 없으면 기본값)
+
+      //2.객체구조분해할당
+      //const {변수1,변수2,..} = {속성:값,속성:값,..};
+      //변수1=값1,변수2=값2,
+      //user객체생성
+      const user = { name: "홍길동", age: 25 };
+      const { name, age } = user;
+
+      console.log("name = ", name); // 홍길동
+      console.log("age = ", age); // 25
+
+      // 다른 변수 이름으로 할당 (별칭 사용)
+      //const { 변수: 별칭} = { };
+      const { name: userName } = user;
+      console.log("userName = ", userName); // 홍길동
+      //기본값 설정
+      const { job = "개발자" } = user;
+      console.log(job); //개발자 기본값 설정이 없으면 undefined
+      //3. 함수의 매개변수에서 구조 분해 (React에서 매우 자주 사용)
+      function printUser({ name, age }) {
+        console.log(`${name} (${age})`);
+      }
+
+      const user2 = { name: "Jane", age: 22 };
+      printUser(user2);
+
+      //4.중첩 구조 분해
+      const user3 = {
+        name: "철수",
+        address: {
+          city: "서울",
+          zip: "12345",
+        },
+      };
+
+      const {
+        address: { city },
+      } = use3r;
+
+      console.log(city); // 서울
+    </script>
+  </body>
+</html>

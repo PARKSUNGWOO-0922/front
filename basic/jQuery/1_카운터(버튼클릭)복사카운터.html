@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>카운터</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
+    
+</head>
+<body>
+    <!-- 사용자 성의 속성: data-* -->
+   <span class="count" data-target="3">0</span>+
+   <span class="count" data-target="2">0</span>+
+   <span class="count" data-target="20">0</span>+
+   <span class="count" data-target="3">0</span>+
+
+<script>
+    //자동 카운터 each:확장성을위해 사용
+    //.count 개수 만큼 반복 각각 함수 실행
+  $(".count").each(function () {
+    //변수처리
+    //parseInt('10000')-> 값를 정수로 변환 cf)Number():숫자로 변환
+    let $this = $(this);
+    let target = parseInt($this.attr("data-target"));
+    let current = 0;
+    let duration = 1000;
+    let interval = 20;
+    //let step = Math.ceil(target / (duration / interval));
+
+    let timer = setInterval(() => {
+      //current += step;
+      current++;
+
+      if (current >= target) {
+        //current = target; 
+        //step에 의한 target 초과되어 표시되지않게??.....++시 필요없음.
+        clearInterval(timer);
+      }
+
+      $this.text(current);
+    }, interval);
+  });
+</script>
+</body>
+</html>

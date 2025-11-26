@@ -12,35 +12,29 @@
             //const num = $('p:eq(0) span').attr('data-count');
             //반복객체.each(function(idx,ele){반복할내용});
 
-            let num;
       
             $('p').each(function(idx,ele){
                // num =  $('p').eq(idx).find('span').attr('data-count');
-                num =  $(ele).find('span').attr('data-count');
+                let num =  $(ele).find('span').attr('data-count');
                 console.log(Number(num));
-
+                i = 0;
                 function counter() {
-                    if(i0 <= num0) {
-                        //break: 반복문(선택문)을 벗어남
-                        $('p').eq(0).find('span').text(i0++);
-                        //return;    
+                    if (i <= Number(num)) {
+                        $(ele).find('span').text(i++);
                     }
-             
-                    return;
                 }
-
+                //const 변수명 = setInterval(함수,시간)
+                //시간은 밀리초(ms):1000 -> 1초
+                //setInterval(function(){counter();},50);
+                setInterval(counter,50);
+                //clearInterval(변수명)
+               // clearInterval()
             });
 
         
 
            
             
-            //const 변수명 = setInterval(함수,시간)
-            //시간은 밀리초(ms):1000 -> 1초
-            //setInterval(function(){counter();},50);
-            setInterval(counter,50);
-            //clearInterval(변수명)
-           // clearInterval()
         });
     </script>
 </head>
