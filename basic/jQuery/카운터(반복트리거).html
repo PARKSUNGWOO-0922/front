@@ -78,7 +78,7 @@ section {
         $(".counter").each(function() {
             const $this = $(this),
                 elementTop = $this.offset().top;
-
+            //outerHeight() 콘텐츠크기
             if (scrollTop + windowHeight > elementTop + 50 && scrollTop < elementTop + $this.outerHeight()) {
                 if (!$this.hasClass("active")) {
                     $this.addClass("active");
@@ -86,13 +86,13 @@ section {
                 }
             } else {
                 $this.removeClass("active");
-                $this.text(0);
+                $this.text(0);//아래로 내려가면 다시 초기화
             }
         });
     } //checkScroll() end
     //$.throttle(시간, 함수)
     //시간은 ms 예) 100 -> 0.1초
-    $(window).on("scroll", $.throttle(100, checkScroll));
+    $(window).on("scroll", $.throttle(100, checkScroll));//0.1초(100ms)에 한 번만 checkScroll 실행되도록 제한(throttle)하는 것.
     checkScroll();
 });
 </script>

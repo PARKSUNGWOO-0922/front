@@ -56,14 +56,14 @@ section {
 
     function runCounter() {
         const scrollTop = $(window).scrollTop(),//스크롤양
-            windowHeight = $(window).height(),//창높이
-            countersTop = $("#counters").offset().top;
+            windowHeight = $(window).height(),//브라우저 화면창높이
+            countersTop = $("#counters").offset().top;//문서전체기준#counter의 위치
             console.log('windowHeight:',windowHeight);
             console.log('countersTop:',countersTop);
 
         if (!counted && scrollTop + windowHeight > countersTop + 100) {
             counted = true;
-
+            //100->#counters가 화면에 살짝 나타날 때 작동하게
             $(".counter").each(function() {
                 const $this = $(this)
                 const    target = parseInt($this.attr("data-target"))
