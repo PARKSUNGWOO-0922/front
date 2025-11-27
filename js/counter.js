@@ -40,4 +40,4 @@
     //시간은 ms 예) 100 -> 0.1초
     $(window).on("scroll", $.throttle(100, checkScroll));
     checkScroll();
-});
+});//$(document).ready() end
