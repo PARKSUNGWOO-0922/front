@@ -1,0 +1,133 @@
+
+<!-- 카운터(반보트리거)복사본임 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스크롤카운터</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+section {
+    height: 100vh;
+}
+
+#counters {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: red;
+}
+.counter {
+    font-size: 4em;
+    font-weight: bold;
+   /*  margin: 20px; */
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+.progress-wrap {
+            position: relative;
+            width: 400px;
+            height: 30px;
+            background: #ddd;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            width: 0%;
+            height: 100%;
+            background: #4caf50;
+            transition: width .3s ease-out;
+        }
+
+        .percent {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-weight: bold;
+        }
+
+.counter.active {
+    opacity: 1;
+}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-throttle-debounce/1.1/jquery.ba-throttle-debounce.min.js" ></script>
+    
+</head>
+<body>
+<section>
+    <h1>스크롤 아래로 내려보세요</h1>
+</section>
+
+<section >
+    <div id="counters">
+    
+    <div class="progress-wrap ">
+        <div class="progress-bar bg-info"><span class="counter percent" data-target="3">30%</span></div>
+    </div>
+    
+    <div class="progress-wrap">
+        <div class="progress-bar bg-info"><span class="counter percent" data-target="3">30%</span></div>    
+    </div>
+        
+        
+    </div>
+</section>
+
+<script>
+    $(function() {
+
+    function runCounter($counter) {
+        let target = parseInt($counter.attr("data-target")),
+            count = 0,
+            speed = 50;
+
+        $counter.text(0);
+
+        let counterInterval = setInterval(function() {
+
+            count += Math.ceil(target / 100);
+            if (count >= target) {
+                count = target;
+                clearInterval(counterInterval);
+            }
+            $counter.text(count);
+        }, speed);
+    }//runCounter($counter) end
+
+    function checkScroll() {
+        let scrollTop = $(window).scrollTop(),
+            windowHeight = $(window).height();
+
+        $(".counter").each(function() {
+            const $this = $(this),
+                elementTop = $this.offset().top;
+            //outerHeight() 콘텐츠크기
+            if (scrollTop + windowHeight > elementTop + 50 && scrollTop < elementTop + $this.outerHeight()) {
+                if (!$this.hasClass("active")) {
+                    $this.addClass("active");
+                    runCounter($this);
+                }
+            } else {
+                $this.removeClass("active");
+                $this.text(0);//아래로 내려가면 다시 초기화
+            }
+        });
+    } //checkScroll() end
+    //$.throttle(시간, 함수)
+    //시간은 ms 예) 100 -> 0.1초
+    $(window).on("scroll", $.throttle(100, checkScroll));//0.1초(100ms)에 한 번만 checkScroll 실행되도록 제한(throttle)하는 것.
+    checkScroll();
+});
+</script>
+</body>
+</html>
