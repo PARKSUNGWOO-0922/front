@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
+
+    <style>
+        * {
+
+            box-sizing: border-box;
+            margin: 0px;
+        }
+
+        .mega-poster {
+           
+            position: relative;
+            width: 252px;
+            height: 418px;
+            border-radius: 8px;
+            overflow: hidden;
+            background-color: #333;
+        }
+
+        .container .img-main img {
+            width: 100%;
+            height: 100%;
+             cursor: pointer;
+            object-fit: cover;
+        }
+
+        .img-main {
+            position: relative;
+            overflow: hidden;
+        }
+        /* 텍스트 오버레이 기본 상태: 숨김 */
+        .text-overlay {
+            position: absolute;
+            width: 200px;
+            height: 162px;
+            top: 32px;
+            left: 28px;
+            right: 20px;
+            color: white;
+            font-size: 16px;
+            opacity: 0;
+            transition: opacity .4s ease;
+        }
+
+        .review .review-point {
+            position: absolute;
+            display: flex;
+            top: 280px;
+            width: 220px;
+            margin-left: 16px;
+            height: 68px;
+            font-size: 14px;
+            line-height: 68px;
+            opacity: 0;
+            justify-content: space-between;
+            padding: 0 80px;
+            align-items:  center;
+            color: #fff;
+            border-top:1px solid #5f5f5f;
+            
+        }
+
+        .review .review-point span {
+            position: absolute;
+            right: 30px;
+            font-size: 32px;
+            color: #037b94;
+        }
+
+        /* hover 시 텍스트 나타남 */
+        .container:hover .text-overlay,
+        .container:hover .review-point {
+            opacity: 1;
+        }
+
+        /* hover 시 이미지 어둡게 또는 흐릿하게 */
+        .img-main img {
+            transition: .4s ease;
+        }
+
+        .container:hover img {
+            filter: brightness(30%) blur(2px);
+        }
+
+        .container .img-sub1 img {
+            position: absolute;
+            top: 290px;
+            left: 8px;
+            width: 60px;
+            height: 20px;
+        }
+
+        .container .img-sub2 img {
+            position: absolute;
+            top: 312px;
+            left: 8px;
+            width: 60px;
+            height: 20px;
+        }
+
+        .container .img-sub3 img {
+            position: absolute;
+            top: 334px;
+            left: 8px;
+            width: 60px;
+            height: 20px;
+        }
+
+        .container .img-sub4 img {
+            position: absolute;
+            top: 326px;
+            left: 220px;
+            width: 28px;
+            height: 28px;
+        }
+
+        .mega-poster .like-button {
+            display: inline-block;
+            margin: 2px 2px 0 2px;
+            width: 80px;
+            height: 40px;
+            line-height: 40px;
+            cursor: pointer;
+            text-align: center;
+            color: #fff;
+            border-radius: 4px;
+            border: 0.5px solid #888;
+            background-color: #222;
+
+        }
+
+        .mega-poster .reserve-button {
+            display: inline-block;
+            margin: 2px 2px 0 2px;
+            width: 158px;
+            height: 40px;
+            line-height: 40px;
+            cursor: pointer;
+            text-align: center;
+            border-radius: 4px;
+            background-color: #037b94;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="mega-poster">
+        <div class="container">
+
+            <div class="img-main"><img src="./../../assets/img/juto_main.jpg" alt="main-poster">
+                <p class="text-overlay">더 화려해진 세계,더 넓어진 주토피아!<br>디즈니의가~~장 사랑스러운콤비'주디'와'닉'이돌아온다!<br><br>미스터리한 뱀'게리'가나타난
+                    순간.</p>
+                <div class="review">
+                    <p class="review-point">
+                        관람평 <span>9.4</span>
+                    </p>
+                </div>
+            </div>
+
+            <div class="img-sub1"><img src="./../../assets/img/type_mega_mx4d.png" alt="sub1-poster"></div>
+            <div class="img-sub2"><img src="./../../assets/img/type_dolbycinema.png" alt="sub2-poster"></div>
+            <div class="img-sub3"><img src="./../../assets/img/type_dolbyatmos.png" alt="sub3-poster"></div>
+            <div class="img-sub4"><img src="./../../assets/img/ALL_56x56.png" alt="sub4-poster"></div>
+        </div>
+        <div>
+            <span class="like-button"><i class="fa-regular fa-heart"></i>1.8k</span>
+            <span class="reserve-button">예매</span>
+        </div>
+    </div>
+</body>
+
+</html>

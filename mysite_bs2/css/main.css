@@ -1,0 +1,162 @@
+@charset "utf-8";
+/* 타이포*/
+     @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap");
+
+     @font-face {
+         font-family: "Lato-Regular";
+         src: url(../assets/font/Lato/Lato-Regular.ttf);
+     }
+     @font-face {
+        font-family: Lato-Thin;
+        src:url(https://PARKSUNGWOO-0922.github.io/jfs/assets/font/Lato-Thin.ttf)
+     }
+
+
+   .ls10px{
+        letter-spacing: 0.625rem;
+    }
+/* 공통 */
+.container {
+    max-width: 980px;
+}
+/* 배경 이미지*/
+
+#home .bgimg {
+    background: url(../assets/img/light_mode.jpg) no-repeat 30% 30%/cover fixed;
+}
+#home.dark .bgimg {
+    /* filter:brightness(100%); */
+    background-image: url(../assets/img/dark_mode.jpg) ;
+}
+.parallax-bg {
+    height: 400px;
+    background: no-repeat 50% 50% / cover fixed;
+}
+#about .parallax-bg {
+    background-image: url(../assets/img/bg-about.jpg);
+    background-position: 50% 100%;
+}
+
+#work .parallax-bg {
+    background-image: url(../assets/img/parallax2.jpg);
+    background-position: 50% 30%;
+}
+#contact .parallax-bg {
+    background-image: url(../assets/img/bg-contact.jpg);
+    background-position: 50% 20%;
+}
+
+/* 애니메이션 */
+
+   .circle_ani {
+    width: 135px;
+    height: 136px;
+    transition: linear 5s;
+    animation:circle 50s linear infinite;
+}
+    @keyframes circle {
+        0%{transform: rotate(0deg) scale(2.5)}
+        100%{transform: rotate(720deg) scale(2.5)}
+    }
+/* 헤더 배경색 지정 */
+    #header {
+        background: transparent;
+        transition: 0.3s;
+    }
+    #header a {
+        color:#eee;
+        transition: 0.3s;
+
+    }
+    #header a:hover {
+        color:#fff
+
+    }
+    #header.active {
+        background: #fff;
+        /* 헤더 박스 그림자 */            
+    box-shadow:0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
+}
+#header.active a {
+    color:#222;
+    transition: 0.3s;
+}
+#header.active a:hover {
+    color:#111;
+}
+/* 텍스트 그림자 */
+#home.dark h2 {
+    text-shadow: 1px 1px 5px red, 0 0 25px red, 0 0 35px red;
+}
+
+#counter {
+    /* 카운터와 #work 섹션 사이가 벌어진(흰색) 부분 해결 */
+    transform: translateY(56px);
+}
+#about::before, #work::before, #contact::before {
+    display: block;
+    content: '';
+    /* ::before 높이를  헤더의 높이 만큼 지정한다. */
+    height: 56px;
+}
+/* 프로필 소개 문단 양끝정렬,단어간 공백조정*/
+.basic p {
+    text-align: justify;
+    word-break: break-all;
+}
+
+/* 나의사진 */
+.myimg {
+    width: 425px;
+    height: 280px;
+}
+
+/* 진행률 바 */
+.progress {
+    height: 35px;
+}
+.progress:first-of-type .progress-bar{
+    width: 40%;
+}
+.progress:last-of-type .progress-bar{
+    width: 50%;
+}
+/* 카운터 */
+.counter {
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+.counter::after {
+    content:'+';
+}
+
+.counter.active {
+    opacity: 1;
+}
+/* 작품 크기 */
+.portfolio li {
+    /* aspect-ratio: 가로/세로; */
+    aspect-ratio: 9/6;
+}
+
+
+/* 맵 */
+.map {
+    height: 160px;
+
+}
+/* 텍스트 상자 */
+input {
+    height: 45px;
+}
+#name, #email {
+    width: calc(50% - 8px);
+}
+textarea {
+    width: 100%;
+    height: 200px;
+    resize: none;
+}
+#btnForm {
+    width: auto;
+}

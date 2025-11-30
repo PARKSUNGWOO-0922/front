@@ -1,31 +1,34 @@
  $(function() {
 
     function runCounter($counter) {
-        let target = parseInt($counter.attr("data-target")),
+        var target = parseInt($counter.attr("data-target")),
             count = 0,
-            speed = 50;
+            speed = 90;
 
         $counter.text(0);
 
-        let counterInterval = setInterval(function() {
-            count += Math.ceil(target / 100);
+        var counterInterval = setInterval(function() {
+            count ++;
             if (count >= target) {
-                count = target;
                 clearInterval(counterInterval);
             }
+             // 바 증가
+             $counter.parent('.progress-bar').css("width", count + "%");
+            // 숫자(퍼센트) 증가
             $counter.text(count);
         }, speed);
-    }//runCounter($counter) end
+    }//  function runCounter($counter) end
 
     function checkScroll() {
-        let scrollTop = $(window).scrollTop(),
+        const scrollTop = $(window).scrollTop(),
             windowHeight = $(window).height();
+            elementTop = $(".counters").offset().top;
 
         $(".counter").each(function() {
-            const $this = $(this),
-                elementTop = $this.offset().top;
+            const $this = $(this);
+            //console.log($this);
 
-            if (scrollTop + windowHeight > elementTop + 50 && scrollTop < elementTop + $this.outerHeight()) {
+            if (scrollTop + windowHeight > elementTop + 250) {
                 if (!$this.hasClass("active")) {
                     $this.addClass("active");
                     runCounter($this);
@@ -35,9 +38,10 @@
                 $this.text(0);
             }
         });
-    } //checkScroll() end
+         //console.log($(window).scrollTop());
+    } // function checkScroll() end
     //$.throttle(시간, 함수)
     //시간은 ms 예) 100 -> 0.1초
-    $(window).on("scroll", $.throttle(100, checkScroll));
+    $(window).on("scroll", $.throttle ? $.throttle(100, checkScroll) : checkScroll);
     checkScroll();
 });//$(document).ready() end

@@ -72,6 +72,7 @@
         color:#fff
 
     }
+    
     #header.active {
         background: #fff;
         /* 헤더 박스 그림자 */            
@@ -88,18 +89,26 @@
 #home.dark h2 {
     text-shadow: 1px 1px 5px red, 0 0 25px red, 0 0 35px red;
 }
+/* 내비게이션 버튼 클릭하여 섹션 이동 시
+섹션의 제목 영역이 헤더에 가려지는 현상 해결! */
 
 #counter {
     /* 카운터와 #work 섹션 사이가 벌어진(흰색) 부분 해결 */
     transform: translateY(56px);
 }
-#about::before, #work::before, #contact::before {
+#about::before, 
+#work::before, 
+#contact::before {
     display: block;
     content: '';
     /* ::before 높이를  헤더의 높이 만큼 지정한다. */
     height: 56px;
 }
-
+/* 프로필 소개 문단 양끝정렬,단어간 공백조정*/
+.basic p {
+    text-align: justify;
+    word-break: break-all;
+}
 
 /* 나의사진 */
 .myimg {
@@ -112,10 +121,10 @@
     height: 35px;
 }
 .progress:first-of-type .progress-bar{
-    width: 30%;
+    width: 40%;
 }
 .progress:last-of-type .progress-bar{
-    width: 30%;
+    width: 50%;
 }
 /* 카운터 */
 .counter {
@@ -129,6 +138,12 @@
 .counter.active {
     opacity: 1;
 }
+/* 작품 크기 */
+.portfolio li {
+    /* aspect-ratio: 가로/세로; */
+    aspect-ratio: 9/6;
+}
+
 
 /* 맵 */
 .map {
@@ -148,5 +163,5 @@ textarea {
     resize: none;
 }
 #btnForm {
-    width: 29%;
+    width: auto;
 }

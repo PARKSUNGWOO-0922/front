@@ -22,13 +22,13 @@ $(window).scroll(function () {
             case 1:
             case 2:
                 offset1 = 800;
-                offset2 = 600;
+                offset2 = 300;
                 speed = 1000;
                 break;
             default:
-                offset1 = 1800;
+                offset1 = 1600;
                 offset2 = 600;
-                speed = 400;
+                speed = 500;
         }
 
         // if ( i < 1){
@@ -49,9 +49,8 @@ $(window).scroll(function () {
 
         // console.log(elementTop);   
         if (windowScrollTop > elementTop - windowHeight + offset1) {
-            $(el).stop().animate({ top: pos, opacity: 1 }, (speed * (i + 1)) / 2, easing);
-        }
-        else {
+            $(el).stop().animate({ top: pos, opacity: 1 },(speed * (i + 1)) / 2, easing);
+        } else {
             $(el).stop().animate({ top: pos + offset2, opacity: 0 }, speed, easing);
         }
     });
