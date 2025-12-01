@@ -73,7 +73,7 @@
         display: flex;
       }
       /* 메인 매뉴 호버시 하단의 바 */
-      #gnb .main>li:not(nth-of-type(5)):hover::after {
+      #gnb .main>li:not(nth-of-type(5))>a:hover::after {
         position: absolute;
         bottom: -16px;
         transform: translateX(-100%);
