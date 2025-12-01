@@ -19,12 +19,12 @@
       console.log("c = " + c); // 3
       // + , 모두사용가능
       const [x, y, z = 100] = [10, 20];
-      console.log("x =", x); // 100 (값이 없으면 기본값)
-      console.log("y =", y); // 100 (값이 없으면 기본값)
+      console.log("x =", x); // 10 (값이 없으면 기본값)
+      console.log("y =", y); // 20 (값이 없으면 기본값)
       console.log("z =", z); // 100 (값이 없으면 기본값)
 
       //2.객체구조분해할당
-      //const {변수1,변수2,..} = {속성:값,속성:값,..};
+      //const {변수1,변수2,..} = {속성:값1,속성:값2,..};
       //변수1=값1,변수2=값2,
       //user객체생성
       const user = { name: "홍길동", age: 25 };
@@ -58,8 +58,8 @@
       };
 
       const {
-        address: { city },
-      } = use3r;
+        address: { city },//왼쪽address는 변수가아니라 “user3에서 address 속성을 찾아라”는 의미임.
+      } = user3;
 
       console.log(city); // 서울
     </script>
