@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MEET PLAY SHARE,메가박스</title>
+    <style>
+      /* reset(초기화) */
+      /* 눈누 나눔바른고딕 검색:네이버선택 */
+      @font-face {
+        font-family: "NanumBarunGothic";
+        src: url("//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWeb.eot");
+        font-weight: 400;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: "NanumBarunGothic";
+        src: url("//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.eot");
+        font-weight: 700;
+        font-display: swap;
+      }
+      @font-face {
+        font-family: "NanumBarunGothic";
+        src: url("//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.eot");
+        font-weight: 300;
+        font-display: swap;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body,
+      h1,
+      ul {
+        margin: 0;
+        padding: 0;
+      }
+      ul {
+        list-style: none;
+      }
+      body {
+        font: 15px/1.6 "NanumBarunGothic", sans-serif;
+      }
+      a {
+        text-decoration: none;
+        color:#fff;
+      }
+      img {
+        vertical-align: top;
+      }
+      
+      /* header(헤더) */
+      #header {
+        background: #111;;
+      }
+
+    </style>
+  </head>
+  <body>
+    <!-- header -->
+    <header id="header">
+      <div class="inner">
+        <!-- logo -->
+        <h1 id="logo">
+          <a href="index.html"
+            ><img
+              src="images/logo-white_new2.png"
+              alt="메가박스"
+              title="MEGABOX 메인으로 가기"
+          /></a>
+        </h1>
+        <!-- top_link -->
+        <div class="top_link">
+          <div class="left_link">
+            <a href="https://www.megabox.co.kr/benefit/viplounge">VIP LOUNGE</a>
+            <a href="https://www.megabox.co.kr/benefit/membership">멤버십</a>
+            <a href="https://www.megabox.co.kr/support">고객센터</a>
+          </div>
+
+          <div class="left_link">
+            <a href="#">로그인</a>
+            <a href="https://www.megabox.co.kr/joinp">회원가입</a>
+            <a href="https://www.megabox.co.kr/booking">빠른예매</a>
+          </div>
+        </div>
+        <!--//top_link -->
+        <!-- GNB -->
+        <!-- nav#gnb>ul.main>li*6>a[href="#"]+ul>li*3>a[href="#"] -->
+        <nav id="gnb">
+          <ul class="main">
+            <li>
+              <a href="#">영화</a>
+              <ul class="sub">
+                <li><a href="https://www.megabox.co.kr/movie">전체영화</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="https://www.megabox.co.kr/booking">예매</a>
+              <ul class="sub">
+                <li><a href="https://www.megabox.co.kr/booking">빠른예매</a></li>
+                <li>
+                  <a href="https://www.megabox.co.kr/booking/timetable"
+                    >상영시간표</a
+                  >
+                </li>
+                <li>
+                  <a href="https://www.megabox.co.kr/booking/privatebooking"
+                    >더 부티크 프라이빗예매</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="https://www.megabox.co.kr/theater/list">극장</a>
+              <ul class="sub">
+                <li>
+                  <a href="https://www.megabox.co.kr/theater/list">전체극장</a>
+                </li>
+                <li>
+                  <a href="https://www.megabox.co.kr/specialtheater/list"
+                    >특별관</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="https://www.megabox.co.kr/event">이벤트</a>
+              <ul class="sub">
+                <li>
+                  <a href="https://www.megabox.co.kr/event">진행중 이벤트</a>
+                </li>
+                <li><a href="https://www.megabox.co.kr/event/end">지난 이벤트</a></li>
+                <li><a href="https://www.megabox.co.kr/event/winner/list?currPage=1&searchText=&">당첨자 발표</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="https://www.megabox.co.kr/store">스토어</a>
+            </li>
+            <li>
+              <a href="https://www.megabox.co.kr/benefit/membership">혜택</a>
+              <ul class="sub">
+                <li><a href="https://www.megabox.co.kr/benefit/membership">메가박스 멤버십</a></li>
+                <li><a href="https://www.megabox.co.kr/benefit/discount/guide">제휴/할인</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+        <!-- //gnb -->
+        <!-- link icon -->
+        <div class="link_icon">
+          <div class="left_link">
+            <a href="https://www.megabox.co.kr/benefit/discount/guide"
+              ><img
+                src="./images/ico-sitemap-white.png"
+                alt="사이트맵"
+                title="사이트맵"
+            /></a>
+            <a href="#"
+              ><img src="./images/ico-search-white.png" alt="검색" title="검색"
+            /></a>
+          </div>
+          <div class="right_link">
+            <a href="https://www.megabox.co.kr/booking/timetable"
+              ><img
+                src="./images/ico-schedule-white.png"
+                alt="상영시간표"
+                title="상영시간표"
+            /></a>
+            <a href="#"
+              ><img
+                src="./images/ico-mymega-white.png"
+                alt="나의메가박스"
+                title="나의메가박스"
+            /></a>
+          </div>
+        </div>
+      </div>
+      <!-- //.inner -->
+    </header>
+    <!-- //header -->
+    <!-- section -->
+    <section id="section"></section>
+    <!--//section -->
+    <!-- footer -->
+    <footer id="footer"></footer>
+    <!-- //footer -->
+  </body>
+</html>
