@@ -32,8 +32,8 @@
       ul {
         list-style: none;
       }
+      /* https://sitero.co.kr/fontsize :단위변환 사이트 */
       body {
-          /* https://sitero.co.kr/fontsize :단위변환 사이트 */
         font: 0.9375rem/1.6 "NanumBarunGothic", sans-serif;
         background: #111;
       }
@@ -43,7 +43,8 @@
       }
       img {
         vertical-align: middle;/* top->middle 헤더아이콘 상하 정렬(bottom,top등으로 조정) */
+        /* card(y축회전)에서만 필요/index.html 헤더깨짐 */
         width: 100%;
         height: 100%;
-        object-fit: cover;
+        object-fit: cover; 
       }

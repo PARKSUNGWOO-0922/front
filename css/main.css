@@ -139,19 +139,13 @@
     opacity: 1;
 }
 /* 작품 크기 */
-.portfolio li {
-    /* aspect-ratio: 가로/세로; */
-    aspect-ratio: 9/6;
-}
 
-   .box_office {
-            display: flex;
-            gap: 40px;
-        }
+
+   
 
         .box_office_card {
             position: relative;
-            width: 245px;
+           /*  width: 245px; */
         }
 
         /* 영화 순위 */
@@ -165,25 +159,13 @@
             font-style: italic;
             text-shadow: 2px 2px 2px #000;
         }
-
-        /* 스크린 타입 */
-        .screen_type {
-            position: absolute;
-            left: 10px;
-            bottom: 10px;
-            width: 60px;
+/* 포스터 */
+.poster {
+    height: 352px;
         }
 
-        /* 연령 제한 */
-        .grade {
-            position: absolute;
-            right: 10px;
-            bottom: 10px;
-            width: 28px;
-        }
-
-        /* 관람평 */
-        .score {
+/* 작업 시간 */
+.worktime {
             position: absolute;
             width: calc(100% - 48px);
             text-align: center;
@@ -192,42 +174,36 @@
             padding-top: 8px;
         }
 
-        /* 관람평 점수 */
-        .score span {
+.worktime span {
             color: #59bec9;
             font-size: 1.5rem;
             margin-left: 16px;
         }
 
         /* 버튼 */
-        .btn {
+.portfolio .btn {
             display: flex;
+            justify-content: space-between;
+            padding: 0;
             gap: 8px;
             margin-top: 8px;
+            height: 34px;
         }
 
-        /* 좋아요! 버튼 */
-        .like {
-            color: #fff;
+/* 작업 유형 */
+.worktype {
             background: transparent;
-            border: 1px solid #fff;
+             border: 1px solid #111;
             border-radius: 5px;
-            width: 100px;
-            /* height: 34px; */
+            width: 60px;
+            line-height: 30px;
         }
 
-        .like i {
-            margin-right: 4px;
-        }
-
-        /* 예매 버튼 */
-        .reservation_link {
+/* 사이트 바로가기 버튼 */
+.sitelink {
             width: 100%;
-            background: #037b94;
             border-radius: 5px;
-            text-align: center;
-            padding: 6px;
-            /* line-height: 34px; */
+    line-height: 30px;
         }
 
         /* y축 회전 */
