@@ -1,5 +1,5 @@
 $(datas).each((idx, data) => {
-    const desc = data.description.map(ele=>`<li>${ele}</li>`).join('');
+        const desc = data.description.map(ele=>`<li>${ele}</li>`).join('');
 
     const card = `<div class="box_office_card col-lg col-md-6 motion position-relative">
             <div class="inner">
