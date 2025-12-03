@@ -1,5 +1,5 @@
 // 카드 데이터 배열
-
+// datas 배열
 const datas = [
     {
         rank: 1,
