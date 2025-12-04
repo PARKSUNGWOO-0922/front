@@ -99,6 +99,14 @@
         .mouse span {
             display: inline-block;
             width: 16px;
+            animation: mouse 2.0s infinite ease-in-out  alternate;
+        }
+        @keyframes mouse {
+            0% {transform: translateY(0)}
+            50% {transform: translateY(20px)}
+            80% {transform: translateY(20px)}
+            100% {transform: translateY(0px)}
+            
         }
 
 

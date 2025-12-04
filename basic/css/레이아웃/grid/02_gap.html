@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Grid Gap</title>
+    <style>
+        /* 
+            그리드 컨테이너 
+              
+
+                gap
+                column-gap
+                row-gap
+
+        */
+      .container {
+        display: grid;
+        /* 3열(column), 폭은 자동(auto) */
+      
+
+        grid-template-columns: repeat(4, 1fr);
+
+        grid-template-rows: 80px 200px;/* 카드예시로 테스트 */
+        grid-template-rows: 396px 83px;
+
+        column-gap: 40px;
+         row-gap: 50px;
+        /* gap:행 열 */
+         gap: 50px 40px;
+
+        background-color: dodgerblue;
+        padding: 10px;
+        max-width: 1100px;
+        margin: 0 auto;
+      }
+      /* 그리드 아이템(item) */
+      .container div {
+        background-color: #f1f1f1;
+        border: 1px solid black;
+        padding: 10px;
+        font-size: 30px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+      <div>6</div>
+      <div>7</div>
+      <div>8</div>
+    </div>
+  </body>
+</html>
