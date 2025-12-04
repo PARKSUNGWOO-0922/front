@@ -8,9 +8,9 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
     <style>
-        /* section  */
-        #section  {
-            color:#fff;
+        /* section */
+        #section {
+            color: #fff;
         }
         .ibox {
             max-width: 1100px;
@@ -99,14 +99,13 @@
         .mouse span {
             display: inline-block;
             width: 16px;
-            animation: mouse 2.0s infinite ease-in-out  alternate;
+            animation: mouse 2s infinite ease-in-out;
         }
         @keyframes mouse {
-            0% {transform: translateY(0)}
-            50% {transform: translateY(20px)}
-            80% {transform: translateY(20px)}
-            100% {transform: translateY(0px)}
-            
+            0% {transform: translateY(0);}
+            40% {transform: translateY(20px);}
+            80% {transform: translateY(20px);}
+            100% {transform: translateY(0px);}            
         }
 
 
@@ -254,9 +253,11 @@
             <div class="more"><a href="https://www.megabox.co.kr/movie">더 많은 영화보기<i class="fa-solid fa-plus"></i></a></div>
             <!-- Card UI(카드 UI) -->
             <div class="box_office"></div><!-- //.box_office -->
-            <!-- 검색 창 -->
+            
+            <!-- 섹션 링크 -->
             <ul class="link">
-                <li ><span class="search"><input type="text" placeholder="영화명을 입력해 주세요"></span></li>
+                <!-- 검색 창 -->
+                <li><span class="search"><input type="text" placeholder="영화명을 입력해 주세요"></span></li>
                 <li><a href="https://www.megabox.co.kr/booking/timetable"><img src="images/ico-schedule-main.png" alt="상영시간표"><span>상영시간표</span></a></li>
                 <li><a href="https://www.megabox.co.kr/movie"><img src="images/ico-boxoffice-main.png" alt="박스오피스"><span>박스오피스</span></a></li>
                 <li><a href="https://www.megabox.co.kr/booking"><img src="images/ico-quick-reserve-main.png" alt="빠른예매"><span>빠른예매</span></a></li>
@@ -299,7 +300,7 @@
     
         $('.box_office').append(card);
 
-        }); // forEach()
+        }); // each()
     </script>
 </body>
 

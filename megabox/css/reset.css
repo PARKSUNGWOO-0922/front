@@ -20,6 +20,8 @@
         font-weight: 300;
         font-display: swap;
       }
+
+/* 초기화 */
       * {
         box-sizing: border-box;
       }
@@ -39,7 +41,7 @@
       }
       a {
         text-decoration: none;
-        color:#fff;
+        color: #fff;
       }
       img {
         vertical-align: middle;/* top->middle 헤더아이콘 상하 정렬(bottom,top등으로 조정) */
@@ -52,10 +54,14 @@
         background: transparent;
         border: none;
         /* input이 focus를 가질 경우 생기는 테두리 */
-        outline:none;
+        outline: none;
+    color: #fff;
       }
 
       ::placeholder {
-        color:#fff;
+        color: #fff;
         font-size: 1rem;
       }
+address {
+    font-style: normal;
+}

@@ -1,7 +1,9 @@
 
-/* card UI */
-$(datas).each((idx, data)=>{
-            const screenImgs = data.screenTypes.map(ele=>`<img src="${ele}" alt="Screen Types">`).join('');
+// Movie Card UI 
+$(datas).each((idx, data) => {
+            const screenImgs = data.screenTypes
+            .map((ele) => `<img src="${ele}" alt="Screen Types">`)
+            .join('');
             
             const card = `<div class="box_office_card">
             <div class="inner">
@@ -25,16 +27,16 @@ $(datas).each((idx, data)=>{
                 <button type="button" class="like"><i class="fa-regular fa-heart"></i>${data.like}</button>
                 <a href="" class="reservation_link">예매</a>
             </div>
-        </div>`
+        </div>`;
     
         $('.box_office').append(card);
 
         }); // each()
 
-/* footer theater */
-    $('.btn_looking_theater').on('click', ()=>{
-            $('.theater').addClass('active');
+// footer - looking for theater
+$(".btn_looking_theater").on("click", () => {
+    $(".theater").addClass("active");
         });
-        $('.closed').on('click', ()=>{
-            $('.theater').removeClass('active');
+$(".closed").on("click", () => {
+    $(".theater").removeClass("active");
         });
