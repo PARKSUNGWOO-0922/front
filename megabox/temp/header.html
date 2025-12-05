@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MEET PLAY SHARE,메가박스</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MEET PLAY SHARE, 메가박스</title>
     <style>
       /* reset(초기화) */
       /* 눈누 나눔바른고딕 검색:네이버선택 */
@@ -14,14 +14,14 @@
         font-display: swap;
       }
       @font-face {
-        font-family: "NanumBarunGothic";
-        src: url("//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.eot");
+        font-family: 'NanumBarunGothic';
+        src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebBold.eot');
         font-weight: 700;
         font-display: swap;
       }
       @font-face {
-        font-family: "NanumBarunGothic";
-        src: url("//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.eot");
+        font-family: 'NanumBarunGothic';
+        src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.eot');
         font-weight: 300;
         font-display: swap;
       }
@@ -39,15 +39,16 @@
       }
       /* https://sitero.co.kr/fontsize :단위변환 사이트 */
       body {
-        font: 0.9375rem/1.6 "NanumBarunGothic", sans-serif;
+        font: 0.9375rem/1.6 'NanumBarunGothic', sans-serif;
         background: #111;
       }
       a {
         text-decoration: none;
-        color:#fff;
+        color: #fff;
       }
       img {
-        vertical-align: middle;/* top->middle 아이콘 상하 정렬(bottom,top등으로 조정) */
+        vertical-align: middle;
+        /* top->middle 아이콘 상하 정렬(bottom,top등으로 조정) */
       }
       
       /* header(헤더) */
@@ -55,7 +56,7 @@
         position: relative;
         background: #111;
         padding: 15px;
-        border-bottom: 1px solid rgba(255,255,255,0.2);
+        border-bottom: 1px solid rgba(255,255,255,.2);
       }
       #header .inner {
         max-width: 1100px;
@@ -65,9 +66,9 @@
       /* logo(로고) */
       #logo {
         position: absolute;
-        top: 50%;
         left: 50%;
-        transform: translate(-50%,-50%);
+        top: 50%;
+        transform: translate(-50%, -50%);
       }
       /* top menu */
       #header .top_link {
@@ -75,17 +76,18 @@
         justify-content: space-between;
       }
       #header .top_link a {
-        font-size: 0.8125rem;/* 13px */
-        color:#888;
-        margin: 10px;
+        /* 13px */
+        font-size: 0.8125rem;
+        color: #888;
+        margin: 0 10px;
       }
        /* link icon */
       #header .link_icon {
         display: flex;
-        justify-content: space-between;
         align-items: center;
+        justify-content: space-between;
       }
-      #header .link  {
+      #header .link_icon a {
         margin: 0 10px;
       }
       /* GNB(글로벌 내비게이션 바) */
@@ -97,9 +99,6 @@
         top: 50px;
         transform: translateX(-50%);
       }
-      #gnb a {
-        position: relative;
-      }
       /* 1depth */
       #gnb .main {
         
@@ -108,30 +107,30 @@
       }
       #gnb .main a {
         position: relative;
-        font-size: 1.125rem;/* 18px */
+        font-size: 1.125rem;
+        /* 18px */
       }
       #gnb .main>li:nth-of-type(1) {
-        margin-right: 30px;/* 좌우 글자수 차이로 인한 여백조정 어려움 */
-      }
-      /* #gnb .main>li:nth-of-type(2) {
         margin-left: 30px;
-      } */
+        /* 좌우 글자수 차이로 인한 여백조정 어려움 */
+      }
+    
       #gnb .main>li:nth-of-type(4) {
         margin-left: 300px;
       }
       #gnb .main>li:hover .sub {
         display: flex;
       }
-      /* 메인 매뉴 호버시 하단의 바 */
+      /* 메인 메뉴 호버시 하단의 바 */
       #gnb .main>li:not(:nth-of-type(5))>a:hover::after {
         position: absolute;
-        bottom: -16px;
+        bottom: -14px;
         transform: translateX(-100%);
+        content: '';
         width: 100%;
 
-        content:'';
         height: 3px;
-        background: #fff;;
+        background: #fff;
       }
     
     /* 2depth */
@@ -139,17 +138,18 @@
         position: absolute;
         padding-top: 30px;
         transform: translateX(-25%);
-        text-wrap: nowrap;/* 마지막 메뉴(혜택메뉴)의 영역이 부족하여 줄바꿈되는현상 제거 */
         display: none;
+        /* 마지막 메뉴(혜택 메뉴)의 영역이 부족하여 줄 바꿈되는 현상 제거 */
+        text-wrap: nowrap;
       }
-      #gnb.sub li {
+      #gnb .sub li {
         margin: 0 8px;
-      }
-      #gnb .sub a:hover {
-        text-decoration: underline;
       }
       #gnb .sub a {
         font-size: 0.9375rem;
+      }
+      #gnb .sub a:hover {
+        text-decoration: underline;
       }
      
      
@@ -162,15 +162,9 @@
     <header id="header">
       <div class="inner">
         <!-- logo -->
-        <h1 id="logo">
-          <a href="index.html"
-            ><img
-              src="images/logo-white_new2.png"
-              alt="메가박스"
-              title="MEGABOX 메인으로 가기"
-          /></a>
-        </h1>
-        <!-- top_link -->
+        <h1 id="logo"><a href="index.html"><img src="images/logo-white_new2.png" alt="MEGABOX 메인으로 가기"
+              title="MEGABOX 메인으로 가기"></a></h1>
+        <!-- top link -->
         <div class="top_link">
           <div class="left_link">
             <a href="https://www.megabox.co.kr/benefit/viplounge">VIP LOUNGE</a>
@@ -180,17 +174,17 @@
 
           <div class="left_link">
             <a href="#">로그인</a>
-            <a href="https://www.megabox.co.kr/joinp">회원가입</a>
+            <a href="https://www.megabox.co.kr/join">회원가입</a>
             <a href="https://www.megabox.co.kr/booking">빠른예매</a>
           </div>
-        </div>
-        <!--//top_link -->
+        </div><!-- //.top_link -->
         <!-- GNB -->
-        <!-- nav#gnb>ul.main>li*6>a[href="#"]+ul>li*3>a[href="#"] -->
+        <!-- nav#gnb>ul.main>li*6>a[href="#"]+ul.sub>li*3>a[href="#"] -->
+        <!-- ctrl+spacebar -->
         <nav id="gnb">
           <ul class="main">
             <li>
-              <a href="#">영화</a>
+                <a href="https://www.megabox.co.kr/movie">영화</a>
               <ul class="sub">
                 <li><a href="https://www.megabox.co.kr/movie">전체영화</a></li>
               </ul>
@@ -199,39 +193,24 @@
               <a href="https://www.megabox.co.kr/booking">예매</a>
               <ul class="sub">
                 <li><a href="https://www.megabox.co.kr/booking">빠른예매</a></li>
-                <li>
-                  <a href="https://www.megabox.co.kr/booking/timetable"
-                    >상영시간표</a
-                  >
-                </li>
-                <li>
-                  <a href="https://www.megabox.co.kr/booking/privatebooking"
-                    >더 부티크 프라이빗예매</a
-                  >
-                </li>
+                <li><a href="https://www.megabox.co.kr/booking/timetable">상영시간표</a></li>
+                <li><a href="https://www.megabox.co.kr/booking/privatebooking">더 부티크 프라이빗 예매</a></li>
               </ul>
             </li>
             <li>
               <a href="https://www.megabox.co.kr/theater/list">극장</a>
               <ul class="sub">
-                <li>
-                  <a href="https://www.megabox.co.kr/theater/list">전체극장</a>
-                </li>
-                <li>
-                  <a href="https://www.megabox.co.kr/specialtheater/list"
-                    >특별관</a
-                  >
-                </li>
+                            <li><a href="https://www.megabox.co.kr/theater/list">전체극장</a></li>
+                            <li><a href="https://www.megabox.co.kr/specialtheater/list">특별관</a></li>
               </ul>
             </li>
             <li>
               <a href="https://www.megabox.co.kr/event">이벤트</a>
               <ul class="sub">
-                <li>
-                  <a href="https://www.megabox.co.kr/event">진행중 이벤트</a>
-                </li>
+                            <li><a href="https://www.megabox.co.kr/event">진행중 이벤트</a></li>
                 <li><a href="https://www.megabox.co.kr/event/end">지난 이벤트</a></li>
-                <li><a href="https://www.megabox.co.kr/event/winner/list?currPage=1&searchText=&">당첨자 발표</a></li>
+                            <li><a href="https://www.megabox.co.kr/event/winner/list?currPage=1&searchText=&">당첨자발표</a>
+                            </li>
               </ul>
             </li>
             <li>
@@ -245,45 +224,29 @@
               </ul>
             </li>
           </ul>
-        </nav>
-        <!-- //gnb -->
+            </nav><!-- //#gnb -->
+
         <!-- link icon -->
         <div class="link_icon">
           <div class="left_link">
-            <a href="https://www.megabox.co.kr/benefit/discount/guide"
-              ><img
-                src="./images/ico-sitemap-white.png"
-                alt="사이트맵"
-                title="사이트맵"
-            /></a>
-            <a href="#"
-              ><img src="./images/ico-search-white.png" alt="검색" title="검색"
-            /></a>
+                    <a href="#"><img src="images/ico-sitemap-white.png" alt="사이트맵" title="사이트맵"></a>
+                    <a href="#"><img src="images/ico-search-white.png" alt="검색" title="검색"></a>
           </div>
           <div class="right_link">
-            <a href="https://www.megabox.co.kr/booking/timetable"
-              ><img
-                src="./images/ico-schedule-white.png"
-                alt="상영시간표"
-                title="상영시간표"
-            /></a>
-            <a href="#"
-              ><img
-                src="./images/ico-mymega-white.png"
-                alt="나의메가박스"
-                title="나의메가박스"
-            /></a>
-          </div>
+                    <a href="https://www.megabox.co.kr/booking/timetable"><img src="images/ico-schedule-white.png"
+                            alt="상영시간표" title="상영시간표"></a>
+                    <a href="#"><img src="images/ico-mymega-white.png" alt="나의 메가박스" title="나의 메가박스"></a>
         </div>
       </div>
-      <!-- //.inner -->
-    </header>
-    <!-- //header -->
+        </div><!-- //.inner -->
+    </header><!-- //header -->
     <!-- section -->
-    <section id="section"></section>
-    <!--//section -->
+    <section id="section">
+
+    </section><!-- //section -->
     <!-- footer -->
-    <footer id="footer"></footer>
-    <!-- //footer -->
+    <footer id="footer">
+
+    </footer><!-- //footer -->
   </body>
 </html>

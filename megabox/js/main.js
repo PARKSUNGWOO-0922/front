@@ -3,7 +3,7 @@
 $(datas).each((idx, data) => {
             const screenImgs = data.screenTypes
             .map((ele) => `<img src="${ele}" alt="Screen Types">`)
-            .join('');
+            .join("");
             
             const card = `<div class="box_office_card">
             <div class="inner">
@@ -29,7 +29,7 @@ $(datas).each((idx, data) => {
             </div>
         </div>`;
     
-        $('.box_office').append(card);
+        $(".box_office").append(card);
 
         }); // each()
 

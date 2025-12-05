@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MEET PLAY SHARE,메가박스</title>
+    <title>MEET PLAY SHARE, 메가박스</title>
     <link rel="stylesheet" href="css/reset.css">
     <style>
         .box_office_card {
@@ -52,30 +52,28 @@
         /* 뒷면 */
         .back {
             opacity: 0;
-           /*  display: none; */
             position: absolute;
             left: 0;
             top: 0;
-            /* position: relative; *//* 99 */
-            height: 352px;/* 앞뒤면 높이 같이지정 */
+            height: 352px;
             padding: 24px;
-            color:#fff;
-            background: rgb(0,0,0,0.8);
-            transition:.3s ;
+            color: #fff;
+            background: rgb(0,0,0, 0.8);
+            transition: .3s;
         }
         .score {
 
-            position: absolute;/* 99 */
+            position: absolute;
             width: calc(100% - 48px);
             text-align: center;
             bottom: 30px;
            
-            border-top: 1px solid rgba(255,255,255,0.2);
+            border-top: 1px solid rgba(255,255,255,.2);
             padding-top: 8px;
 
         }
         .score span {
-            color:#59bec9 ;
+            color: #59bec9;
             font-size: 1.5rem;
             margin-left: 16px;  
             
@@ -83,30 +81,34 @@
         /* 버튼 */
         .btn {
             display: flex;
-            gap:8px;/* 하단 버튼간의 간격 */
-            margin: 8px;/* 포스터 이미지와 하단btn공간확보 */
+            gap: 8px;
+            /* 하단 버튼간의 간격 */
+            /* 포스터 이미지와 하단btn공간확보 */
+            margin-top: 8px;
         }
         /* 좋아요! 버튼 */
         /* vscode : css navigation 설치 class 목록 자동생성 */
         .like {
-            color:#fff;
-            background: transparent;/* 배경을 투명하게   */
-            border:1px solid #fff;
-            border-radius:5px;
+            color: #fff;
+            /* 배경을 투명하게   */
+            background: transparent;
+            border: 1px solid #fff;
+            border-radius: 5px;
             width: 100px;
-         /*    height: 34px; */
+         /* height: 34px; */
            
         }
-        .like {
+        .like i {
             margin-right: 4px;
         }
         .reservation_link {
-            width: 100%;/* .box_office_cardwidth:245px */
+            /* .box_office_cardwidth:245px */
+            width: 100%;
             background: #037b94;
              border-radius: 5px;
              text-align: center;
              padding: 6px;
-            /* line-height: 34px */
+            /* line-height: 34px; */
         }
 
 
@@ -123,14 +125,14 @@
                     <img src="images/YiSbqEf6OvFcDoLoQCipDojOHqMCwKG4_420.jpg" alt="주토피아">
                 </div>
                 <div class="screen_type">
-                    <img src="images/type_mega_mx4d.png" alt="mega_mx4d.">
-                    <img src="images/type_dolbycinema.png" alt="dolbycinema">
-                    <img src="images/type_dolbyatmos.png" alt="dolbyatmos">
+                    <img src="images/type_mega_mx4d.png" alt="mega mx4d">
+                    <img src="images/type_dolbycinema.png" alt="dolby cinema">
+                    <img src="images/type_dolbyatmos.png" alt="dolby atmos">
                 </div>
                 <div class="grade">
                     <img src="images/ALL_56x56.png" alt="Grade All">
                 </div>
-            </div><!-- .front -->
+            </div><!-- //.front -->
             
             <div class="back">
                 <p>더 화려해진 세계, 더 넓어진 주토피아!<br>
@@ -138,11 +140,11 @@
                     돌아온다!<br><br>
                     미스터리한 뱀 '게리'가 나타난 순간,</p>
                     <div class="score">관람평<span>9.3</span></div>
-                </div><!-- back  -->
-            </div><!-- .inner -->
-
+                </div><!-- //.back -->
+            </div><!-- //.inner -->
+        <!-- btn -->
         <div class="btn">
-            <button type="button" class="like">   <i class="fa-regular fa-heart"></i>3.6k    </button>
+            <button type="button" class="like"><i class="fa-regular fa-heart"></i>3.6k</button>
             <a href="" class="reservation_link">예매</a>
         </div>
      </div>
