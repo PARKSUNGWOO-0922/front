@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Grid align</title>
+    <style>
+        /* 
+            그리드 컨테이너 
+              
+                justify-content
+                 - 주축(수평)에서 사용 가능한 모든 공간을 사용하지 않을 경우 그리드 콘텐츠를 정렬합니다.
+                 - 기본값: normal(start,stretch)
+                    - grid-template-columns:auto-> stretch
+                    - 아니면: start
+                    - 즉, 아이템의 크기가 auto 이면 stretch, 아니면 start
+                    
+                      space-evenly : 아이템을 제외한 남은 공간을 모두 같게
+                      space-around : 아이템의 좌우 여백을 같게
+                      space-between : 첫번째 아이템은 start, 마지막 아이템은 end 배치후 남은 아이템의 주위공간을 같게
+                      center - 모든아이템을 가운데
+                      start  - 모든아이템을  시작
+                      end  - 모든아이템을 끝
+                      stretch - grid-template-columns:auto ;일때
+
+                      align-content - 교차축(수직)에서 사용 가능한 모든 공간을 사용하지 않을 경우 그리드 콘텐츠를 정렬합니다.
+                                    - 기본값:normal(stretch)
+
+                      place-content - align-content + justify-content 대한 약어 속성
+                                   ex) place-content: center;
+                                       place-content: end space-between;
+                      
+                      justify-items
+                          - 수평으로 아이템 단위 정렬 -> 열 단위 정렬
+                          - justify-content를 지정하지 않았을때(normal) 지정된다.
+                          - start, end, center
+                      align-items
+                          - 수직으로 아이템 단위 정렬 -> 행 단위 정렬
+                          - align-content를 지정하지 않았을때(normal) 지정된다.
+                          - 기본값:stretch
+                          - start, end, center,baseline
+              
+
+        */
+      .container {
+        display: grid;
+        /* grid-template-columns:70px 70px 70px; */
+        grid-template-columns:repeat(3,70px);
+        justify-content: start;/* jss(기본값:normal )*/
+        gap:5px;
+        background-color: dodgerblue;
+        padding: 5px;
+        /* align-content(수직 배치) */
+        height: 700px;
+
+
+
+        /* 수직정렬 :수평정렬도 하나씩해보기..*/
+        align-content: stretch;
+        align-content: start;
+        align-content: center;
+        align-content: end;
+        align-content: space-between;
+        align-content: space-around;
+        align-content: space-evenly;
+
+        place-content: center;/*정 가운데 */
+        place-content: end space-between;
+        
+        place-content: normal;/* align-items지정을 위해 content normal로 지정 */
+        align-items: start;
+        align-items: center;
+        align-items: baseline;
+
+        justify-items: stretch;
+        justify-items: start;
+        justify-items: end;
+        justify-items: center;
+       
+
+        
+      }
+      /* 그리드 아이템(item) */
+      .container div {
+        background-color: #f1f1f1;
+        border: 1px solid black;
+        padding: 10px;
+        font-size: 30px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+      <div>6</div>
+      <div>7</div>
+      <div>8</div>
+    </div>
+  </body>
+</html>
