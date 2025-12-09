@@ -21,12 +21,12 @@ const datas = [
     },
     {
         rank: 3,
-        poster: "https://www.dummyimage.com/400x600/000/fff&text=+preparing...",
-        title: "메가커피",
+        poster: "assets/img/project3_thumb.png",
+        title: "메가박스",
         task: "PE",
         description: ["준비중..."],
-        worktime: "240H",
-        siteurl: "#"
+        worktime: "16H",
+        siteurl: "hellow1203.netlify.app"
     },
     {
         rank: 4,

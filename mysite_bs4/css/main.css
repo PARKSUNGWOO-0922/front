@@ -1,0 +1,275 @@
+@charset "utf-8";
+/* 타이포*/
+     @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap");
+
+     @font-face {
+         font-family: "Lato-Regular";
+         src: url(../assets/font/Lato/Lato-Regular.ttf);
+     }
+     @font-face {
+        font-family: Lato-Thin;
+        src:url(https://PARKSUNGWOO-0922.github.io/jfs/assets/font/Lato-Thin.ttf)
+     }
+
+
+   .ls10px{
+        letter-spacing: 0.625rem;
+    }
+/* 공통 */
+.container {
+    max-width: 980px;
+}
+/* 배경 이미지*/
+
+#home .bgimg {
+    background: url(../assets/img/light_mode.jpg) no-repeat 30% 30%/cover fixed;
+}
+#home.dark .bgimg {
+    /* filter:brightness(100%); */
+    background-image: url(../assets/img/dark_mode.jpg) ;
+}
+.parallax-bg {
+    height: 400px;
+    background: no-repeat 50% 50% / cover fixed;
+}
+#about .parallax-bg {
+    background-image: url(../assets/img/bg-about.jpg);
+    background-position: 50% 100%;
+}
+
+#work .parallax-bg {
+    background-image: url(../assets/img/parallax2.jpg);
+    background-position: 50% 30%;
+}
+#contact .parallax-bg {
+    background-image: url(../assets/img/bg-contact.jpg);
+    background-position: 50% 20%;
+}
+
+/* 애니메이션 */
+
+   .circle_ani {
+    width: 135px;
+    height: 136px;
+    transition: linear 5s;
+    animation:circle 50s linear infinite;
+}
+    @keyframes circle {
+        0%{transform: rotate(0deg) scale(2.5)}
+        100%{transform: rotate(720deg) scale(2.5)}
+    }
+/* 헤더 배경색 지정 */
+    #header {
+        background: transparent;
+        transition: 0.3s;
+    }
+    #header a {
+        color:#eee;
+        transition: 0.3s;
+
+    }
+    #header a:hover {
+        color:#fff
+
+    }
+    
+    #header.active {
+        background: #fff;
+        /* 헤더 박스 그림자 */            
+    box-shadow:0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
+}
+#header.active a {
+    color:#222;
+    transition: 0.3s;
+}
+#header.active a:hover {
+    color:#111;
+}
+/* 텍스트 그림자 */
+#home.dark h2 {
+    text-shadow: 1px 1px 5px red, 0 0 25px red, 0 0 35px red;
+}
+/* 내비게이션 버튼 클릭하여 섹션 이동 시
+섹션의 제목 영역이 헤더에 가려지는 현상 해결! */
+
+#counter {
+    /* 카운터와 #work 섹션 사이가 벌어진(흰색) 부분 해결 */
+    transform: translateY(56px);
+}
+#about::before, 
+#work::before, 
+#contact::before {
+    display: block;
+    content: '';
+    /* ::before 높이를  헤더의 높이 만큼 지정한다. */
+    height: 56px;
+}
+/* 프로필 소개 문단 양끝정렬,단어간 공백조정*/
+.basic p {
+    text-align: justify;
+    word-break: break-all;
+}
+
+/* 나의사진 */
+.myimg {
+    width: 425px;
+    height: 280px;
+}
+
+/* 진행률 바 */
+.progress {
+    height: 35px;
+}
+.progress:first-of-type .progress-bar{
+    width: 40%;
+}
+.progress:last-of-type .progress-bar{
+    width: 50%;
+}
+/* 카운터 */
+.counter {
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+.counter::after {
+    content:'+';
+}
+
+.counter.active {
+    opacity: 1;
+}
+/* 작품 크기 */
+
+
+   
+
+        .box_office_card {
+            position: relative;
+           /*  width: 245px; */
+        }
+
+        /* 영화 순위 */
+        .rank {
+            position: absolute;
+            left: 10px;
+            top: 10px;
+            color: #fff;
+            font-size: 2rem;
+            font-weight: 300;
+            font-style: italic;
+            text-shadow: 2px 2px 2px #000;
+        }
+/* 포스터 */
+.poster {
+    height: 352px;
+        }
+
+/* 작업 시간 */
+.worktime {
+            position: absolute;
+            width: calc(100% - 48px);
+            text-align: center;
+            bottom: 30px;
+            border-top: 1px solid rgba(255, 255, 255, .2);
+            padding-top: 8px;
+        }
+
+.worktime span {
+            color: #59bec9;
+            font-size: 1.5rem;
+            margin-left: 16px;
+        }
+
+        /* 버튼 */
+.portfolio .btn {
+            display: flex;
+            justify-content: space-between;
+            padding: 0;
+            gap: 8px;
+            margin-top: 8px;
+            height: 34px;
+        }
+
+/* 작업 유형 */
+.worktype {
+            background: transparent;
+             border: 1px solid #111;
+            border-radius: 5px;
+            width: 60px;
+            line-height: 30px;
+        }
+
+/* 사이트 바로가기 버튼 */
+.sitelink {
+            width: 100%;
+            border-radius: 5px;
+    line-height: 30px;
+        }
+
+        /* y축 회전 */
+        .inner {
+            position: relative;
+            height: 352px;
+            /* 원근감 */
+            perspective: 1000px;
+        }
+
+        .inner:hover {
+            /* 마우스 손가락 모양 */
+            cursor: pointer;
+        }
+
+        .front,
+        .back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+            transition: .5s;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .front {
+            transform: rotateY(0deg);
+        }
+
+        .back {
+            transform: rotateY(180deg);
+            padding: 24px;
+            color: #fff;
+            background: rgb(0, 0, 0, 0.8);
+            /* 뒷면 숨기기 */
+            backface-visibility: hidden;
+        }
+
+        /* 호버시 뒤집기 */
+        .inner:hover .front {
+            transform: rotateY(180deg);
+        }
+
+        .inner:hover .back {
+            transform: rotateY(360deg);
+        }
+
+/* 맵 */
+.map {
+    height: 160px;
+
+}
+/* 텍스트 상자 */
+input {
+    height: 45px;
+}
+#name, #email {
+    width: calc(50% - 8px);
+}
+textarea {
+    width: 100%;
+    height: 200px;
+    resize: none;
+}
+#btnForm {
+    width: auto;
+}
