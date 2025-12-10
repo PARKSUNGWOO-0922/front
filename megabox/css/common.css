@@ -36,6 +36,9 @@
 * {
     box-sizing: border-box;
 }
+:root {
+    scroll-behavior: smooth;
+}
 
 body,
 h1,h2,h3,ul {
@@ -86,8 +89,11 @@ address {
     padding: 15px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
+#header.active::after {
+    background: #3392be;
+}
 
-#header .inner {
+.inner {
     max-width: 1100px;
     margin: 0 auto;
 }
@@ -98,6 +104,9 @@ address {
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
+}
+#logo a {
+    display: block;
 }
 
 /* top menu */
@@ -162,9 +171,9 @@ address {
     grid-template-columns: repeat(3, auto);
 }
 /* 메인 메뉴 호버시 하단의 바 */
-#gnb .main > li:not(:nth-of-type(5)) > a:hover::after {
+#gnb .main > li:not(:nth-of-type(5)):hover::after {
     position: absolute;
-    bottom: -14px;
+    bottom: -22px;
     transform: translateX(-100%);
     content: "";
     width: 100%;
