@@ -2,7 +2,7 @@
 $('.main li:not(:nth-of-type(5)').mouseenter((e)=>{
     $('#header').addClass('active');
 });
-$('.main li').mouseleave(()=>{
+$('#header .subbar').mouseleave(()=>{
     $('#header').removeClass('active');
 });
 
