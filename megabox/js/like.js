@@ -14,6 +14,6 @@ $(document).on('click', '.like', function () {
         $btn.addClass('active');
         $btn.find('i').attr('class', 'fa-solid fa-heart');
     }
-
+    
     $btn.contents().last()[0].textContent = formatCount(current);
 });
