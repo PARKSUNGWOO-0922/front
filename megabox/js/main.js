@@ -1,5 +1,10 @@
 // main.js
-const formatCount = (num) => num >= 1000 ? (num / 1000).toFixed(1) + "k" : num;
+// 숫자.toFiexd(자릿수)
+//  - 숫자를 소수점 특정 자릿수까지 표현하고 문자열로 반환
+//const formatCount = num => num >= 1000 ? (num / 1000).toFixed(1) + "k" : num;
+const formatCount = function (num) { 
+    return num >= 1000 ? (num / 1000).toFixed(1) + "k" : num; 
+}
 
 // Movie Card UI
 $(datas).each((idx, data) => {
