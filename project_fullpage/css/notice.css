@@ -1,0 +1,89 @@
+@charset "utf-8"; /* @ch */
+@import url(common.css); /* @i */
+/* type */
+
+h2 {
+    font-size: 3.0rem;
+    color: #222;
+}
+th {
+    color:#222;
+}
+/* 중앙정렬 */
+.container {
+    width: 1040px;
+    margin: auto;
+}
+
+/* breadcrumb */
+.bc {
+    display: flex;
+    justify-content: end;
+}
+
+.bc li:not(:last-child)::after {
+    font-family: "Font Awesome 6 Free";
+    /* content:'\f0c7'; */
+     content:'〉'; /* icon 우측기본마진있어 margin-left적용 */
+    margin-left: 8px;
+    color:#222;
+}
+
+.search_wrap {
+    display: flex;
+    justify-content: end;
+    align-items: center;/*사실 버튼은 기본값이 중앙정렬 */
+    height: 78px;
+    background-color: #f4f4f4;
+    padding: 20px 3px;
+    border-radius: 3px;
+} 
+.search_wrap input {
+    width:  320px;
+    height:  38px;
+    border:1px solid #ddd;
+    border-radius: 3px;
+    padding: 8px;
+    
+}
+.search_wrap button {
+    width: 54px;
+    height: 38px;
+    background-color: #777;
+    border-radius: 3px;
+}
+/* notice table area */
+.notice {
+    width: 100%;
+    border-collapse: collapse;/* th 위아래선이 th간에 끊어짐 해결 */
+    /* bcl */
+}
+.notice tr {
+    height: 50px;/* 테이블 레코드 높이 조절 */
+}
+/* > 아이콘을 마지막(공짖사항)에 넣지않기 위해  */
+.notice td:not(:nth-child(2)) {
+    text-align: center;
+}
+/* th 위아래 선넣기 */
+.notice th {
+    border-top: 1px solid #333;/* bt */
+    border-bottom: 1px solid #333;/* bdb */
+    
+}
+/* td아래 선넣기 */
+.notice td {
+    border-bottom: 1px solid #ddd;
+}
+/* 공지사항 제목에 마우스 놓을시 밑줄생성 */
+.notice a:hover {
+    text-decoration: underline;
+
+}
+/* pagination  */
+.pagination  {
+    display: flex;
+    justify-content: center;
+    border:1px solid ;
+    margin-top: 50px;
+}

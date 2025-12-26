@@ -88,7 +88,7 @@ body {
     <section class="page page4">Page 4</section>
     <footer class="footer">Footer 영역 (300px)</footer>
 </div>
-<!-- 페이저 -->
+<!-- 인디케이터 -->
  <ul class="pager"></ul>
 
 <script>
@@ -140,6 +140,8 @@ body {
         const scrollTop = window.scrollY;
         // window.innerHeight는 브라우저 뷰포트(Viewport)의 실제 높이(px)
         const lastPageTop = lastPageIndex * window.innerHeight;
+        console.log('window.scrolly : ' + window.scrollY);
+        console.log('window.innerHeight : ' + window.innerHeight);
 
         /* footer 영역 */
         if (scrollTop > lastPageTop) {
@@ -180,7 +182,10 @@ body {
         currentPage = Math.max(0, Math.min(currentPage, lastPageIndex));
 
         moveTo(currentPage);
-
+        // setInterval(함수,시간): 매 시간 마다 반복
+        // clearInterval()
+        // setTimeout(함수,시간): 시간 이후 1번만 실행
+        // clearTimeout()
         setTimeout(() => isScrolling = false, 600);
         // 브라우저는 스크롤 관련 이벤트의 성능을 높이기 위해
         // wheel, touchstart, touchmove 이벤트를 기본적으로 passive로 취급한다.
