@@ -10,6 +10,36 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <!-- bxSlider 라이브러리 -->
     <script src="https://cdn.jsdelivr.net/npm/bxslider@4.2.17/dist/jquery.bxslider.min.js"></script>
+    <style>
+      body  {
+        margin: 0;
+        padding: 0;
+      }
+      /* .bxslider의 조상 div */
+       .bx-wrapper{
+        background-color: none;
+        border: none; 
+        box-shadow: none;
+
+       }
+       /* 좌우 버튼 */
+       .bx-wrapper .bx-controls-direction a{
+        width: 18px;
+        height: 30px;
+
+               }
+        /* prev 버튼 */
+        .bx-wrapper .bx-prev{
+        background: url("assects/btn_slide_prev_new.png") no-repeat center/contain !  important;
+        left:calc(50% - 420px);
+        }
+        /* next 버튼 */
+        .bx-wrapper .bx-next{
+        background: url("assects/btn_slide_next_new.png") no-repeat center/contain !important;
+        right: calc(50% - 420px );
+        }
+
+    </style>
 
 </head>
 <body>
@@ -22,11 +52,16 @@
 </div>
 <script>
       $('.bxslider').bxSlider({
-    auto: true,
-    autoControls: true,
-    stopAutoOnClick: true,
-    pager: true,
-    slideWidth: 600
+    mode: 'fade',//기본값'horizontal',수직'vertical'
+    auto: true,//자동슬라이드
+    speed:800,//전환속도(기본값:500ms)
+    pause:4000,//자동슬라이드간격(기본값4000) ms
+    //autoControls: true,//시작/일시정지 버튼
+    stopAutoOnClick: true,//버튼 클릭시 자동슬라이드 일시정지
+    pager: false,//인디케이터(기본값:true(보임))
+    controls: true,//좌우버튼(기본값:true(보임))
+    autoHover: true,//마우스 오버시 자동슬라이드 일시정지
+    slideWidth: 1200//슬라이드 가로 크기
   });
 </script>
 </body>
