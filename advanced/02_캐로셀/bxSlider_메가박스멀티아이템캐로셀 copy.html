@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>메가박스</title>
+    <!-- jquery.bxslider.min.css 라이브러리 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bxslider@4.2.17/dist/jquery.bxslider.min.css">
+    <!-- jQuery 라이브러리 -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <!-- bxSlider 라이브러리 -->
+    <script src="https://cdn.jsdelivr.net/npm/bxslider@4.2.17/dist/jquery.bxslider.min.js"></script>
+    <style>
+      body  {
+        margin: 0;
+        padding: 0;
+      }
+      /* .bxslider의 조상 div */
+       .bx-wrapper{
+        background-color: none;
+        border: none; 
+        box-shadow: none;
+
+       }
+       /* 좌우 버튼 */
+       .bx-wrapper .bx-controls-direction a{
+        width: 18px;
+        height: 30px;
+
+               }
+        /* prev 버튼 */
+        .bx-wrapper .bx-prev{
+        background: url("assects/btn_slide_prev_new.png") no-repeat center/contain !  important;
+        left:calc(50% - 420px);
+        }
+        /* next 버튼 */
+        .bx-wrapper .bx-next{
+        background: url("assects/btn_slide_next_new.png") no-repeat center/contain !important;
+        right: calc(50% - 420px );
+        }
+
+    </style>
+
+</head>
+<body>
+    <div class="bxslider">
+  <div><img src="assects/bg-main-boutiq.png" alt="이미지1" /></div>
+  <div><img src="assects/bg-main-comfort.png" alt="이미지1" /></div>
+  <div><img src="assects/bg-main-dolbyatmos.png" alt="이미지1" /></div>
+  <div><img src="assects/bg-main-dolbycinema.png" alt="이미지1" /></div>
+  <div><img src="assects/bg-main-dva.png"></div>
+  <div><img src="assects/bg-main-red.png" alt="이미지1" /></div>
+  <div><img src="assects/bg-main-mx4d.png" alt="이미지1" /></div>
+  <div><img src="assects/bg-main-private.png" alt="이미지1" /></div>
+  <div><img src="assects/bg-main-recliner.png" alt="이미지1" /></div>
+  <div><img src="assects/bg-main-suite.png" alt="이미지1" /></div>
+ 
+</div>
+<script>
+      $('.bxslider').bxSlider({
+    auto: true,//자동슬라이드
+    pager: false,//인디케이터(기본값:true(보임))
+    stopAutoOnClick: true,//버튼 클릭시 자동슬라이드 일시정지
+    autoHover: true,//마우스 오버시 자동슬라이드 일시정지
+    slideWidth: 170,//슬라이드 가로 크기
+
+    minSlides: 6,//최소슬라이드 기본값1
+    maxSlides: 6,//최대슬라이드 기본값1
+    moveSlides: 1,//이동슬라이드 기본값0 아이템이동갯수
+    slideMargin: 16,//슬라이드 간격 기본값0 아이템 사이 여백
+    
+  });
+</script>
+</body>
+</html>
