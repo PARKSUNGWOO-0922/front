@@ -6,15 +6,20 @@
     <title>CSS:Flexbox</title>
 <style>
     .flex-container {
-      display: flex;
-      /* flex-direction: row;   */
-      /* 기본값은  row */
-      /* flex-direction: column; */
-      /* height: 100px; */
-      background-color: DodgerBlue;
-      /* gap: 10px; */
-      /* gap은 위아래가 안들어감 그래서 주석처리 */
-      margin: 20px;
+        display: flex;
+        /* flex-direction: row;   */
+        /* 기본값은  row */
+        /* flex-direction: column; */
+        /* height: 100px; */
+        background-color: DodgerBlue;
+        /* gap: 10px; */
+        /* gap은 위아래가 안들어감 그래서 주석처리-개소리였음,지금상태에서는 .flex-container자체가 개별적인flex컨테이너가 되기때문에 안에 item들의 상하 간격이 벌어지게 된다.만약flex-container의 상하간격을 벌리려면 전체를 감싸는 div를 만들고 그곳에 display:flex;를 주고 flex-direction:column;gap:10px;를 주면 된다 예시는 밑에  */
+        /* .container {
+            display: flex;
+            flex-direction: column;
+            gap:10px;
+        } */
+        margin: 20px;
     }
     .flex-container div {
       background-color: #f1f1f1;  
@@ -35,25 +40,27 @@
 </style>
 </head>
 <body>
-    <div class="flex-container fx1" >
-        <div>1</div>
-        <div>2</div>
-        <div>3</div>  
-    </div>
-    <div class="flex-container fx2">
-        <div>1</div>
-        <div>2</div>
-        <div>3</div>  
-    </div>
-    <div class="flex-container fx3">
-        <div>1</div>
-        <div>2</div>
-        <div>3</div>  
-    </div>
-    <div class="flex-container fx4">
-        <div>1</div>
-        <div>2</div>
-        <div>3</div>  
+    <div class="container">
+        <div class="flex-container fx1" >
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>  
+        </div>
+        <div class="flex-container fx2">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>  
+        </div>
+        <div class="flex-container fx3">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>  
+        </div>
+        <div class="flex-container fx4">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>  
+        </div>
     </div>
 </body>
 </html>

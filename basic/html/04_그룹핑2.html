@@ -7,6 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <title>HTML그룹핑</title>
+    <style>
+        h2 {margin:0} /* 내부의 <h2> 태그는 웹브라우저 기본 스타일(User Agent Stylesheet)에 의해 상하단에 기본 마진(Margin)을 가지고 있습니다.
+
+이 <h2>의 상단 마진(margin-top) 때문에 노란색 섹션 안의 텍스트가 아래로 밀려 내려가면서, 마치 섹션 상단에 빈 공간이 생긴 것처럼 보이게 됩니다. (실제로는 섹션 자체의 상단 여백이 아니라 섹션 안의 <h2>가 밀려난 것입니다.)*/
+    </style>
 </head>
     
 <body >
@@ -31,7 +36,7 @@
         
         <header style="border: 1px solid red; margin:5px; height:100px;">헤더</header>
         <nav>내비게이션</nav>
-        <div style="border: 1px solid red; margin:5px; height:300px; display: flex; flex-wrap: wrap;">
+        <div style="border: 1px solid red; margin:5px; height:300px; display: flex; flex-wrap: wrap;" >
             
             <div style="width: 60%;">
                 <section style="background: yellow ; height: 150px;"><h2>섹션</h2></section>

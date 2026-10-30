@@ -44,16 +44,18 @@
         */
       .container {
         display: grid;
-        /* grid-template-columns:70px 70px 70px; */
+        /*"모눈종이(바둑판) 판을 깔아준 건 맞는데... 가로로 몇 칸을 쪼갤지, 세로로 몇 줄을 만들지 아무런 지시를 안 했잖아? 일단 기본값인 1열짜리 세로 줄로 놔둘게." 하고 멍하니 기다리는 상태*/
         grid-template-columns:repeat(3,70px);
-        justify-content: start;/* jss(기본값:normal )*/
+        /*width70px 3열로 만들어*/
+        justify-content: start;
+        /*이건 그냥 초기화 개념이라 생각하기로 했다.화면상에 변화는 없지만 뭔가 깔끔하게 시작환경을 만들려고 했다 이정도 ㅋ*/
+        /* jss(기본값:normal )*/
         gap:5px;
         background-color: dodgerblue;
         padding: 5px;
-        /* align-content(수직 배치) */
         height: 700px;
 
-
+        /* align-content(수직 배치) */
 
         /* 수직정렬 :수평정렬도 하나씩해보기..*/
         align-content: stretch;
@@ -64,21 +66,27 @@
         align-content: space-around;
         align-content: space-evenly;
 
-        place-content: center;/*정 가운데 */
+        /*place-content: [세로 정렬(align)] [가로 정렬(justify)];*/
+        place-content: center;
+        /*정 가운데 */
         place-content: end space-between;
+        /*밑에서 between 모양으로 */
         
-        place-content: normal;/* align-items지정을 위해 content normal로 지정 */
+        place-content: normal;
+        /*최초 height:70px;적용시점으로 복귀*/
+        /* align-items지정을 위해 content normal로 지정 */
         align-items: start;
         align-items: center;
         align-items: baseline;
+        /*지금 예제는 align-items:start와 모양이 같다, 만약 크기가다른 글자들이 섞여있는 예제에서는 다르게 보임.*/
 
+        /*justify-items셀단위 범위 즉 바둑판에 비교하면 한칸개념으로 그범위안에서 start/end/center하는거라 cell폭이 작으면 조금씩 움직이는것처럼 보인다.*/    
         justify-items: stretch;
+        /*변화가 없는 이유:기본값이stretch이기때문*/
         justify-items: start;
+        /*stretch가 미적용됨*/
         justify-items: end;
         justify-items: center;
-       
-
-        
       }
       /* 그리드 아이템(item) */
       .container div {

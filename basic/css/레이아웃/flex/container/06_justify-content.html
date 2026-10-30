@@ -20,7 +20,9 @@
     .flex-container {
       display: flex;
       background-color: DodgerBlue;
-      margin: 20px;           
+      margin: 20px;  
+      
+              
     }
     /* 플렉스 아이템 */
     .flex-container div {
@@ -31,20 +33,51 @@
     }
     .fx1 {justify-content: flex-start;/* jcfs */
     }
+    .fx1::after {
+        content:'justify-content: flex-start';
+        position:absolute;
+        margin-left: 450px;
+    }
     .fx2 {justify-content: flex-end;/* jcfe */
+    }
+    .fx2::after {
+        content:'justify-content: flex-end';
+        position:absolute;
+        margin-right: 450px;
     }
     .fx3 {justify-content: center;/* jcc */
     }
+     .fx3::after {
+        content:'justify-content: center';
+        position:absolute;
+        margin-left: 650px;
+    }
     .fx4 {justify-content: space-between;/* jcsb */
+    }
+     .fx4::after {
+        content:'justify-content: space-between';
+        position:absolute;
+        margin-left: 850px;
     }
     .fx5 {justify-content: space-around;/* jcsa */
     }
+     .fx5::after {
+        content:'justify-content: space-around';
+        position:absolute;
+        margin-left: 450px;
+    }
     .fx6 {justify-content: space-evenly;/* jcse */
+    }
+     .fx6:after {
+        content:'justify-content: space-evenly';
+        position:absolute;
+        margin-left: 450px;
     }
 
 </style>
 </head>
 <body>
+    
     <div class="flex-container fx1" >
         <div>1</div>
         <div>2</div>

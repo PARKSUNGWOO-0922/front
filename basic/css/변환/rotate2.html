@@ -9,16 +9,24 @@
             background-color: #2a2c44;
         }
         div {
-            width: 135px;
-            height: 136px;
+            border:1px solid red;
+            
+            display: inline-block;
+            /*inlin-block한이유 높이는 자동으로 이미지에 맞게 조절되지만 가로폭은 혼자 100독차지하기 때문이다*/
+            
+            /* width/height 지정없이도 이미지크기에 맞게 자동크기지정 */
 
             /* transform: rotate(0deg); */
-            transition: linear 5s;
+            transition: 5s linear ;
         }
         div:hover {
             /* transform: rotate(숫자deg); 0~360이상*/
             transform: rotate(720deg);
         }
+       img {
+        display: block;
+            /*img는 기본하단 여백을 가진다*/
+       }
     </style>
 </head>
 <body>

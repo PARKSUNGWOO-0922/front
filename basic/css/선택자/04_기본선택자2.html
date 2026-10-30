@@ -39,16 +39,16 @@
         /* ul > p {border: 2px dashed blue;} 직계자식이 아니어서error */
          li > p {border: 2px dashed blue;}  /*위error수정본  */
 
-
+        /*ul 태그 하위에 있는 모든 p태그*/
          ul p {border: 2px dashed blue;} 
          
-         /* ui태그중에 li클래스를 가진 요소 */
+         /* ul태그중에 li클래스를 가진 요소 */
          ul.li {border:4px dotted goldenrod}   
 
          /*li 태그의 하위또는 동등 요소 중에서 li 클래스를가진 요소  */
-         li.li {border:3px dotted blue;} 
+         li.li {border:3px dotted brown;} 
 
-         /* li태그 하위, p태그중에 li클래스를 가진요소 :아래표현 */
+         /* li태그 하위, p태그중에 li클래스를 가진요소 :아래표현(중복으로인해 상단의 ul p {border: 2px dashed blue;} 코드가 덮어짐) */
          li p.li {border:3px double palegreen;}    
         
     </style>

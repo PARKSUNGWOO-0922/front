@@ -7,7 +7,7 @@
     <style>
         @import url('https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css');
 
-        /* 초기화 */
+        /* 1. 초기화 */
         html {
             font-size: 10px;
         }
@@ -15,81 +15,75 @@
             margin:0;
         }
         ul {
-            padding: 0;
-            list-style: none;
-        }
+            padding: 0;/*점이없어지나 여백제거로 숨겨진것*/
+            list-style: none;/*실질적으로 점 없앰*/
+        } 
         a {
             text-decoration: none;
             color:#333;
         }
-        /* 공통 */
+
+        /* 2. 공통 */
         body {
-            font:1.5rem/1.6 'NanumSquare';
+            font:1.5rem/1.6 'NanumSquare';/*글자크기(필수),행간격 폰트(필수)*/
             background-color: #366cc9;
         }
-        /* 헤더 */
+        /* 3. 헤더 및 컨테이너 */
         #header {
             background:#0f2244;
-            overflow: hidden; 
+            overflow: hidden;
+            /*헤더띠 아래부분 안보임 :현재는 울퉁불퉁 흰색배경에 메뉴가 보이는 상태로 있으나
+            호버되면서 내려오는 배경이 같은색이라 표시안남 ㅎ 이게 맞는건지 */
         }
-         #header::after {
-            content: '';
-            color: #fff;
-            display: block;
-            width: 100%;
-            height: 0;
-            background: #fff;
-            transition: .7s;
+        
+        /*전부 상단으로 올라감*/
+        .container {
+            position: relative;/*??*/
+            padding:0 50px;/*상하0좌우50*/
+            height: 95px;/*헤더넓이지정*/
+            display:flex;/*전체 컨테이너 위줄에 가로로*/
+            justify-content: space-between;/*로그,gnb,util 좌우로펼침*/
+            align-items: center;/*글자 헤더 세로중앙*/
+          
         }
 
-        #header:hover::after {
-            height: 200px;
-        }
         #header a {
             color: #fff;
+            /*드디어 상단 글자 보임*/
         }
-        .container {
-            position: relative;
-            padding:0 50px;
-            height: 95px;
-            display:flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        /* 로고 */
-        /* 글로벌 내비게이션바(GNB) */
+        /* 4. 로고 / 글로벌 내비게이션바(GNB) */
+        /*gnb 헤더 아래부분으로 이동 */
         #gnb {
-            align-self: flex-start;
             position: absolute;
-            left:50%;
-            top: 33px;
+            left:50%;/*포지션으로 이탈한 메뉴 가운데이동*/
+            top: 33px;/*포지션으로 이탈한 메뉴 가운데이동*/
             transform: translateX(-50%);
+            /*포지션으로 이탈한 메뉴 가운데이동*/
         }
-        /* 1depth:Main Menu */
+        /* 5. 1depth:Main Menu */
         .main {
             width: 600px;
-            display:flex;
-            text-align:center;/* tac */
+            display:flex;/*main 가로방향으로 펼침*/
+            text-align:center;
+            /*.main 박스 안에 들어있는 메인 메뉴 글자들(분양단지, 브랜드 등)을 각자 자기 칸(150px 너비) 안에서 정렬해 주는 역할*/
+            /* tac */
             font-size: 1.8rem;
             font-weight: 700;
         }
-         .main li {
-            width: 150px;
+        .main li {
+            width: 150px;/*main li 좌우공간생김*/
         }
-
         /* 메인 메뉴 호버시 밑줄생성 */
         .main>li>a {
             display: inline-block;
         }
-
+        /*---- 반응 없음*/
         .main> li> a::after {
             content: '';
             display: block;
             width:100%;
             height: 2px;
             background: #bbb;
-            /* margin: auto; */
-            /* border-bottom: 3px solid red;*/
             transform: scaleX(0);
             /* transform-origin: x축기준 y축기준; */
             transform-origin: 50% 50%; /* 기본값 중심에서 시작*/
@@ -98,40 +92,49 @@
 
             transition: .3s; 
         }
-
         .main li a:hover::after {
             transform: scaleX(1);
-            /* width: 100%; */
             transform-origin: left;/* 0% 50% */
         }
-
         #header .main a:hover {
             color: #bbb;
         }
-        /* 2depth:Sub Menu */
+        
+        /* 6. 2depth:Sub Menu */
         .sub {
             font-size: 1.6rem;
             line-height:2;
             font-weight: 400;
             margin-top: 45px;
-            background: #fff;
-        } 
-        /* a태그 글자색은 반드시 a태그에 직접 지정한다. */
-           #header .sub a {
-            color: #333;
+            background: #fff;/*sub배경흰색 글자안보임 현재는 들쭉날쭉 길이별로 */
         }
-        /* SNS,로그인,회원가입 */
-
+        /* a태그 글자색은 반드시 a태그에 직접 지정한다. */
+        #header .sub a {
+            color: #333;/*흰색배경에 가려진 sub글자 보일수있도록 어두운 색깔로*/
+            
+        }
+        /* 7. 헤더 호버시 흰색 드롭다운 생성 (SNS,로그인,회원가입 포함)*/
+         #header::after {
+            content: '';
+            color: #fff;
+            display: block;/*높이주기위해*/
+            width: 100%;
+            height: 0px;/*안호버시 흰색드롭 숨김*/
+            background: #fff;
+            transition: .7s;
+        }
+        /*헤더에 호버시 아래쪽으로 흰색 드롭*/
+        #header:hover::after {
+            height: 200px;
+        }
     </style>
 </head>
 <body>
      <header id="header">
         <div class="container">
             <!-- 로고 -->
-            <!-- h1.logo>a[href=index.html] -->
-            <!-- h1.logo>a[href=index.html] -->
             <h1 class="logo"><a href="index.html">경남아너스빌</a></h1>
-            <!-- 내비게이션: GNB -->
+            <!-- 내비게이션: GNB(Global Navigation Bar) -->
             <nav id="gnb">
                 <ul class="main">
                     <!-- shift+alt+방향키 -->

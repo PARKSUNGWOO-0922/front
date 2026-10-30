@@ -48,24 +48,25 @@
         */
       .container {
         display: grid;
-        /* 3열(column), 폭은 자동(auto) */
-        grid-template-columns: auto auto auto;
-        grid-template-columns: 80px 200px auto;/* 숫자로도 지정가능 */
-        grid-template-columns: 1fr 1fr 1fr;/* fraction(분수) */
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-columns: minmax(80px, 1fr) 150px 150px;
-
+        /* 4열(column), 폭은 아이템크기에 맞추어 자동(auto) */
+        grid-template-columns: auto auto auto auto;
+        /* 4열(column), 폭은 아이템크기에 상관없이 4등분  fraction(분수)*/
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        /*1fr4번 repeat사용 단축속성*/
         grid-template-columns: repeat(4, 1fr);
-
-        grid-template-rows: 80px 200px;/* 카드예시로 테스트 */
-        grid-template-rows: 396px 83px;
-
+        /* 숫자로도 지정가능 */
+        grid-template-columns: 80px 200px auto auto;
+        /*최소 크기는 80px이고 최대 크기는 1fr이라는 뜻. 1fr은 고정된 픽셀값이 아니라 남은공간을 가짐*/
+        grid-template-columns: minmax(80px, 1fr) 150px 150px;
+        /*1번행높이 80px, 2번행높이 200px*/
+        grid-template-rows: 80px 200px ;
+       
+        
         background-color: dodgerblue;
         padding: 10px;
         max-width: 1100px;
         margin: 0 auto;
       }
-      /* 그리드 아이템(item) */
       .container div {
         background-color: #f1f1f1;
         border: 1px solid black;
@@ -73,10 +74,12 @@
         font-size: 30px;
         text-align: center;
       }
-    </style>
+      </style>
   </head>
   <body>
+    <!-- 그리드 컨테이너(container)  --> 
     <div class="container">
+    <!-- 그리드 아이템(item)  --> 
       <div>1</div>
       <div>2</div>
       <div>3</div>

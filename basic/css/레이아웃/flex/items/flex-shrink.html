@@ -8,6 +8,10 @@
         /* 
             CSS Flex Items(플렉스항목)
 
+            align-self: 세로 축에서 "위치나 늘어남"을 혼자 다르게 잡는 것 (배치/정렬의 문제)
+
+            flex-shrink: 가로 공간이 부족할 때 "누가 더 많이 찌그러질 것인가"를 정하는 비율 (크기 압축의 문제)
+
         */
     .flex-container {
         display: flex;
@@ -22,7 +26,12 @@
         padding: 10px;
         
     }
-    .flex-container div:nth-child(3) {flex-shrink: 3  }   
+    .flex-container div:nth-child(3) {flex-shrink: 3  }  
+    /*
+    브라우저 창 오른쪽 끝을 붙잡고 왼쪽으로 사정없이 줄여서 공간이 좁아지게 만들면, 그때서야 3번 박스의 축소된 모습이 보임
+
+    "나 혼자 다른 애들보다 3배나 더 팍팍 찌그러질래!""
+    */ 
         
     </style>
 </head>

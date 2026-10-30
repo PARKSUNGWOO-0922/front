@@ -23,9 +23,9 @@
             border:1px solid #333;
         }
          .slides {
-            /* height: calc(100% * 4); */
+         
             height: calc(100% * 4);
-            /* width: 100%; */ /* 안해도 블록레벨이니까... */
+            /* 슬라이드갯수만큼 */
           
             animation: slideRoll 9s infinite ease-in-out;
         }
@@ -43,10 +43,12 @@
             display:flex;
             align-items:center;
             height: 25%;
+            /*25%짜리가 4개 들어가면 딱 100%*/
             padding-left: 8px;
         }
         /* 말줄임표 효과(...) */
         .slider li span {
+            /*white-space:nowrap,text-overflow:ellipsis,overflow:hidden 3종세트로 외워*/
             text-overflow: ellipsis; /* txo, 생략(보이는문장끝...표시) */
             white-space: nowrap; /* whs,줄바꿈안함(줄바꿈으로 인하여 다른문장과 겹치는거 없애기위함) */
             overflow: hidden;  /* oh,넘치는 부분 숨기기..사실상 ellipsis효과를 주어 필요없다. */
@@ -55,6 +57,7 @@
     </style>
 </head>
 <body>
+    <!--개새끼 ul밑에는 li가 바로와야 규칙임-->
      <ul class="slider">
         <div class="slides">
             <li><span>[속보] 李대통령 "김정은, 트럼프 뜻 수용 못했지만…평화의 씨앗될 것</span></li>

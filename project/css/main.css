@@ -116,16 +116,11 @@ font-weight: 글자굵기;
 #sec3 .intro p:first-of-type strong {
     font-weight: var(--fwm);
 }
-.card-details p/*[선생님] p*/{
+.card-details p{
     /* p는 위아래 기본마진(폰트크기(16)의1em */
-    /* address sai jobajim */
-    margin-top: 0; /* 확인 */
+    margin-top: 0px; 
 }
-/* header */
-/* section */
-/* ======================section1 area==================================== */
-/*=================== section common(공통)========================= */
-/* id 와 class 이 선언순서에 대한 좀더 공부가 필요할것 같다.. */
+
 /* 공통코드가 #sec1을 넘어서 최상단으로 가면 첫페이에 모두모이는 현상이발생된다. */
 .sec {
     position: relative;
@@ -140,8 +135,7 @@ font-weight: 글자굵기;
 }
 /* ========================================================= */
 #sec1 {
-    /* position: relative; ???답:공통항목sec에 기록되서*/
-    /* po */
+    
     background-color: lightgreen;
 }
 
@@ -199,7 +193,7 @@ font-weight: 글자굵기;
     /* margin:20px; */
     /* 배경색:bgc */
     background-color:#f0eeed;
-    /* overflow: hidden; */
+    overflow: hidden;
     /* margin:20px */
 }
 .card-image-wrapper {
@@ -210,13 +204,13 @@ font-weight: 글자굵기;
     transition: 0.3s;/* trs,0.3초 */
 }
 .card-image-wrapper:hover img{
-    /* transform: scale(너비, 높이); 기본값 1 ,trf:s */
+    /* transform: scale(너비, 높이); 기본값 1(또는100%) ,trf:s */
     transform: scale(1.2, 1.2);/* trf:s */
 }
 .card-content {
     /* 마진 겹침 해결!
     ->마진이 부모 바깥으로 지정되는 것을 방지
-    */
+    ..(나)이건 겹침이아니다 자식의마진과부모의경계가 합해지면서 하나가 되어 움직이는것이다.즉padding만주어도 겹침은 없어진다는뜻*/
     display:flow-root;
 }
 /* 배지 + 좋아요 */
@@ -258,10 +252,10 @@ font-weight: 글자굵기;
     line-height: 55px;
     /* line-height로 인하여 하트가 가운데 정렬
     :이유 span으로 묶인 바깥원과 안의 하트간의
-    줄간격을 line-hegiht로준것이며 */
+    줄간격을 line-hegiht로 주면 브라우저가 자동으로 세로중앙으로 위치하게한다. */
     /* 줄간격,lh55px */
-    text-align: center;/* 텍스트 좌우 정렬,tac */
-    /* padding: 16px 15px 24px; 원안에 하트의 위치를 조정해보려시도->밑으로감 */
+    text-align: center; /* 텍스트 좌우 정렬,tac */
+   
     border-radius:50% ;/* bdrs50p */
     margin-top: 20px;
     margin-left: 145px; 
@@ -269,7 +263,7 @@ font-weight: 글자굵기;
 }
 /* 하트를 하얀색으로  */
 .like-button i {
-    color: #fff;/* 글자 색,c */
+    color: #fff; /*글자 색,c */
     /* color: red; */
     font-size:20px;/* 글자크기= heart,fz20 */
 }
@@ -286,30 +280,29 @@ font-weight: 글자굵기;
     패럴랙스 스크롤링(Parallax Scrolling)
     - 웹사이트나 게임 등에서 배경 레이어는 느리게, 전경 레이어는 빠르게 움직여 입체감과 깊이감을 주는 디자인 기법입니다. 
     */
+   
     background-attachment: fixed;
     background: url(./../assets/img/back_image.jpg) no-repeat 50%/cover fixed ;/* fixed :back image고정 */
 }
+
 #sec3 .intro a {
-    display:inline-block;
-    /* a는 inline속성으로 높이를 주지못함. */
-    border: 2px solid var(--white-color);
-    /* bd */
-    border-radius: 5px;
-    /* bdrr */
+    display:inline-block;/* a는 inline속성으로 높이를 주지못함. */
+    border: 2px solid var(--white-color);    /* bd */
+    border-radius: 5px;    /* bdrr */
     margin-top: 28px;
     padding: 6px 24px;
-}/* ①에 있어야 글자가 가운데 정렬됨??? 아니면 좌측으로 붙어버림????? */
-/* *******************#sec3을 이선밑으로하면 배경그림이 나온다.이유모름... */
+}
 #sec3 .intro {
+    
     position: absolute;
     left: 400px;
     top: 50%;
     transform: translateY(-50%);
     width: 380px;
     height: 520px;
-    /* background: lightgreen; */
     text-align: right;
     /* tar */
+   
 }
 
 

@@ -33,14 +33,40 @@
     /* 블록으로 지정한 영역의 같은 내용을 선택:ctrl+d */
     .fx1 {align-items: flex-start;/* aifs */
     }
+    .fx1::after {
+        content:'align-items: flex-start';
+        font-size: 20px;
+        margin-top: 50px;
+        
+    }
     .fx2 {align-items: flex-end;/* aife */
+    }
+    .fx2::after {
+        content:'align-items: flex-end';
+        font-size: 20px;
+        margin-top: 50px;
     }
     .fx3 {align-items: center;/* aic */
     }
+    .fx3::after {
+        content:'align-items: center';
+        font-size: 20px;
+        margin-top: 50px;
+    }
     .fx4 {align-items: stretch;/* ais */
+    }
+     .fx4::after {
+        content:'align-items: stretch';
+        font-size: 20px;
+        margin-top: 50px;
     }
     /* 텍스트의 크기가 같으면 flex-start와 같다 */
     .fx5 {align-items: baseline;/* aib */
+    }
+    .fx5::after {
+        content:'align-items: baseline';
+        font-size: 20px;
+        margin-top: 50px;
     }
     .fx5 div:nth-last-of-type(1) {
         font-size: 60px;

@@ -28,24 +28,24 @@
     /* 플렉스 아이템 */
     .flex-container div {
       background-color: #f1f1f1;  
-      width: 200px;
-      height: 100px;
+      width: 500px;
+      height: 200px;
       padding: 10px;
       margin: 10px;
     }
+    /*wrap인경우는 모두 row인경우는 column 떨어지고,column인경우는 row로 쭉 연결된다.*/
     .fx1 {
         /* 플렉스 아이템에 지정한 height는 적용, width는 적용안됨.(nowrap일때) */
+       
         flex-flow: row nowrap;
         margin-bottom: 50px;
     }
     .fx2 {
         
         /* 플렉스 아이템에 지정한 height는 적용안됨, width는 적용됨(nowrap일때). */
+        
         flex-flow: column nowrap;
     }
-    
-  
-
 </style>
 </head>
 <body>
@@ -71,7 +71,5 @@
         <div>8</div>
         <div>9</div> 
     </div>
-   
-   
 </body>
 </html>
