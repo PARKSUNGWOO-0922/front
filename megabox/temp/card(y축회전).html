@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MEET PLAY SHARE, 메가박스</title>
-    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="../css/reset.css">
     <style>
         .box_office_card {
             position: relative;
@@ -30,12 +30,13 @@
             bottom: 10px;
             width: 60px;
         }
-        .grade {
+         .grade {
+           
             position: absolute;
             right: 10px;
             bottom: 10px;
             width: 28px;
-        }
+        } 
         .inner:hover {
             cursor: pointer;
         }
@@ -99,7 +100,8 @@
             height: 100%;
             left: 0;
             top: 0;
-            transition: .5s;
+            
+            transition: .5s; 
             /* 뒷면 숨기기 */
             backface-visibility: hidden;
            /*  transform-style: preserve-3d; 없어도 큰차이 없어서*/
@@ -108,8 +110,8 @@
             transform: rotateY(0deg);/* 0->180 */
         }
         .back {
-             transform: rotateY(180deg);/* 180->360 */
-            padding: 24px;
+            transform: rotateY(180deg);/* 180->360 */
+            padding: 0 ;
             color: #fff;
             background: rgb(0,0,0, 0.8);
         
@@ -129,24 +131,29 @@
         <div class="inner">
             <div class="front">
                 <span class="rank">1</span>
+
                 <div class="poster">
-                    <img src="images/YiSbqEf6OvFcDoLoQCipDojOHqMCwKG4_420.jpg" alt="쥬토피아">
+                    <img src="../images/main/YiSbqEf6OvFcDoLoQCipDojOHqMCwKG4_420.jpg" alt="쥬토피아">
                 </div>
                 <div class="screen_type">
-                    <img src="images/type_mega_mx4d.png" alt="mega mx4d">
-                    <img src="images/type_dolbycinema.png" alt="dolby cinema">
-                    <img src="images/type_dolbyatmos.png" alt="dolby atmos">
+                    <img src="../images/main/type_mega_mx4d.png" alt="mega mx4d">
+                    <img src="../images/main/type_dolbycinema.png" alt="dolby cinema">
+                    <img src="../images/main/type_dolbyatmos.png" alt="dolby atmos">
                 </div>
+
                 <div class="grade">
-                    <img src="images/ALL_56x56.png" alt="Grade All">
+                    <img src="../images/main/ALL_56x56.png" alt="Grade All">
                 </div>
+
             </div><!-- //.front -->
+
             <div class="back">
                 <p>더 화려해진 세계, 더 넓어진 주토피아!<br>
-            디즈니의 가~~장 사랑스러운 콤비 '주디'와 '닉'이 돌아온다!<br><br>
-            미스터리한 뱀 '게리'가 나타난 순간,</p>
+                     디즈니의 가~~장 사랑스러운 콤비 '주디'와 '닉'이 돌아온다!<br><br>
+                        미스터리한 뱀 '게리'가 나타난 순간,</p>
                 <div class="score">관람평<span>9.3</span></div>
             </div><!-- //.back -->
+            
         </div><!-- //.inner -->
         <!-- btn -->
         <div class="btn">

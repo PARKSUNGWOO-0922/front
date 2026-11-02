@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MEET PLAY SHARE, 메가박스</title>
-    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="../css/reset.css" />
     <style>
       .box_office {
         display: flex;
@@ -90,7 +90,7 @@
         position: relative;
         height: 352px;
         /* 원근감 800~1000 */
-        perspective: 1000;
+        perspective: 1000px;
       }
 
       .front,
@@ -130,7 +130,7 @@
     <div class="box_office"></div>
     <!--.box_office -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <script src = "js/data.js"> </script>
+    <script src = "../js/data.js"> </script>
 
     <script>
       // datas.forEach(함수);
@@ -140,6 +140,7 @@
       // datas.map(([요소],[인덱스],[배열])=>{});
       // data = 요소
       datas.forEach((data) => {
+        const screenImgs = data.screenTypes.map(ele=>`<img src=${ele} alt='screen Types'>`).join('');
         const card = `<div class="box_office_card">
                 <div class="inner">
                     <div class="front">
@@ -148,9 +149,10 @@
                             <img src="${data.poster}" alt="${data.title}">
                             </div>
                             <div class="screen_type">
-                               ${ data.screenTypes[0]=== undefined ? "" :`<img src="${data.screenTypes[0]}" alt="mega mx4d">`}
+                              ${screenImgs}
+                               <!--${ data.screenTypes[0]=== undefined ? "" :`<img src="${data.screenTypes[0]}" alt="mega mx4d">`}
                                 ${data.screenTypes[1]=== undefined ? "" :`<img src="${data.screenTypes[1]}" alt="dolby cinema">`}
-                                ${data.screenTypes[2]=== undefined ? "" :`<img src="${data.screenTypes[2]}" alt="dolby atmos">`}
+                                ${data.screenTypes[2]=== undefined ? "" :`<img src="${data.screenTypes[2]}" alt="dolby atmos">`} -->
                                 </div>
                                 <div class="grade">
                                     <img src="${data.grade}" alt="Grade ${data.age}">

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MEET PLAY SHARE, 메가박스</title>
-    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="../css/reset.css">
     <style>
         .box_office {
             display: flex;
@@ -147,29 +147,34 @@
     <div class="box_office"></div><!-- //.box_office -->
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <script src="js/data.js"></script>
+    <script src="../js/data.js"></script>
 
     <script>
-        // ${data.screenTypes[0] === undefined ? "" : `<img src="${data.screenTypes[0]}" alt="mega mx4d">`}
-        // ${data.screenTypes[1] === undefined ? "" : `<img src="${data.screenTypes[1]}" alt="dolby cinema">`}
-        // ${data.screenTypes[2] === undefined ? "" : `<img src="${data.screenTypes[2]}" alt="dolby atmos">`}
-
+        
         
         // datas.forEach(([요소], [인덱스], [배열])=>{});
         // datas.forEach(data=>{
-        // $(datas).each(([인덱스], [요소])=>{});
-        $(datas).each((idx, data)=>{
-            // datas.map(([요소], [인덱스], [배열])=>{});
-            const screenImgs = data.screenTypes.map(ele=>`<img src="${ele}" alt="Screen Types">`).join('');
-            
-            const card = `<div class="box_office_card">
-            <div class="inner">
-                <div class="front">
-                    <span class="rank">${data.rank}</span>
-                    <div class="poster">
-                        <img src="${data.poster}" alt="${data.title}">
-                    </div>
-                    <div class="screen_type">${screenImgs}</div>
+            // $(datas).each(([인덱스], [요소])=>{});
+            $(datas).each((idx, data)=>{
+                // datas.map(([요소], [인덱스], [배열])=>{});
+                const screenImgs = data.screenTypes.map(ele=>`<img src="${ele}" alt="Screen Types">`).join('');
+                
+                const card = `<div class="box_office_card">
+                    <div class="inner">
+                        <div class="front">
+                            <span class="rank">${data.rank}</span>
+                            <div class="poster">
+                                <img src="${data.poster}" alt="${data.title}">
+                                </div>
+                                <div class="screen_type">
+                                    ${screenImgs}
+
+                                    <!-- ${data.screenTypes[0] === undefined ? "" : `<img src="${data.screenTypes[0]}" alt="mega mx4d">`}
+                                    ${data.screenTypes[1] === undefined ? "" : `<img src="${data.screenTypes[1]}" alt="dolby cinema">`}
+                                    ${data.screenTypes[2] === undefined ? "" : `<img src="${data.screenTypes[2]}" alt="dolby atmos">`}-->
+                                    <!--두가지 모두 사용가능하다 그러나 map방식 추천 -->
+                                    
+                                    </div>
                     <div class="grade">
                         <img src="${data.grade}" alt="Grade ${data.age}">
                     </div>
