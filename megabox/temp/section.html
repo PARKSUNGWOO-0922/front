@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MEET PLAY SHARE, 메가박스</title>
-    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
     <style>
         /* section */
@@ -74,7 +74,7 @@
             right: 0px;
             width: 18px;
             height: 18px;
-            background: url(images/ico-search-white.png) no-repeat;
+            background: url(../images/ico-search-white.png) no-repeat;
         }
         .link .search input::placeholder {
             font-size: 0.938rem;
@@ -98,7 +98,7 @@
         .mouse span {
             display: inline-block;
             width: 16px;
-            animation: mouse 2s infinite ease-in-out;
+            animation: mouse 2.8s infinite ease-in-out;
         }
         @keyframes mouse {
             0% {transform: translateY(0);}
@@ -257,17 +257,17 @@
             <ul class="link">
                 <!-- 검색 창 -->
                 <li><span class="search"><input type="text" placeholder="영화명을 입력해 주세요"></span></li>
-                <li><a href="https://www.megabox.co.kr/booking/timetable"><img src="images/ico-schedule-main.png" alt="상영시간표"><span>상영시간표</span></a></li>
-                <li><a href="https://www.megabox.co.kr/movie"><img src="images/ico-boxoffice-main.png" alt="박스오피스"><span>박스오피스</span></a></li>
-                <li><a href="https://www.megabox.co.kr/booking"><img src="images/ico-quick-reserve-main.png" alt="빠른예매"><span>빠른예매</span></a></li>
+                <li><a href="https://www.megabox.co.kr/booking/timetable"><img src="../images/ico-schedule-main.png" alt="상영시간표"><span>상영시간표</span></a></li>
+                <li><a href="https://www.megabox.co.kr/movie"><img src="../images/ico-boxoffice-main.png" alt="박스오피스"><span>박스오피스</span></a></li>
+                <li><a href="https://www.megabox.co.kr/booking"><img src="../images/ico-quick-reserve-main.png" alt="빠른예매"><span>빠른예매</span></a></li>
             </ul>
             <!-- 마우스 모양 애니메이션 -->
-             <div class="mouse"><span><img src="images/ico-mouse.png" alt="아래로"></span></div>
+             <div class="mouse"><span><img src="../images/ico-mouse.png" alt="아래로"></span></div>
         </div>
     </section>
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <script src="js/data.js"></script>
+    <script src="../js/data.js"></script>
 
     <script>
         $(datas).each((idx, data)=>{

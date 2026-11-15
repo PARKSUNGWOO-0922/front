@@ -55,11 +55,11 @@ i {
 }
 
 #section img {
-    width: auto;
+    width: auto;/*소이미지 크기 지정*/
     height: 30px;
     object-fit: contain;
 }
-
+/*세로정렬되어있던 이미지들이 가로/세로로 이쁘게 정려*/
 .special {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -67,14 +67,14 @@ i {
 }
 
 .special:nth-of-type(2) {
-    margin: 100px 0;
+    margin: 100px 0;/*LUXURY기준 상하여백을 부여*/
 }
 
 .special div,
 .special h3 {
     min-height: 260px;
     border-radius: 12px;
-    background: rgb(6, 149, 125);
+    background: rgb(6, 149, 125);/*그림이보이않거나 하는경우를 대비한 뒷배경색 정도라고 생각해두자*/
 }
 
 /* 제목 배경색 */
@@ -92,62 +92,63 @@ i {
 
 /* 그리드 아이템 박스 공통 */
 .special h3 {
-    padding: 30px;
+    padding: 30px;/*이미지안에 글자 정렬 */
 }
 
 .special div {
-    padding: 30px;
-    background: no-repeat 50% 50%/cover;
+    padding: 30px;/*이미지안에 소이미지 정렬*/
+    background: no-repeat 50% 50%/cover;/*50% 50% 이미지와 박스의 중심을 일치시킴*/
 }
 
 /* 배경 이미지 */
 .special:nth-of-type(1) div:nth-of-type(4) {
-    background-image: url(/images/specialtheater/bg_LED.png);
+    background-image: url(../images/specialtheater/bg_LED.png);
 }
 
 .special:nth-of-type(1) div:nth-of-type(5) {
-    background-image: url(/images/specialtheater/bg_dolby_atmos.png);
+    background-image: url(../images/specialtheater/bg_dolby_atmos.png);
 }
 
 .special:nth-of-type(2) div:nth-of-type(3) {
-    background-image: url(/images/specialtheater/bg_boutique.png);
+    background-image: url(../images/specialtheater/bg_boutique.png);
 }
 
 .special:nth-of-type(3) div:nth-of-type(1) {
-    background-image: url(/images/specialtheater/bg_recliner.png);
+    background-image: url(../images/specialtheater/bg_recliner.png);
 }
 
 .special:nth-of-type(3) div:nth-of-type(2) {
-    background-image: url(/images/specialtheater/bg_comfort.png);
+    background-image: url(../images/specialtheater/bg_comfort.png);
 }
 
 /* 그리드 아이템 크기 */
 .special:nth-of-type(1) div:nth-of-type(1) {
-    grid-column: 2 / span 2;
+    grid-column: 2 / span 2;/*2 : 두 번째 세로 경계선에서 시작
+                                span 2 : 두 칸을 차지*/
     grid-row: 1 / span 1;
-    background-image: url(/images/specialtheater/bg_dolbycinema.png);
+    background-image: url(../images/specialtheater/bg_dolbycinema.png);
 }
 
 .special:nth-of-type(1) div:nth-of-type(2) {
     grid-column: 1 / span 2;
     grid-row: 2 / span 1;
-    background-image: url(/images/specialtheater/bg_dolbyvision.png);
+    background-image: url(../images/specialtheater/bg_dolbyvision.png);
 }
 
 .special:nth-of-type(1) div:nth-of-type(3) {
     grid-column: 3 / span 1;
     grid-row: 2 / span 2;
-    background: #333 url(/images/specialtheater/bg_MX4D.png);
+    background: #333 url(../images/specialtheater/bg_MX4D.png);
 }
 
 .special:nth-of-type(2) div:nth-of-type(1) {
     grid-column: 2 / span 2;
-    background-image: url(/images/specialtheater/bg_boutique_private.png);
+    background-image: url(../images/specialtheater/bg_boutique_private.png);
 }
 
 .special:nth-of-type(2) div:nth-of-type(2) {
     grid-column: 1 / span 2;
-    background-image: url(/images/specialtheater/bg_suite.png);
+    background-image: url(../images/specialtheater/bg_suite.png);
 }
 
 .tothetop {
@@ -157,9 +158,12 @@ i {
     border-radius: 50%;
     box-shadow: 1px 1px 7px 0 rgba(0, 0, 0, .5);
     opacity: 0;
-    /* 링크가 동작되지 않게 하기 위해 */
+   /*
+   opacity: 0은 투명하게 만들 뿐이지, 요소를 완전히 사용할 수 없게 만들지는 않습니다.
+    즉, 버튼이 보이지 않아도 마우스로 클릭할 수 있고 키보드로 접근할 수도 있습니다.
+   */
     visibility: hidden;
-    /* visibility는 transition가 지정되지 않는다. */
+    /* visibility는 transition가 지정되지 않는다. 즉visibility가 버튼을 숨기고 보여주는 역할을 하고, opacity가 나타나고 사라지는 움직임을 부드럽게 만드는 역할을 하는 것입니다.*/
     transition: .3s;
 }
 

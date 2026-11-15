@@ -1,3 +1,53 @@
+<!--
+   이코드는 openweathermap 의 API를 이용해서 날씨정보를 가져오는 코드이다.
+   날씨1 파일은 중간에 서버가 필요하다는데..나중에 공부하기로 하고 이코드를 먼저 배우자
+   API주소는 사이트에 로그인한후 API키를 복사할수 있다 33458adeede7884d23cd2c62cb2f5a0e
+   어떻게 요청하는지도 사이트에서 current weather documentation에 가면 요청하는 방법주소복사
+   https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={API key}
+   하게 되어있고 옵션(lang:You can use this parameter to get the output in your language,units:Units of measurement. standard, metric and imperial units are available. If you do not use the units parameter, standard units will be applied by default)즉 사용자언어 및 섭씨온도로 변경하는옵션등이 제공된다, json으로 어떻게 보내는지도 설명되어있다. 아래는 예시(2026.11.15)
+{
+  "base": "stations",
+  "clouds": {
+    "all": 0
+  },
+  "cod": 200,
+  "coord": {
+    "lon": 126.9778,
+    "lat": 37.5683
+  },
+  "dt": 1794740488,
+  "id": 1835848,
+  "main": {
+    "temp": 10.76,
+    "feels_like": 10.16,
+    "temp_min": 10.76,
+    "temp_max": 10.78,
+    "pressure": 1018
+  },
+  "name": "Seoul",
+  "sys": {
+    "type": 1,
+    "id": 8105,
+    "country": "KR",
+    "sunrise": 1794694281,
+    "sunset": 1794730923
+  },
+  "timezone": 32400,
+  "visibility": 7000,
+  "weather": [
+    {
+      "id": 800,
+      "main": "Clear",
+      "description": "맑음",
+      "icon": "01n"
+    }
+  ],
+  "wind": {
+    "speed": 2.57,
+    "deg": 280
+  }
+}
+-->
 <!DOCTYPE html>
 <html lang="ko">
 
@@ -111,7 +161,8 @@
             <button onclick="changeCity()">검색</button>
         </div>
 
-        <h3 id="city">로딩 중...</h3>
+        <h3 id="city">로딩 중...span</h3>
+        <div class="time">-</div>
         <div class="icon-box">
             <img id="icon" src="" alt="날씨 아이콘">
         </div>
@@ -147,23 +198,70 @@
                 // 1. 한글 여부 판별 및 쿼리 생성
                 const isKorean = /[ㄱ-ㅎ|ㅏ-ㅣ|가-힣]/.test(city);
                 const searchQuery = isKorean ? `${city},KR` : city;
+                
                 const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${searchQuery}&appid=${API_KEY}&lang=kr&units=metric`;
-
+                
+                /*도시면 한글로 검색이 에러발생..해결못함*/
                 const wResponse = await fetch(weatherUrl);
                 const wData = await wResponse.json();
-               console.log(wData);
+         
+                /*
+                fetch(weatherUrl) : weatherUrl에 들어 있는 주소로 날씨 정보를 요청해.
+                await : 요청한 결과가 돌아올 때까지 기다려.
+                const wResponse = : 결과가 돌아오면 wResponse라는 변수에 담아.
+                */
+               /*
+               wResponse : 외부 사이트에서 돌아온 응답이야.
+               .json() : 응답에 들어 있는 JSON 형식의 데이터를 자바스크립트에서 사용할 수 있는 형태로 바꿔줘.
+               const wData = : 변환된 데이터를 wData라는 변수에 담아
+               */
+              /*
+              json()은 "변환"이면서 "수신"이기도 합니다
+              wResponse.json()이 하는 일은 사실 이 두 가지예요.
+              아직 도착 중인 본문을 끝까지 읽기 (네트워크 작업, 시간이 걸림)
+              읽은 글자를 JSON 객체로 해석하기 (컴퓨터 내부 작업)
+              */
+             console.log(wData);
+            
+               
 
                 if (wData.cod !== 200) {
                     alert("도시를 찾을 수 없습니다. (한글 또는 영문 도시명을 정확히 입력하세요)");
                     return;
                 }
-
+                //시간정보를 한번 넣어보았다
+              
+                const { dt, timezone: timezoneOffsetSeconds } = wData;//분할할당..ㅎㅎ
+                const localDate = new Date((dt + timezoneOffsetSeconds) * 1000);
+                let timer;
+                clearInterval(timer);
+                timer = setInterval(()=>{ 
+                    localDate.setSeconds(localDate.getSeconds() + 1);
+                      /*
+                반환 형태: 요소들의 목록 (HTMLCollection, 배열과 비슷한 형태)
+                설명: 같은 클래스 이름을 가진 태그는 페이지 안에 여러 개 있을 수 있기 때문에, 컴퓨터는 일치하는 모든 요소를 꾸러미(목록)로 묶어서 반환합니다.
+                이 꾸러미(목록) 통째에는 .innerText라는 속성이 없기 때문에, 곧바로 붙이면 적용되지 않습니다. 만약 쓰려면 아래처럼 몇 번째 요소인지 번호(인덱스)를 적어주어야 합니다.그래서 id를 많이씀
+                */
+                    document.getElementsByClassName('time')[0].innerText = localDate.toLocaleTimeString(undefined,{hour12:false});
+                },1000); 
+                
+                /*
+                toLocaleTimeString('ko-KR',{hour12:false})
+                    true : 오전 1:30:25
+                    false : 13:30:25
+                */
+                /*
+                만약 const localDate =...를 setInterval 안에 넣으면 매초 처음 시간을 다시 불러오게 돼.
+                그러면 초가 계속 1초로 돌아가겠지?
+                따라서 바깥에서 한 번 만들고 안에서 초를 증가시키는 거야
+                */
                 // 2. 화면 날씨 정보 업데이트
                 document.getElementById('city').innerText = wData.name;
                 document.getElementById('temp').innerText = wData.main.temp.toFixed(1);
-                document.getElementById('desc').innerText = wData.weather[0].description;
+                //toFixed(1)은 소수점 첫째 자리까지 표시해
+                document.getElementById('desc').innerHTML = wData.weather[0].description;
                 document.getElementById('icon').src = `https://openweathermap.org/img/wn/${wData.weather[0].icon}@4x.png`;
-
+                
                 // 3. 위도/경도를 사용해 미세먼지 업데이트
                 const { lat, lon } = wData.coord;
                 updateAirQuality(lat, lon);
@@ -180,10 +278,20 @@
                 const aResponse = await fetch(airUrl);
                 const aData = await aResponse.json();
 
-                const aqi = aData.list[0].main.aqi; // 1(좋음)~5(매우나쁨)
+                const aqi = aData.list[0].main.aqi; 
+                /*
+                OpenWeatherMap 대기오염 API 응답 데이터의 구조(list 배열 안의 첫 번째 객체 속 main.aqi)에서 AQI(Air Quality Index, 통합대기환경지수) 숫자를 꺼내옵니다.
+                이 API는 미세먼지(PM10), 초미세먼지(PM2.5) 등을 종합하여 1부터 5까지의 정수로 대기 상태를 알려줍니다.
+                1: 좋음
+                2: 보통
+                3: 민감군 주의
+                4: 나쁨
+                5: 매우 나쁨
+                */
                 const aqiText = ["", "좋음 😊", "보통 🙂", "민감군 주의 🤨", "나쁨 😷", "매우 나쁨 🚨"];
+                
                 const aqiClass = aqi <= 2 ? "good" : "bad";
-
+                
                 const aqiElement = document.getElementById('aqi');
                 aqiElement.innerText = aqiText[aqi];
                 aqiElement.className = aqiClass;
@@ -198,7 +306,7 @@
             const newCity = input.value.trim();
             if (newCity) {
                 updateWeather(newCity);
-                input.value = ""; // 입력 후 칸 비우기
+                 input.value = ""; // 입력 후 칸 비우기
             }
         }
 
@@ -208,8 +316,10 @@
         });
 
         // 초기 실행 (서울)
-        updateWeather(currentCity);
        
+        updateWeather(currentCity);
+        
+           
     </script>
 </body>
 

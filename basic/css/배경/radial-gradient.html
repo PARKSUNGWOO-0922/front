@@ -17,7 +17,7 @@
                     closest-side: 사이드에서 가장 가까운
                     farthest-side: 사이드에서 가장 먼
                     closest-corner: 코너에서 가장 가까운
-                위치: x위치 y위치
+                위치: x위치 y위치(즉 중심점을 정한다.)
                     기본값: 50% 50%, 즉 원의 중심
                     예) farthest-corner at 70% 60%
                 색 뒤에 %는 색의 위치
@@ -36,11 +36,11 @@
         #grad2 {
             background-image: radial-gradient(circle, red 5%, yellow 15%, green 60%);
         }
-
+        /* closest-side 중심점에서 가장가까운 사이드까지 그라데이선 진행 모서리 만나면 그후에는 모두 검은색으로*/
         #grad3 {
              background-image: radial-gradient(closest-side at 70% 60%, red, yellow, black);
         }
-       
+       /* farthest-side 중심점에서 가장먼 사이드까지(멀리있는만금 넓게 퍼진다 ) 그라에이션진행 사이드 만나면 그후에는 모두 검은색으로 */
         #grad4 {
              background-image: radial-gradient(farthest-side at 70% 60%, red, yellow, black);
         }
@@ -62,7 +62,7 @@
 <body>
     <p id="grad1">background-image: radial-gradient(red, yellow,green);</p>
     <p id="grad2">background-image: radial-gradient(red 5%, yellow 15%, green 60%);</p>
-    <p id="grad3">closest-side</p>
+    <p id="grad3">(closest-side at 70% 60%, red, yellow, black)</p>
     <p id="grad4">farthest-side</p>
     <p id="grad5">closest-corner</p>
     <p id="grad6">farthest-corner</p>
