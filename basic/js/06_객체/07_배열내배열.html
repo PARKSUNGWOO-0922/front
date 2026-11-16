@@ -31,14 +31,14 @@
      });   
     
      // 자동차 정보를 아래방향을 출력하고자 할때
-    // car.forEach((ele, i) => {
-    //       div.innerHTML += `<h2>[car${i+1} 속성]</h2>`;
+    car.forEach((ele, i) => {
+           div.innerHTML += `<h2>[car${i+1} 속성]</h2>`;
   
         // 자동차 한 대의 정보를 다시 반복문 돌리기
-      //   ele.forEach(info => {
-      //     div.innerHTML += `<p>${info}</p>`; // 하나씩 <p>에 담아서 아래로!
-      //   });
-      // });
+         ele.forEach(info => {
+           div.innerHTML += `<p>${info}</p>`; // 하나씩 <p>에 담아서 아래로!
+         });
+       });
             
         </script>
 </body>
